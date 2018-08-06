@@ -16,7 +16,7 @@
 
 <html class="theme-next gemini use-motion" lang="zh-CN">
 <head>
-  <meta charset="UTF-8"/>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
@@ -170,7 +170,7 @@
       .logo-line-after i { right: initial; }
     }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 </head>
 
@@ -181,7 +181,7 @@
     
   
 
-  <div class="container sidebar-position-left 
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left 
   page-home">
     <div class="headband"></div>
 
@@ -346,7 +346,7 @@
                 
               
 
-              <time title="创建时间：2018-08-06 17:05:38 / 修改时间：18:58:44" itemprop="dateCreated datePublished" datetime="2018-08-06T17:05:38+08:00">2018-08-06</time>
+              <time title="创建时间：2018-08-06 17:05:38 / 修改时间：22:45:16" itemprop="dateCreated datePublished" datetime="2018-08-06T17:05:38+08:00">2018-08-06</time>
             
 
             
@@ -385,118 +385,14 @@
 
       
         
-          
-            <p>今天模拟测试一共有三道题，这里先发一下有关这三道题的题解，有关这几类题目的详解会在以后更新。</p>
-<h3 id="T1-奇数码问题"><a href="#T1-奇数码问题" class="headerlink" title="T1 奇数码问题"></a>T1 奇数码问题</h3><p><strong>[题目描述]</strong></p>
-<pre><code>你一定玩过八数码游戏，它实际上是在一个3*3的网格中进行的，1个空格和1~8这8个
-数字恰好不重不漏地分布在这3*3的网格中。
-
-例如：
-5 2 8
-1 3 _
-4 6 7
-
-在游戏过程中，可以把空格与其上、下、左、右四个方向之一的数字交换（如果存在）。
-例如在上例中，空格可与左、上、下面的数字交换，分别变成：
-5 2 8       5 2 _      5 2 8
-1 _ 3       1 3 8      1 3 7
-4 6 7       4 6 7      4 6 _
-
-奇数码游戏是它的一个扩展，在一个n*n的网格中进行，其中n为奇数，1个空格和
-1~n*n-1这n*n-1个数恰好不重不漏地分布在n*n的网格中。
-
-空格移动的规则与八数码游戏相同，实际上，八数码就是一个n=3的奇数码游戏。
-
-现在给定两个奇数码游戏的局面，请判断是否存在一种移动空格的方式，使得其中一个
-局面可以变化到另一个局面。
-</code></pre><p><strong>[输入格式]</strong></p>
-<pre><code>多组数据，对于每组数据：
-第1行一个奇整数n。
-接下来n行每行n个整数，表示第一个局面。
-接下来n行每行n个整数，表示第二个局面。
-局面中每个整数都是0~n*n-1之一，其中用0代表空格，其余数值与奇数码游戏中的意
-义相同，保证这些整数的分布不重不漏。
-</code></pre><p><strong>[输出格式]</strong></p>
-<pre><code>对于每组数据，若两个局面可达，输出TAK，否则输出NIE。
-</code></pre><p><strong>[样例输入]</strong></p>
-<pre><code>3
-1 2 3
-0 4 6
-7 5 8
-1 2 3
-4 5 6
-7 8 0
-1
-0
-0
-</code></pre><p><strong>[样例输出]</strong></p>
-<pre><code>TAK
-TAK
-</code></pre><p><strong>[数据范围与约定]</strong></p>
-<pre><code>对于30%的数据，1&lt;=n&lt;=3；
-对于60%的数据，1&lt;=n&lt;=50；
-对于100%的数据，1&lt;=n&lt;=500，n为奇数，每个测试点不超过10组。
-</code></pre><p><strong>[题解]</strong></p>
-<pre><code>通过题目可知，这是一道经典的八数码问题，可以说是模板题。
-对于这种问题，可以把方阵转为链（忽略输入的 0），然后统计初始状态和
-目标状态的逆序对的数量。
-若逆序对数的奇偶性相同，则可以到达，否则不行。
-</code></pre><p><strong>[参考代码]</strong></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, a, t[<span class="number">300010</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">modify</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = x; i &lt;= n; i += i &amp; -i) ++t[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = x; i; i -= i &amp; -i)</span><br><span class="line">		res += t[i];</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">work</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(t, <span class="number">0</span>, <span class="keyword">sizeof</span>(t));</span><br><span class="line">	<span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;a);</span><br><span class="line">		<span class="keyword">if</span> (!a) <span class="keyword">continue</span>;</span><br><span class="line">		cnt += query(n) - query(a);</span><br><span class="line">		modify(a);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> cnt &amp; <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	freopen(<span class="string">"digital.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">	freopen(<span class="string">"digital.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (; <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n) == <span class="number">1</span>; ) &#123;</span><br><span class="line">		n *= n;</span><br><span class="line">		<span class="keyword">if</span> (work() == work()) <span class="built_in">printf</span>(<span class="string">"TAK\n"</span>);</span><br><span class="line">		<span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">"NIE\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 此处使用了树状数组做</span></span><br><span class="line"><span class="comment">// 本题还可以使用归并排序做，有兴趣的同学可以试试看用归并排序做。</span></span><br></pre></td></tr></table></figure>
-<p><strong>[评价]</strong></p>
-<p>第一题嘛……水题，模板题，送分题……</p>
-<h3 id="T2-树洞"><a href="#T2-树洞" class="headerlink" title="T2 树洞"></a>T2 树洞</h3><p><strong>[题目描述]</strong></p>
-<pre><code>在一片栖息地上有N棵树，每棵树下住着一只兔子，有M条路径连接这些树。更特殊地是，
-只有一棵树有3条或更多的路径与它相连，其它的树只有1条或2条路径与其相连。换句话讲，
-这些树和树之间的路径构成一张N个点、M条边的无向连通图，而度数大于2的点至多有1个。
-
-近年以来，栖息地频繁收到人类的侵扰。兔子们联合起来召开了一场会议，决定在其中K棵
-树上建造树洞。当危险来临时，每只兔子均会同时前往距离它最近的树洞躲避，路程中花费
-的时间在数值上等于距离。为了在最短的时间内让所有兔子脱离危险，请你安排一种建造树
-洞的方式，使最后一只到达树洞的兔子所花费的时间尽量少。
-</code></pre><p><strong>[输入格式]</strong></p>
-<pre><code>第一行有3个整数N，M，K，分别表示树（兔子）的个数、路径数、计划建造的树洞数。
-接下来M行每行三个整数x,y，表示第x棵树和第y棵树之间有一条路径相连。
-1&lt;=x,y&lt;=N，x≠y，任意两棵树之间至多只有1条路径。
-</code></pre><p><strong>[输出格式]</strong></p>
-<pre><code>一个整数，表示在最优方案下，最后一只到达树洞的兔子所花费的时间。
-</code></pre><p><strong>[样例输入]</strong></p>
-<pre><code>5 5 2
-1 2
-2 3
-3 1
-1 4
-4 5
-</code></pre><p><strong>[样例输出]</strong></p>
-<pre><code>1
-</code></pre><p><strong>[数据范围与约定]</strong></p>
-<pre><code>对于20%的数据，1 ≤  n ≤ 10。
-对于另外30%的数据，每棵树至多与2条路径相连。
-对于另外30%的数据，保证存在一种最优解，使与3条或更多路径相连的树上一定建造了树洞。
-对于100%的数据，1 ≤ n ≤ 2000，n-1&lt;=m&lt;=n*(n-1)/2。
-</code></pre><p><strong>[题解]</strong></p>
-<pre><code>求最大值最小，而且答案满足单调，很显然可以用二分 
-如何验证？
-首先考虑一条链的情况，答案必然是（n-k）/k；
-
-而另外存在一个特殊点有三条及以上的边的情况
-我们先枚举一个点，可以将特殊点覆盖，覆盖后，
-原来的图将断成若干条链，然后重复之前链的做法统计答案是否超过k，
-来判断二分的答案是否正确
-</code></pre><p><strong>[参考代码]</strong></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m, k, rt, deep, mi;</span><br><span class="line"><span class="keyword">int</span> deg[<span class="number">2005</span>], dis[<span class="number">2005</span>];</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">2005</span>], first[<span class="number">2005</span>];</span><br><span class="line"><span class="keyword">int</span> head[<span class="number">2005</span>], num;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">edge</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> nxt, to;</span><br><span class="line">&#125; e[<span class="number">4000005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">	e[++num].nxt = head[x];</span><br><span class="line">	e[num].to = y;</span><br><span class="line">	head[x] = num;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> len)</span> </span>&#123;</span><br><span class="line">	deep += <span class="number">1</span>;</span><br><span class="line">	vis[x] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">if</span> (!len) <span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = head[x]; i; i = e[i].nxt) &#123;</span><br><span class="line">		<span class="keyword">int</span> v = e[i].to;</span><br><span class="line">		<span class="keyword">if</span> (!vis[v]) &#123;</span><br><span class="line">			dis[v] = dis[x] + <span class="number">1</span>;</span><br><span class="line">			dfs(v, len - <span class="number">1</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">	dfs(rt, x);</span><br><span class="line">	<span class="built_in">memcpy</span>(first, vis, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (first[i]) &#123;</span><br><span class="line">			<span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">			<span class="built_in">memset</span>(vis, <span class="number">0</span>, <span class="keyword">sizeof</span>(vis));</span><br><span class="line">			dfs(i, x);</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n &amp;&amp; res &lt; k; j++)</span><br><span class="line">			<span class="keyword">if</span> (!vis[j]) &#123;</span><br><span class="line">				deep = <span class="number">0</span>;</span><br><span class="line">				dfs(j, n);</span><br><span class="line">				res += (deep + <span class="number">2</span> * x) / (<span class="number">2</span> * x + <span class="number">1</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span> (res &lt; k) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;n, &amp;m, &amp;k);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">		<span class="keyword">int</span> x, y;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;x, &amp;y);</span><br><span class="line">		deg[x]++;</span><br><span class="line">		deg[y]++;</span><br><span class="line">		add(x, y);</span><br><span class="line">		add(y, x);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="keyword">if</span> (deg[i] &gt; <span class="number">2</span>) &#123;</span><br><span class="line">			rt=i;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (!rt) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d"</span>, (n + k - <span class="number">1</span>) / k / <span class="number">2</span>);</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> l = <span class="number">1</span>, r = n - <span class="number">1</span>, ans = n;</span><br><span class="line">	<span class="keyword">while</span> (l &lt;= r) &#123;</span><br><span class="line">		<span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span> (check(mid)) &#123;</span><br><span class="line">			ans = mid;</span><br><span class="line">			r = mid - <span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> l = mid + <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>[评价]</strong></p>
-<p>之所以标题称这次模拟为“戏剧性的模拟测试”，是因为这道题一开始不会，用了个随机数骗了个 10 分（逃）。</p>
-<p>虽然这种骗分方法不值得提倡，但也是没有办法的办法，毕竟信奥有时就是这么玄。</p>
-<p>对于这种二分答案的题要记住题目所满足的条件：单调性，一般遇到最大值求最小，最小值求最大的这种坑题可以考虑二分答案的方法了。</p>
-<h3 id="T3-まんふは函数"><a href="#T3-まんふは函数" class="headerlink" title="T3 まんふは函数"></a>T3 まんふは函数</h3><p><strong>[吐槽]</strong></p>
-<p>为什么这道题一上来就吐槽呢？首先，这道题的思维难度比较大，其次，这道题的思维难度比较小（WTF!!??）。</p>
-<div style="align: center"> <img src="黑人问号.jpg"> </div><br>首先来看一下题目中日语的发音：<br><div style="align: center"> <img src="翻译1.jpg"> </div><br>重新排列之后：<br><div style="align: center"> <img src="翻译2.jpg"> </div><br>经过 Google 的提醒：<br><div style="align: center"> <img src="翻译3.jpg"> </div>
-
-<p>这不就是 Huffman 的意思吗……<br>明摆着让我们用霍夫曼树……</p>
-<p>（当然，从题中所给的公式也可以看出来，比如考试的时候我就看出来了（逃）。）</p>
-
-          
+          <p>今天模拟测试一共有三道题，这里先发一下有关这三道题的题解，有关这几类题目的详解会在以后更新。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/06/NOIP-模拟-2018-8-6-题解-一次戏剧性的模拟测试/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -611,7 +507,7 @@ TAK
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-08-06 17:14:05" itemprop="dateModified" datetime="2018-08-06T17:14:05+08:00">2018-08-06</time>
+                <time title="修改时间：2018-08-06 22:39:20" itemprop="dateModified" datetime="2018-08-06T22:39:20+08:00">2018-08-06</time>
               
             
           </span>
@@ -645,11 +541,14 @@ TAK
 
       
         
-          
-            <p>重新弄了一个 Github 账号，因为高中决定搞信息竞赛了，所以以后会在这个新的博客里不定期地更新一些有关信息竞赛的内容，当然也可能会更新其他的内容。</p>
-<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><p>TO BE CONTINUED……</p>
-
-          
+          <p>重新弄了一个 Github 账号，因为高中决定搞信息竞赛了，所以以后会在这个新的博客里不定期地更新一些有关信息竞赛的内容，当然也可能会更新其他的内容。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/05/Hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -999,7 +898,7 @@ TAK
         }
     });
 </script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
     
   
