@@ -125,7 +125,7 @@
 <meta property="og:site_name" content="梅骏逸的博客">
 <meta property="og:description" content="写在前面因为很多次模拟测试都败在区间最值问题（RMQ）上，所以决定开一篇博客好好总结一下。本篇文章着重介绍 RMQ 问题中最著名的 ST 算法。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-11T09:14:27.277Z">
+<meta property="og:updated_time" content="2018-08-11T09:24:05.929Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[算法] RMQ 问题与 ST 算法">
 <meta name="twitter:description" content="写在前面因为很多次模拟测试都败在区间最值问题（RMQ）上，所以决定开一篇博客好好总结一下。本篇文章着重介绍 RMQ 问题中最著名的 ST 算法。">
@@ -383,7 +383,7 @@
                 
               
 
-              <time title="创建时间：2018-08-11 16:31:36 / 修改时间：17:14:27" itemprop="dateCreated datePublished" datetime="2018-08-11T16:31:36+08:00">2018-08-11</time>
+              <time title="创建时间：2018-08-11 16:31:36 / 修改时间：17:24:05" itemprop="dateCreated datePublished" datetime="2018-08-11T16:31:36+08:00">2018-08-11</time>
             
 
             
@@ -470,8 +470,7 @@
 <p>当我们要查询区间 $[l,r]$ 的最值时，我们先计算出一个 $k$，满足 $2^k &lt; r-l+1 \leqslant 2^{k+1}$，也就是使二的 $k$ 次幂小于区间长度的前提下最大的 $k$。那么“从 $l$ 开始的 $2^k$ 个数”和“以 $r$ 结尾的 $2^k$ 个数” 这两段一定覆盖了原来的整个区间，这两段的最大值分别为 $F[l,k]$ 和 $F[r-2^k+1,k]$，二者中较大的就是整个区间的最值。因为求的是最大值，所以只要覆盖区间就行，重叠是没有关系的。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">STquery</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> k = <span class="built_in">log</span>(r - l + <span class="number">1</span>) / <span class="built_in">log</span>(<span class="number">2</span>);</span><br><span class="line">	<span class="keyword">return</span> max(f[l][k], f[r - (<span class="number">1</span> &lt;&lt; k) + <span class="number">1</span>][k]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>如果要进一步提高执行效率，可以将 $f$ 数组的两个维度交换，这样对缓存更加友好。并且可以预处理出 $1 \thicksim n$ 中 $log_2 n$ 的值，甚至是各个区间对应的 $k$ 的值，具体方法视情况而定。</p>
-<p>###总结</p>
-<ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
 <li>为什么使用 <code>log()</code> 函数而不是 <code>log2()</code> 呢，原因是前者效率更快，而且众所周知，对数是有换底公式的（啥？你不知道？赶紧补一下高中数学必修一吧！），所以这里效率会高一点</li>
 <li><a href="https://www.luogu.org/problemnew/show/P3865" target="_blank" rel="noopener">ST 表的模板题地址——洛谷 p3865</a></li>
 </ol>
@@ -756,7 +755,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RMQ-问题"><span class="nav-number">2.</span> <span class="nav-text">RMQ 问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ST-算法"><span class="nav-number">3.</span> <span class="nav-text">ST 算法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RMQ-问题"><span class="nav-number">2.</span> <span class="nav-text">RMQ 问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ST-算法"><span class="nav-number">3.</span> <span class="nav-text">ST 算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
