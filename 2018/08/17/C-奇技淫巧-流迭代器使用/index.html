@@ -117,25 +117,25 @@
      });
 </script>
 
-  <meta name="description" content="写在前面最近自己在自学数论，为了保证遇到数论的题的时候能从容不迫地应对，本篇文章主要是对莫比乌斯函数( $\mu{(n)}$ )的初步了解">
-<meta name="keywords" content="数论,欧拉函数,莫比乌斯函数">
+  <meta name="description" content="写在前面自从熟知了 STL 库这个东西，我就再也离不开它了，以前一直以为只有容器才会有迭代器可以用，然而这是因为自己的知识水平还不够高，今天就介绍一下流迭代器这种神奇的存在。">
+<meta name="keywords" content="C++ 奇技淫巧,迭代器,iostream">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[数论] 数论基础知识----莫比乌斯函数">
-<meta property="og:url" content="http://walesexcitedmei.github.io/2018/08/08/数论-数论基础知识-莫比乌斯函数/index.html">
+<meta property="og:title" content="[C++ 奇技淫巧] 流迭代器使用">
+<meta property="og:url" content="http://walesexcitedmei.github.io/2018/08/17/C-奇技淫巧-流迭代器使用/index.html">
 <meta property="og:site_name" content="梅骏逸的博客">
-<meta property="og:description" content="写在前面最近自己在自学数论，为了保证遇到数论的题的时候能从容不迫地应对，本篇文章主要是对莫比乌斯函数( $\mu{(n)}$ )的初步了解">
+<meta property="og:description" content="写在前面自从熟知了 STL 库这个东西，我就再也离不开它了，以前一直以为只有容器才会有迭代器可以用，然而这是因为自己的知识水平还不够高，今天就介绍一下流迭代器这种神奇的存在。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-16T12:32:40.563Z">
+<meta property="og:updated_time" content="2018-08-17T13:18:29.407Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[数论] 数论基础知识----莫比乌斯函数">
-<meta name="twitter:description" content="写在前面最近自己在自学数论，为了保证遇到数论的题的时候能从容不迫地应对，本篇文章主要是对莫比乌斯函数( $\mu{(n)}$ )的初步了解">
+<meta name="twitter:title" content="[C++ 奇技淫巧] 流迭代器使用">
+<meta name="twitter:description" content="写在前面自从熟知了 STL 库这个东西，我就再也离不开它了，以前一直以为只有容器才会有迭代器可以用，然而这是因为自己的知识水平还不够高，今天就介绍一下流迭代器这种神奇的存在。">
 
 
 
 
 
 
-  <link rel="canonical" href="http://walesexcitedmei.github.io/2018/08/08/数论-数论基础知识-莫比乌斯函数/"/>
+  <link rel="canonical" href="http://walesexcitedmei.github.io/2018/08/17/C-奇技淫巧-流迭代器使用/"/>
 
 
 
@@ -145,7 +145,7 @@
   };
 </script>
 
-  <title>[数论] 数论基础知识----莫比乌斯函数 | 梅骏逸的博客</title>
+  <title>[C++ 奇技淫巧] 流迭代器使用 | 梅骏逸的博客</title>
   
 
 
@@ -358,7 +358,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://walesexcitedmei.github.io/2018/08/08/数论-数论基础知识-莫比乌斯函数/">
+    <link itemprop="mainEntityOfPage" href="http://walesexcitedmei.github.io/2018/08/17/C-奇技淫巧-流迭代器使用/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wales Mei">
@@ -375,7 +375,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">[数论] 数论基础知识----莫比乌斯函数
+          <h1 class="post-title" itemprop="name headline">[C++ 奇技淫巧] 流迭代器使用
               
             
           </h1>
@@ -400,24 +400,12 @@
                 
               
 
-              <time title="创建时间：2018-08-08 18:46:44" itemprop="dateCreated datePublished" datetime="2018-08-08T18:46:44+08:00">2018-08-08</time>
+              <time title="创建时间：2018-08-17 19:09:16 / 修改时间：21:18:29" itemprop="dateCreated datePublished" datetime="2018-08-17T19:09:16+08:00">2018-08-17</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-08-16 20:32:40" itemprop="dateModified" datetime="2018-08-16T20:32:40+08:00">2018-08-16</time>
               
             
           </span>
@@ -434,7 +422,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/数论/" itemprop="url" rel="index"><span itemprop="name">数论</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/奇技淫巧/" itemprop="url" rel="index"><span itemprop="name">奇技淫巧</span></a></span>
 
                 
                 
@@ -449,10 +437,10 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/08/数论-数论基础知识-莫比乌斯函数/#comments" itemprop="discussionUrl">
+                <a href="/2018/08/17/C-奇技淫巧-流迭代器使用/#comments" itemprop="discussionUrl">
                 
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2018/08/08/数论-数论基础知识-莫比乌斯函数/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2018/08/17/C-奇技淫巧-流迭代器使用/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -488,17 +476,93 @@
       
 
       
-        <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>最近自己在自学数论，为了保证遇到数论的题的时候能从容不迫地应对，本篇文章主要是对莫比乌斯函数( $\mu{(n)}$ )的初步了解</p>
+        <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>自从熟知了 STL 库这个东西，我就再也离不开它了，以前一直以为<strong>只有容器才会有迭代器可以用</strong>，然而这是因为自己的知识水平还不够高，今天就介绍一下流迭代器这种神奇的存在。</p>
 <a id="more"></a>
-<h3 id="莫比乌斯函数"><a href="#莫比乌斯函数" class="headerlink" title="莫比乌斯函数"></a>莫比乌斯函数</h3><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>莫比乌斯函数 $\mu{(n)}$ 的定义如下：</p>
-<p>$$ \mu(1) = 1; $$</p>
-<p>如果 $n&gt;1$，写 $n=p_1^{a_1}p_2^{a_2}p_3^{a_3}…p_k^{a_k}$，则：</p>
-<p>$$<br>\mu(n)=<br>\begin{cases}<br>(-1)^k &amp; \text{when $a_1=a_2=a_3=…=a_k=1$,}\\<br>0 &amp; \text{otherwise.}<br>\end{cases}<br>$$</p>
-<p><strong>注</strong>     $\mu(n)=1$当且仅当$n$有一个大于$1$的平方因子。</p>
-<h4 id="定理"><a href="#定理" class="headerlink" title="定理"></a>定理</h4><p>莫比乌斯函数在数论中经常出现（上次就被它狠狠地坑了一次），它的基本性质之一是对约束求和 $\sum_{d|n}\mu{(d)}$ 的一个重要的简明公式，它在$n$的正约数上展开，式子中的 $\left[x\right]$ 表示不大于$x$的最大整数。定理如下：</p>
-<p><strong>[定理描述]</strong><br>如果${n}\geqslant{1}$，我们有<br>$$<br>\sum_{d|n}\mu{(d)}=\left[\frac{1}{n}\right]=<br>\begin{cases}<br>1 &amp;\text{when $n=1$,}\\<br>0 &amp;\text{when $n&gt;1$.}<br>\end{cases}<br>$$</p>
-<p><strong>[定理证明]（运用了二项式定理）</strong><br>对于 $n=1$，等式显然成立。设 $n&gt;1$ 并写 $n=p_1^{a_1}…p_k^{a_k}$ ，在 $\sum_{d|n}\mu{(d)}$ 中非零的项仅来自于 $d=1$ 与 $n$ 的约数是不同素数的乘积，即<br>$$<br>\begin{aligned}<br>\sum_{d|n}\mu{(d)}={}&amp; \mu(1)+\mu(p_1)+…+\mu(p_k)+\mu(p_1p_k)+…+{} \\<br>&amp;\mu(p_{k-1}p_k)+…+\mu(p_1p_2…p_k){}\\<br>={}&amp;1+\binom{k}{1}(-1)+\binom{k}{2}(-1)^2+…+\binom{k}{k}(-1)^k{}\\<br>={}&amp;0<br>\end{aligned}<br>$$</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>莫比乌斯函数本身其实并不难，但是要深刻地理解它还是有一点点困难的，以后会和别的有关函数结合起来进行讲解，加深记忆。</p>
+<h3 id="流迭代器"><a href="#流迭代器" class="headerlink" title="流迭代器"></a>流迭代器</h3><p><strong>iostream 迭代器（iostream iterator）</strong>：与输入或输出流绑定在一起，用于迭代遍历所关联的 IO 流。</p>
+<p>虽然 <code>iostream</code> 类型不是容器，但标准库同样提供了在 <code>iostream</code> 对象上使用的迭代器：<code>istream_iterator</code> 用于读取输入流，而 <code>ostream_iterator</code> 则用于写输出流。这些迭代器将它们所对应的流视为特定类型的<strong>元素序列</strong>。</p>
+<p>下面列出流迭代器的使用方法：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><code>iostream</code>  迭代器的构造函数</th>
+<th style="text-align:center">对应的意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>istream_iterator&lt;T&gt; in(strm)</code></td>
+<td style="text-align:center">创建从输入流 <code>strm</code> 中读取T类型对象的 <code>istream_iterator</code> 对象</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>istream_terator&lt;T&gt; in</code></td>
+<td style="text-align:center"><code>istream_iterator</code> 对象的超出末端迭代器</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ostream_iterator&lt;T&gt; out(strm)</code></td>
+<td style="text-align:center">创建将T类型的对象写到输出流 <code>strm</code> 的 <code>ostream_iterator</code> 对象</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>ostream_iterator&lt;T&gt; out(str, delim)</code></td>
+<td style="text-align:center">创建将 <code>T</code> 类型的对象写到输出流 <code>strm</code> 的 <code>ostream_iterator</code> 对象，在写入过程中使用 <code>delim</code> 作为元素的分隔符。<code>delim</code> 是以空字符结束的字符数组（C风格字符串）。</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><code>istream_iterator</code> 的操作</th>
+<th style="text-align:center">对应的意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>it1 == it2; it1 != it2</code></td>
+<td style="text-align:center">比较两上 <code>istream_iterator</code> 对象是否相等（不等）。迭代器读取的必须是相同的类型。如果两个迭代器都是 <code>end</code> 值，则它们相等。对于两个都不指向流结束位置的迭代器，如果它们使用同一个输入流构造，则它们也相等</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>*it</code></td>
+<td style="text-align:center">返回从流中读取的值</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>it-&gt;mem</code></td>
+<td style="text-align:center">是 <code>(*it).mem</code> 的同义词。返回从流中读取的对象的 mem 成员</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>++it; it++</code></td>
+<td style="text-align:center">通过使用元素类型提供的 <code>&gt;&gt;</code> 操作从输入流中读取下一个元素值，使迭代器向前移动。通常，前缀版本使用迭代器在流中向前移动，并返回对加 $1$ 后的迭代器的引用。而后缀版本使迭代器在流中向前移动后，返回原值</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注：流迭代器都是类模板：任何已定义输入操作符（<code>&gt;&gt;</code> 操作符）的类型都可以定义istream_iterator。任何已定义输出操作符（<code>&lt;&lt;</code> 操作符）的类型可定义 <code>ostream_iterator</code>。</strong> </p>
+<h3 id="流迭代器使用"><a href="#流迭代器使用" class="headerlink" title="流迭代器使用"></a>流迭代器使用</h3><p><strong>注：迭代器的头文件别忘记引入。 <code>#include &lt;iterator&gt;</code></strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iterator&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	istream_iterator&lt;<span class="keyword">int</span>&gt; cinIter(<span class="built_in">cin</span>);</span><br><span class="line">	istream_iterator&lt;<span class="keyword">int</span>&gt; endOfStream;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec;</span><br><span class="line">	<span class="keyword">while</span> (cinIter != endOfStream)</span><br><span class="line">		<span class="comment">//注意++先引用后增值，不能写出前缀</span></span><br><span class="line">		vec.push_back(*cinIter++);</span><br><span class="line">	<span class="comment">//也可以写成  vector&lt;int&gt; vec(cinIter, endOfStream);</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i != vec.size(); ++i) <span class="built_in">cout</span> &lt;&lt; vec[i];</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注：其中 <code>end_of_stream</code> 定义为空的迭代器对象，用作结束迭代器。绑定流上的迭代器在遇到文件结束或某个错误时，将等于结束迭代器的值。</strong> </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span> </span>&#123;</span><br><span class="line">	ostream_iterator&lt;<span class="built_in">string</span>&gt; outIter(<span class="built_in">cout</span>, <span class="string">"\n"</span>);</span><br><span class="line">	istream_iterator&lt;<span class="built_in">string</span>&gt; inIter(<span class="built_in">cin</span>), endOfStream;</span><br><span class="line">	<span class="keyword">while</span>(endOfStream != inIter)</span><br><span class="line">		*outIter++ = *inIter++; </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注：执行顺序是先 <code>iter++</code>，返回 <code>iter</code>，最后 <code>*iter</code>。</strong><br><strong>注意输出，输入 <code>1 2 3 4 5</code>，按 <code>enter</code> 输出 <code>1\n2\n3\n4\n</code>，按 <code>ctrl+z</code> 输出 <code>5</code>。</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iterator&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span> </span>&#123;</span><br><span class="line">	<span class="function">ifstream <span class="title">infile</span><span class="params">(<span class="string">"in.txt"</span>)</span></span>;</span><br><span class="line">	istream_iterator&lt;<span class="keyword">int</span>&gt; cinIter(infile);</span><br><span class="line">	istream_iterator&lt;<span class="keyword">int</span>&gt; endOfStream;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec(cinIter, endOfStream);</span><br><span class="line">	sort(vec.begin(), vec.end());</span><br><span class="line">	ostream_iterator&lt;<span class="keyword">int</span>&gt; output(<span class="built_in">cout</span>, <span class="string">" "</span>);</span><br><span class="line">	unique_copy(vec.begin(), vec.end(), output);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>示例输入/输出：</p>
+<pre><code>INPUT(in.txt): 1 2 2 2 5 5 6 6 7 8 9 10 9 100 
+       OUTPUT: 1 2 5 6 7 8 9 10 100
+</code></pre><h3 id="流迭代器的限制"><a href="#流迭代器的限制" class="headerlink" title="流迭代器的限制"></a>流迭代器的限制</h3><ul>
+<li>不可能从 <code>ostream_iterator</code> 对象读入，也不可能写到 <code>istream_iterator</code> 对象中。</li>
+<li>一旦给 <code>ostream_iterator</code>对象赋了一个值，写入就提交了。赋值后，没有办法再改变这个值。此外，<code>ostream_iterator</code> 对象中每个不同的值都只能正好输出一次。</li>
+<li><code>ostream_iterator</code> 没有 <code>-&gt;</code> 操作符。</li>
+</ul>
+<h3 id="流迭代器的速度"><a href="#流迭代器的速度" class="headerlink" title="流迭代器的速度"></a>流迭代器的速度</h3><p>为了测试流迭代器的速度，我先随机生成了 $10000000$ 个数据，生成代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="function">ofstream <span class="title">test</span><span class="params">(<span class="string">"in.txt"</span>)</span></span>;</span><br><span class="line">	srand((<span class="keyword">unsigned</span>)time(<span class="literal">NULL</span>) * <span class="number">19260817</span>); <span class="comment">// +1s</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">10000000</span>; ++i)</span><br><span class="line">		test &lt;&lt; rand() &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="迭代器测试"><a href="#迭代器测试" class="headerlink" title="迭代器测试"></a>迭代器测试</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iterator&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;chrono&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>::chrono;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">auto</span> start = system_clock::now();</span><br><span class="line">	<span class="function">ifstream <span class="title">infile</span><span class="params">(<span class="string">"in.txt"</span>)</span></span>;</span><br><span class="line">	istream_iterator&lt;<span class="keyword">int</span>&gt; cinIter(infile);</span><br><span class="line">	istream_iterator&lt;<span class="keyword">int</span>&gt; endOfStream;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec(cinIter, endOfStream);</span><br><span class="line">	<span class="keyword">auto</span> end = system_clock::now();</span><br><span class="line">	<span class="keyword">auto</span> duration = duration_cast&lt;microseconds&gt;(end - start);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"cost: "</span> </span><br><span class="line">		 &lt;&lt; <span class="keyword">double</span>(duration.count()) * microseconds::period::num / microseconds::period::den </span><br><span class="line">		 &lt;&lt; <span class="string">" seconds"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<pre><code>cost: 10.7543 seconds
+</code></pre><p><strong>注：为了测试时间尽量精准，这里引入了 <code>chrono</code> 库，使用了支持 C++ 11 的 gcc 7.3.0，并且是在 Linux(Ubuntu) 上编译运行的，鉴于编译器的优化能力一个版本比一个版本强，此处没有开优化但结果仍可能有误差，与 OI 中使用迭代器的速度不一样，读者可以使用别的库再进行实验。</strong></p>
+<h4 id="开了-O-2-优化的流迭代器"><a href="#开了-O-2-优化的流迭代器" class="headerlink" title="开了 $O_2$ 优化的流迭代器"></a>开了 $O_2$ 优化的流迭代器</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> GCC optimize(2)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iterator&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;chrono&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>::chrono;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">auto</span> start = system_clock::now();</span><br><span class="line">	<span class="function">ifstream <span class="title">infile</span><span class="params">(<span class="string">"in.txt"</span>)</span></span>;</span><br><span class="line">	istream_iterator&lt;<span class="keyword">int</span>&gt; cinIter(infile);</span><br><span class="line">	istream_iterator&lt;<span class="keyword">int</span>&gt; endOfStream;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec(cinIter, endOfStream);</span><br><span class="line">	<span class="keyword">auto</span> end = system_clock::now();</span><br><span class="line">	<span class="keyword">auto</span> duration = duration_cast&lt;microseconds&gt;(end - start);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"cost: "</span> </span><br><span class="line">		 &lt;&lt; <span class="keyword">double</span>(duration.count()) * microseconds::period::num / microseconds::period::den </span><br><span class="line">		 &lt;&lt; <span class="string">" seconds"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<pre><code>cost: 2.31234 seconds
+</code></pre><p><strong>注：开了优化的结果，读者自行判断</strong></p>
+<h4 id="OI-中快读的时间测试"><a href="#OI-中快读的时间测试" class="headerlink" title="OI 中快读的时间测试"></a>OI 中快读的时间测试</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;chrono&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>::chrono;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;x)</span> </span>&#123;</span><br><span class="line">	x = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">bool</span> sign = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">char</span> ch = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123;</span><br><span class="line">		sign |= (ch == <span class="string">'-'</span>);</span><br><span class="line">		ch = getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch)) &#123;</span><br><span class="line">		x = (x &lt;&lt; <span class="number">3</span>) + (x &lt;&lt; <span class="number">1</span>) + (ch ^ <span class="number">48</span>);</span><br><span class="line">		ch = getchar();</span><br><span class="line">	&#125;</span><br><span class="line">	x = sign ? -x : x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> **argv)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">auto</span> start = system_clock::now();</span><br><span class="line">	freopen(<span class="string">"in.txt"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">	<span class="keyword">int</span> x;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10000000</span>; ++i) &#123;</span><br><span class="line">		read(x);</span><br><span class="line">		a.push_back(x);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">auto</span> end = system_clock::now();</span><br><span class="line">	<span class="keyword">auto</span> duration = duration_cast&lt;microseconds&gt;(end - start);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"cost: "</span> </span><br><span class="line">		 &lt;&lt; <span class="keyword">double</span>(duration.count()) * microseconds::period::num / microseconds::period::den </span><br><span class="line">		 &lt;&lt; <span class="string">" seconds"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果</p>
+<pre><code>cost: 2.61905 seconds
+</code></pre><p><strong>注：快读的写法也许不是最优，读者可以自行实验。</strong></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>事实上，抛开 OI 比赛不说，STL 的库使用优化还是很强的，但是 OI 中嘛，如果作大死用这个也许真的会崩。至于有关 STL 速度的讨论可以看<a href="https://www.zhihu.com/question/51650118" target="_blank" rel="noopener">这里</a>。</p>
 
       
     </div>
@@ -548,11 +612,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/数论/" rel="tag"># 数论</a>
+            <a href="/tags/C-奇技淫巧/" rel="tag"># C++ 奇技淫巧</a>
           
-            <a href="/tags/欧拉函数/" rel="tag"># 欧拉函数</a>
+            <a href="/tags/迭代器/" rel="tag"># 迭代器</a>
           
-            <a href="/tags/莫比乌斯函数/" rel="tag"># 莫比乌斯函数</a>
+            <a href="/tags/iostream/" rel="tag"># iostream</a>
           
         </div>
       
@@ -565,8 +629,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/07/NOIP-模拟-2018-8-7-题解-我写了个自己都看不懂的程序/" rel="next" title="[NOIP 模拟] 2018-8-7 题解: 我写了个自己都看不懂的程序">
-                <i class="fa fa-chevron-left"></i> [NOIP 模拟] 2018-8-7 题解: 我写了个自己都看不懂的程序
+              <a href="/2018/08/14/算法-Manacher-算法求最长回文子串/" rel="next" title="[算法] Manacher 算法求最长回文子串">
+                <i class="fa fa-chevron-left"></i> [算法] Manacher 算法求最长回文子串
               </a>
             
           </div>
@@ -574,10 +638,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/08/NOIP-模拟-2018-8-8-题解-爆零日，我该何去何从/" rel="prev" title="[NOIP 模拟] 2018-8-8 题解: 爆零日，我该何去何从...">
-                [NOIP 模拟] 2018-8-8 题解: 爆零日，我该何去何从... <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -825,7 +885,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#莫比乌斯函数"><span class="nav-number">2.</span> <span class="nav-text">莫比乌斯函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#定义"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#定理"><span class="nav-number">2.2.</span> <span class="nav-text">定理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流迭代器"><span class="nav-number">2.</span> <span class="nav-text">流迭代器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流迭代器使用"><span class="nav-number">3.</span> <span class="nav-text">流迭代器使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流迭代器的限制"><span class="nav-number">4.</span> <span class="nav-text">流迭代器的限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流迭代器的速度"><span class="nav-number">5.</span> <span class="nav-text">流迭代器的速度</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#迭代器测试"><span class="nav-number">5.1.</span> <span class="nav-text">迭代器测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#开了-O-2-优化的流迭代器"><span class="nav-number">5.2.</span> <span class="nav-text">开了 $O_2$ 优化的流迭代器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#OI-中快读的时间测试"><span class="nav-number">5.3.</span> <span class="nav-text">OI 中快读的时间测试</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
@@ -1007,9 +1067,9 @@
   
     <script type="text/javascript">
       var disqus_config = function () {
-        this.page.url = 'http://walesexcitedmei.github.io/2018/08/08/数论-数论基础知识-莫比乌斯函数/';
-        this.page.identifier = '2018/08/08/数论-数论基础知识-莫比乌斯函数/';
-        this.page.title = '[数论] 数论基础知识----莫比乌斯函数';
+        this.page.url = 'http://walesexcitedmei.github.io/2018/08/17/C-奇技淫巧-流迭代器使用/';
+        this.page.identifier = '2018/08/17/C-奇技淫巧-流迭代器使用/';
+        this.page.title = '[C++ 奇技淫巧] 流迭代器使用';
         };
       function loadComments () {
         var d = document, s = d.createElement('script');
