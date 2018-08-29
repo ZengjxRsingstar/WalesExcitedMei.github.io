@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[[杂谈] 编程规范那些事]]></title>
+    <url>%2F2018%2F08%2F29%2F%E6%9D%82%E8%B0%88-%E7%BC%96%E7%A8%8B%E8%A7%84%E8%8C%83%E9%82%A3%E4%BA%9B%E4%BA%8B%2F</url>
+    <content type="text"><![CDATA[写在前面一直很想写一篇博客来普及一下“编程规范”这个看似不重要其实很重要的东西，首先，它是团队合作的基础，有些 OI 竞赛也是有团队合作的。其次，下到 OI 中几十行的程序，上到大项目中几千行甚至几万行乃至上亿（额，这个似乎很少见），如果写得太难看那就会让人实在是无法忍受（比如在写 DP 的时候硬是将一个状态转移方程压成了一行，行数比列数还多一倍）。可见编程规范是多么的重要! Google C++ 编程规范Google 的项目一直都让人看起来赏心悦目，即使有些混乱的宏定义也让人看起来赏心悦目，首先贴一张图，转自 CSDN 上的一篇博客 然后贴上谷歌编程指南的详细说明 评价Google 的编程指南真的是高妙，看起来赏心悦目，但个人觉得还是要去其糟粕的，比如“不用全局变量”这种，在竞赛中就可以直接忽视了，还是以代码的易用性为第一要务。]]></content>
+      <categories>
+        <category>杂谈</category>
+      </categories>
+      <tags>
+        <tag>杂谈</tag>
+        <tag>编程规范</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[[HEXO] hexo 中插入视频的方法]]></title>
     <url>%2F2018%2F08%2F29%2FHEXO-hexo-%E4%B8%AD%E6%8F%92%E5%85%A5%E8%A7%86%E9%A2%91%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[写在前面以前一直以为 hexo 是不能插入视频的，今天突然知道了，原来插入视频是可以的！！本篇博客主要讲解一下 hexo 博客如何插入视频。 插入 Youtube 视频插入 Youtube 视频其实很简单，在 YouTube 视频的下方的“共享”中，选择嵌入即可获取类似这样的链接： 1&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7gJ8mGFjeqA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt; 效果如下（要梯子）： 可以将 width 或 height 改为 &quot;100%&quot;（当然也可以两个都改，具体效果试了才知道，这个数值是可以随便改的） 1&lt;iframe width="100%" height="350" src="https://www.youtube-nocookie.com/embed/7gJ8mGFjeqA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt; 效果如下（要梯子）： 插入 Bilibili 视频其实也是一样，点击“分享”，获取 iframe 这个代码就可以了 1&lt;iframe src="//player.bilibili.com/player.html?aid=19448254&amp;cid=31715906&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"&gt; &lt;/iframe&gt; 效果如下： 自定义了大小之后的效果： 通用方法直接把视频文件放在资源文件夹里，然后直接写 HTML 代码： 123&lt;video width="100%" height="400" src="movie.mp4" controls="controls"&gt;The `&lt;video&gt;` tag is not supported by your browser.&lt;/video&gt; 效果如下： The &lt;video&gt; tag is not supported by your browser. 总结嗯…… HTML 大法好，在 Markdown 里用 HTML 控件简直美滋滋。]]></content>
