@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[OIer 的自嘲与感动]]></title>
-    <url>%2F2018%2F08%2F29%2FOIer-%E7%9A%84%E8%87%AA%E5%98%B2%E4%B8%8E%E6%84%9F%E5%8A%A8%2F</url>
-    <content type="text"><![CDATA[非正经前的宁静本文的东西与 OI 毫无关系，但是身为一个 OIer，自嘲的精神是必须有的 表情包 视频我的一个 OIer 朋友]]></content>
+    <title><![CDATA[[HEXO] hexo 中插入视频的方法]]></title>
+    <url>%2F2018%2F08%2F29%2FHEXO-hexo-%E4%B8%AD%E6%8F%92%E5%85%A5%E8%A7%86%E9%A2%91%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[写在前面以前一直以为 hexo 是不能插入视频的，今天突然知道了，原来插入视频是可以的！！本篇博客主要讲解一下 hexo 博客如何插入视频。 插入 Youtube 视频插入 Youtube 视频其实很简单，在 YouTube 视频的下方的“共享”中，选择嵌入即可获取类似这样的链接： 1&lt;iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/7gJ8mGFjeqA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt; 效果如下（要梯子）： 可以将 width 或 height 改为 &quot;100%&quot;（当然也可以两个都改，具体效果试了才知道，这个数值是可以随便改的） 1&lt;iframe width="100%" height="350" src="https://www.youtube-nocookie.com/embed/7gJ8mGFjeqA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen&gt;&lt;/iframe&gt; 效果如下（要梯子）： 插入 Bilibili 视频其实也是一样，点击“分享”，获取 iframe 这个代码就可以了 1&lt;iframe src="//player.bilibili.com/player.html?aid=19448254&amp;cid=31715906&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"&gt; &lt;/iframe&gt; 效果如下： 自定义了大小之后的效果： 通用方法直接把视频文件放在资源文件夹里，然后直接写 HTML 代码： 123&lt;video width="100%" height="400" src="movie.mp4" controls="controls"&gt;The `&lt;video&gt;` tag is not supported by your browser.&lt;/video&gt; 效果如下： The &lt;video&gt; tag is not supported by your browser. 总结嗯…… HTML 大法好，在 Markdown 里用 HTML 空间简直美滋滋。]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
       <tags>
-        <tag>非正经</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
