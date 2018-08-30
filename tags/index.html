@@ -555,14 +555,7 @@
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
-        </noscript>
-      </div>
     </div>
-
   
 
 
@@ -949,41 +942,8 @@
 
   
 
-  
-    <script id="dsq-count-scr" src="https://walesexcitedmei-github-io.disqus.com/count.js" async></script>
-  
 
-  
-    <script type="text/javascript">
-      var disqus_config = function () {
-        this.page.url = 'http://walesexcitedmei.github.io/tags/index.html';
-        this.page.identifier = 'tags/index.html';
-        this.page.title = 'tags';
-        };
-      function loadComments () {
-        var d = document, s = d.createElement('script');
-        s.src = 'https://walesexcitedmei-github-io.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      }
-      
-        $(function () {
-          var offsetTop = $('#comments').offset().top - $(window).height();
-          if (offsetTop <= 0) {
-            // load directly when there's no a scrollbar
-            loadComments();
-          } else {
-            $(window).on('scroll.disqus_scroll', function () {
-              var scrollTop = document.documentElement.scrollTop;
-              if (scrollTop >= offsetTop) {
-                $(window).off('.disqus_scroll');
-                loadComments();
-              }
-            });
-          }
-        });
-      
-    </script>
+
   
 
 
@@ -993,7 +953,30 @@
 
 
 
-
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: true,
+        notify: true,
+        appId: 'xVd5co4yRDiKjtFDJVKKTJ54-gzGzoHsz',
+        appKey: '9IrEodYzFCgbAr2WXzR9dtIq',
+        placeholder: '😎看了这么多，不想说点什么嘛😉',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
 
 
 
