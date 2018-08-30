@@ -20,6 +20,21 @@
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 4px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
 <meta name="theme-color" content="#222">
 
 
@@ -125,12 +140,14 @@
 <meta property="og:site_name" content="梅骏逸的博客">
 <meta property="og:description" content="写在前面今天创历史新高$290$分，第三道题考完自己都没看出自己用了啥方法（Orz），感觉自已要去补数据结构……另外第一道题实在是坑……十分啊！！">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-07T14:29:29.794Z">
+<meta property="og:updated_time" content="2018-08-30T01:41:23.232Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[NOIP 模拟] 2018-8-7 题解: 我写了个自己都看不懂的程序">
 <meta name="twitter:description" content="写在前面今天创历史新高$290$分，第三道题考完自己都没看出自己用了啥方法（Orz），感觉自已要去补数据结构……另外第一道题实在是坑……十分啊！！">
 
 
+
+  <link rel="alternate" href="/atom.xml" title="梅骏逸的博客" type="application/atom+xml" />
 
 
 
@@ -400,12 +417,24 @@
                 
               
 
-              <time title="创建时间：2018-08-07 19:22:40 / 修改时间：22:29:29" itemprop="dateCreated datePublished" datetime="2018-08-07T19:22:40+08:00">2018-08-07</time>
+              <time title="创建时间：2018-08-07 19:22:40" itemprop="dateCreated datePublished" datetime="2018-08-07T19:22:40+08:00">2018-08-07</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-08-30 09:41:23" itemprop="dateModified" datetime="2018-08-30T09:41:23+08:00">2018-08-30</time>
               
             
           </span>
@@ -593,26 +622,24 @@ Yes
     </div>
 
     
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
 
-    <div>    
-     
-     
-        <ul class="post-copyright">
-          <li class="post-copyright-author">
-              <strong>本文作者：</strong>Wales Mei
-          </li>
-          <li class="post-copyright-link">
-            <strong>本文链接：</strong>
-            <a href="/2018/08/07/NOIP-模拟-2018-8-7-题解-我写了个自己都看不懂的程序/" title="[NOIP 模拟] 2018-8-7 题解: 我写了个自己都看不懂的程序">2018/08/07/NOIP-模拟-2018-8-7-题解-我写了个自己都看不懂的程序/</a>
-          </li>
-          <li class="post-copyright-license">
-            <strong>版权声明： </strong>
-            本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0 CN</a> 许可协议。转载请注明出处！
-          </li>
-        </ul>
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+  <p><span><strong>文章作者:</strong></span><a href="/" title="访问 Wales Mei 的个人博客">Wales Mei</a></p>
+  <p><span><strong>最后更新:</strong></span>2018年08月30日 09:08:23</p>
+  <p><span><strong>原始链接:</strong></span><a href="/2018/08/07/NOIP-模拟-2018-8-7-题解-我写了个自己都看不懂的程序/" title="[NOIP 模拟] 2018-8-7 题解: 我写了个自己都看不懂的程序">http://walesexcitedmei.github.io/2018/08/07/NOIP-模拟-2018-8-7-题解-我写了个自己都看不懂的程序/</a></p>
+  <p><span><strong>版权声明:</strong></span>本博客所有文章除特别声明外，均采用 <i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" title="Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)"> BY-NC-SA 3.0 许可协议</a>，转载请注明出处！</p>  
+</div>
+
       
     </div>
-    
     
     
     
@@ -872,9 +899,7 @@ Yes
                     
                       
                     
-                      
-                    
-                    <span class="site-state-item-count">34</span>
+                    <span class="site-state-item-count">33</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -882,6 +907,13 @@ Yes
             </nav>
           
 
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
@@ -894,6 +926,21 @@ Yes
               
                 <span class="links-of-author-item">
                   <a href="mailto:mjy021025@gmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/u/0/108233707516562369486" target="_blank" title="Google"><i class="fa fa-fw fa-google-plus"></i>Google</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/WalesMei2002" target="_blank" title="Twitter"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/mei-jun-yi-85/activities" target="_blank" title="知乎"><i class="fa fa-fw fa-heart"></i>知乎</a>
                   
                 </span>
               
@@ -978,7 +1025,7 @@ Yes
 </div>
 
 
-
+<!--
 
   <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.7.1</div>
 
@@ -992,7 +1039,7 @@ Yes
 
 
 
-
+-->
         
 <div class="busuanzi-count">
   <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
