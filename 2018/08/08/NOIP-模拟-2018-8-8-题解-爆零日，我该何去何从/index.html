@@ -132,12 +132,13 @@
      });
 </script>
 
-  <meta name="description" content="title: ‘[NOIP 模拟] 2018-8-8 题解: 爆零日，我该何去何从…’date: 2018-08-08 20:39:18tags: - NOIP 模拟 - 题解 - 神题 - 爆零日 categories: NOIPmathjax: truecopyright: true 写在前面今天的题似乎是 Day1 的题，然而却是压力山大，从第一题开始就崩，第二题考场上无脑 Dijkstr">
+  <meta name="description" content="写在前面今天的题似乎是 Day1 的题，然而却是压力山大，从第一题开始就崩，第二题考场上无脑 Dijkstra 求最短路，第三题更是懵逼（考后听说用 Dancing Link 做的时候彻底崩溃），总之，今天四十分，与爆零相差无几，所以这次在写题解的同时，还是会写一点考试技巧的，尤其是第一题和第二题（原谅我知识水平实在不够，对第三题仍然懵逼）。">
+<meta name="keywords" content="NOIP 模拟,题解,神题,爆零日">
 <meta property="og:type" content="article">
-<meta property="og:title" content="梅骏逸的博客">
+<meta property="og:title" content="[NOIP 模拟] 2018-8-8 题解: 爆零日，我该何去何从...">
 <meta property="og:url" content="http://walesexcitedmei.github.io/2018/08/08/NOIP-模拟-2018-8-8-题解-爆零日，我该何去何从/index.html">
 <meta property="og:site_name" content="梅骏逸的博客">
-<meta property="og:description" content="title: ‘[NOIP 模拟] 2018-8-8 题解: 爆零日，我该何去何从…’date: 2018-08-08 20:39:18tags: - NOIP 模拟 - 题解 - 神题 - 爆零日 categories: NOIPmathjax: truecopyright: true 写在前面今天的题似乎是 Day1 的题，然而却是压力山大，从第一题开始就崩，第二题考场上无脑 Dijkstr">
+<meta property="og:description" content="写在前面今天的题似乎是 Day1 的题，然而却是压力山大，从第一题开始就崩，第二题考场上无脑 Dijkstra 求最短路，第三题更是懵逼（考后听说用 Dancing Link 做的时候彻底崩溃），总之，今天四十分，与爆零相差无几，所以这次在写题解的同时，还是会写一点考试技巧的，尤其是第一题和第二题（原谅我知识水平实在不够，对第三题仍然懵逼）。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://walesexcitedmei.github.io/2018/08/08/NOIP-模拟-2018-8-8-题解-爆零日，我该何去何从/pic1.jpg">
 <meta property="og:image" content="http://walesexcitedmei.github.io/2018/08/08/NOIP-模拟-2018-8-8-题解-爆零日，我该何去何从/pic2.jpg">
@@ -146,10 +147,10 @@
 <meta property="og:image" content="http://walesexcitedmei.github.io/2018/08/08/NOIP-模拟-2018-8-8-题解-爆零日，我该何去何从/T2_1.jpg">
 <meta property="og:image" content="http://walesexcitedmei.github.io/2018/08/08/NOIP-模拟-2018-8-8-题解-爆零日，我该何去何从/pic3.jpg">
 <meta property="og:image" content="http://walesexcitedmei.github.io/2018/08/08/NOIP-模拟-2018-8-8-题解-爆零日，我该何去何从/pic4.jpg">
-<meta property="og:updated_time" content="2018-08-30T01:41:23.216Z">
+<meta property="og:updated_time" content="2018-08-30T07:14:43.887Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="梅骏逸的博客">
-<meta name="twitter:description" content="title: ‘[NOIP 模拟] 2018-8-8 题解: 爆零日，我该何去何从…’date: 2018-08-08 20:39:18tags: - NOIP 模拟 - 题解 - 神题 - 爆零日 categories: NOIPmathjax: truecopyright: true 写在前面今天的题似乎是 Day1 的题，然而却是压力山大，从第一题开始就崩，第二题考场上无脑 Dijkstr">
+<meta name="twitter:title" content="[NOIP 模拟] 2018-8-8 题解: 爆零日，我该何去何从...">
+<meta name="twitter:description" content="写在前面今天的题似乎是 Day1 的题，然而却是压力山大，从第一题开始就崩，第二题考场上无脑 Dijkstra 求最短路，第三题更是懵逼（考后听说用 Dancing Link 做的时候彻底崩溃），总之，今天四十分，与爆零相差无几，所以这次在写题解的同时，还是会写一点考试技巧的，尤其是第一题和第二题（原谅我知识水平实在不够，对第三题仍然懵逼）。">
 <meta name="twitter:image" content="http://walesexcitedmei.github.io/2018/08/08/NOIP-模拟-2018-8-8-题解-爆零日，我该何去何从/pic1.jpg">
 
 
@@ -169,7 +170,7 @@
   };
 </script>
 
-  <title> | 梅骏逸的博客</title>
+  <title>[NOIP 模拟] 2018-8-8 题解: 爆零日，我该何去何从... | 梅骏逸的博客</title>
   
 
 
@@ -399,7 +400,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
+          <h1 class="post-title" itemprop="name headline">[NOIP 模拟] 2018-8-8 题解: 爆零日，我该何去何从...
               
             
           </h1>
@@ -441,11 +442,29 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-08-30 09:41:23" itemprop="dateModified" datetime="2018-08-30T09:41:23+08:00">2018-08-30</time>
+                <time title="修改时间：2018-08-30 15:14:43" itemprop="dateModified" datetime="2018-08-30T15:14:43+08:00">2018-08-30</time>
               
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/NOIP/" itemprop="url" rel="index"><span itemprop="name">NOIP</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -492,14 +511,7 @@
       
 
       
-        <hr>
-<p>title: ‘[NOIP 模拟] 2018-8-8 题解: 爆零日，我该何去何从…’<br>date: 2018-08-08 20:39:18<br>tags:</p>
-<pre><code>- NOIP 模拟
-- 题解
-- 神题
-- 爆零日
-</code></pre><p>categories: NOIP<br>mathjax: true<br>copyright: true</p>
-<h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>今天的题似乎是 Day1 的题，然而却是压力山大，从第一题开始就崩，第二题考场上无脑 Dijkstra 求最短路，第三题更是懵逼（考后听说用 Dancing Link 做的时候彻底崩溃），总之，今天四十分，与爆零相差无几，所以这次在写题解的同时，还是会写一点考试技巧的，尤其是第一题和第二题（原谅我知识水平实在不够，对第三题仍然懵逼）。<br><a id="more"></a></p>
+        <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>今天的题似乎是 Day1 的题，然而却是压力山大，从第一题开始就崩，第二题考场上无脑 Dijkstra 求最短路，第三题更是懵逼（考后听说用 Dancing Link 做的时候彻底崩溃），总之，今天四十分，与爆零相差无几，所以这次在写题解的同时，还是会写一点考试技巧的，尤其是第一题和第二题（原谅我知识水平实在不够，对第三题仍然懵逼）。<br><a id="more"></a></p>
 <h3 id="T1-动态仙人掌-dinosaur-cpp-c-pas"><a href="#T1-动态仙人掌-dinosaur-cpp-c-pas" class="headerlink" title="T1 动态仙人掌(dinosaur.cpp/c/pas)"></a>T1 动态仙人掌(dinosaur.cpp/c/pas)</h3><p><strong><em>——玩了这么多次小恐龙，没想到它还会报复我</em></strong></p>
 <p><strong>[题目描述]</strong></p>
 <p>由于 Beny 做的烧网线实验，Fife 家断网了。<br>Fife 照常打开了 Google Chrome，由于断网，他看到了以下内容：</p>
@@ -735,6 +747,7 @@ YES
 <p><strong>[参考代码]</strong></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>; </span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">11</span>,M=<span class="number">510</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> dx[<span class="number">4</span>]=&#123;<span class="number">1</span>,<span class="number">0</span>,<span class="number">-1</span>,<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> dy[<span class="number">4</span>]=&#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">-1</span>&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node2</span>&#123;</span> <span class="keyword">int</span> c[N][N]; &#125; ans[M];</span><br><span class="line"><span class="keyword">bool</span> <span class="keyword">operator</span>&lt; (node2 x,node2 y)&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; N; i++)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j&lt;N; j++)</span><br><span class="line">			<span class="keyword">if</span>(x.c[i][j] != y.c[i][j])</span><br><span class="line">				<span class="keyword">return</span> x.c[i][j] &lt; y.c[i][j];</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span> <span class="keyword">int</span> x, y; &#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">vector</span>&lt;node&gt; b[N * N];</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; p[N * N]; </span><br><span class="line"><span class="keyword">int</span> a[N][N], c[N][N], h[N][N], h1[N][N], h2[N][N];</span><br><span class="line"><span class="keyword">int</span> n, cnt = <span class="number">0</span>, tot = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> x = <span class="number">0</span>, f = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">char</span> c = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (; !<span class="built_in">isdigit</span>(c); c=getchar()) <span class="keyword">if</span>(c == <span class="string">'-'</span>) f = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span> (; <span class="built_in">isdigit</span>(c); c=getchar()) x = x * <span class="number">10</span> + c - <span class="number">48</span>;</span><br><span class="line">	<span class="keyword">return</span> x * f;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">factor</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i * i &lt;= x; i++)</span><br><span class="line">		t += (<span class="keyword">int</span>)(x % i == <span class="number">0</span>);</span><br><span class="line">	<span class="keyword">return</span> t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="built_in">vector</span>&lt;node&gt; x, <span class="built_in">vector</span>&lt;node&gt; y)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (x.size() == y.size())</span><br><span class="line">		<span class="keyword">return</span> factor(x[<span class="number">0</span>].x) &lt;= factor(y[<span class="number">0</span>].x);</span><br><span class="line">	<span class="keyword">return</span> x.size() &lt; y.size();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">divide</span><span class="params">(<span class="keyword">int</span> t, <span class="keyword">int</span> x)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">		<span class="keyword">if</span> (x % i == <span class="number">0</span>) p[t].push_back(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">	h[x][y] = <span class="number">1</span>;</span><br><span class="line">	b[cnt].push_back((node)&#123; x, y &#125;);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</span><br><span class="line">		<span class="keyword">int</span> tx = x + dx[i];</span><br><span class="line">		<span class="keyword">int</span> ty = y + dy[i];</span><br><span class="line">		<span class="keyword">if</span> (tx &gt; <span class="number">0</span> &amp;&amp; tx &lt;= n &amp;&amp; ty &gt; <span class="number">0</span> &amp;&amp; </span><br><span class="line">			ty &lt;= n &amp;&amp; !h[tx][ty] &amp;&amp;</span><br><span class="line">			a[tx][ty] == a[x][y])</span><br><span class="line">			dfs(tx, ty);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">work</span><span class="params">(<span class="keyword">int</span> dep)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fillp</span><span class="params">(<span class="keyword">int</span> t, <span class="keyword">int</span> dep, <span class="keyword">int</span> s, <span class="keyword">int</span> tot)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (dep &gt; tot) work(t + <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">int</span> x=b[t][dep].x, y = b[t][dep].y;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; p[t].size(); i++) &#123;</span><br><span class="line">			<span class="keyword">int</span> u=p[t][i];</span><br><span class="line">			<span class="keyword">if</span> ((s == u || dep &lt; tot) &amp;&amp; s % u == <span class="number">0</span> &amp;&amp;</span><br><span class="line">				!h1[x][u] &amp;&amp; !h2[y][u])&#123;</span><br><span class="line">				h1[x][u] = <span class="number">1</span>；</span><br><span class="line">				h2[y][u] = <span class="number">1</span>;</span><br><span class="line">				c[x][y] = u;</span><br><span class="line">				fillp(t, dep + <span class="number">1</span>, s / u, tot);</span><br><span class="line">				c[x][y] = <span class="number">0</span>;</span><br><span class="line">				h1[x][u] = <span class="number">0</span>；</span><br><span class="line">				h2[y][u]=<span class="number">0</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">work</span><span class="params">(<span class="keyword">int</span> dep)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (dep &gt; cnt) &#123;</span><br><span class="line">		tot++;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">				ans[tot].c[i][j] = c[i][j];</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">int</span> num=b[dep][<span class="number">0</span>].x；</span><br><span class="line">		<span class="keyword">int</span> tot=b[dep].size() - <span class="number">1</span>;</span><br><span class="line">		fillp(dep, <span class="number">1</span>, num, tot);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	freopen(<span class="string">"kenken.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">	freopen(<span class="string">"kenken.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>); </span><br><span class="line">	n = read();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">			a[i][j] = read();</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)</span><br><span class="line">			<span class="keyword">if</span> (!h[i][j]) &#123;</span><br><span class="line">				cnt++;</span><br><span class="line">				b[cnt].push_back((node)&#123; a[i][j], <span class="number">0</span> &#125;);</span><br><span class="line">				dfs(i, j);</span><br><span class="line">			&#125;</span><br><span class="line">	sort(b + <span class="number">1</span>, b + cnt + <span class="number">1</span>, cmp);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= cnt; i++)</span><br><span class="line">		divide(i, b[i][<span class="number">0</span>].x);</span><br><span class="line">	work(<span class="number">1</span>);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; tot &lt;&lt; <span class="string">"\n"</span>;</span><br><span class="line">	node2 t = ans[<span class="number">1</span>];</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= tot; i++)</span><br><span class="line">		t = min(t, ans[i]);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n; i++)&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; j++)</span><br><span class="line">			<span class="built_in">cout</span> &lt;&lt; t.c[i][j] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; t.c[i][n] &lt;&lt; <span class="string">"\n"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="本次考试总结"><a href="#本次考试总结" class="headerlink" title="本次考试总结"></a>本次考试总结</h3><p>Too young, too simple, sometimes naive……还是要提高知识水平和编程素养，防止考试时 GG。</p>
+<hr>
 
       
     </div>
@@ -742,7 +755,29 @@ YES
     
     <div>
       
+        <div>
+  
+    <div style="text-align:center;color: #636363;font-size:14px;letter-spacing: 10px">本文结束啦<i class="fa fa-bell"></i>感谢您的阅读</div>
+  
+</div>
         
+    </div>
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+  <p><span><strong>文章作者:</strong></span><a href="/" title="访问 Wales Mei 的个人博客">Wales Mei</a></p>
+  <p><span><strong>最后更新:</strong></span>2018年08月30日 15:08:43</p>
+  <p><span><strong>原始链接:</strong></span><a href="/2018/08/08/NOIP-模拟-2018-8-8-题解-爆零日，我该何去何从/" title="[NOIP 模拟] 2018-8-8 题解: 爆零日，我该何去何从...">http://walesexcitedmei.github.io/2018/08/08/NOIP-模拟-2018-8-8-题解-爆零日，我该何去何从/</a></p>
+  <p><span><strong>版权声明:</strong></span>本博客所有文章除特别声明外，均采用 <i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" title="Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)"> BY-NC-SA 3.0 许可协议</a>，转载请注明出处！</p>  
+</div>
+
       
     </div>
     
@@ -785,6 +820,18 @@ YES
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/NOIP-模拟/" rel="tag"><i class="fa fa-tag"></i> NOIP 模拟</a>
+          
+            <a href="/tags/题解/" rel="tag"><i class="fa fa-tag"></i> 题解</a>
+          
+            <a href="/tags/神题/" rel="tag"><i class="fa fa-tag"></i> 神题</a>
+          
+            <a href="/tags/爆零日/" rel="tag"><i class="fa fa-tag"></i> 爆零日</a>
+          
+        </div>
       
 
       
@@ -994,7 +1041,9 @@ YES
                     
                       
                     
-                    <span class="site-state-item-count">33</span>
+                      
+                    
+                    <span class="site-state-item-count">34</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1652,6 +1701,30 @@ YES
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 

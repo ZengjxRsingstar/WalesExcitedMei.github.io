@@ -140,7 +140,7 @@
 <meta property="og:site_name" content="梅骏逸的博客">
 <meta property="og:description" content="写在前面今天开始刷 LeetCode，虽然说里面都是大公司的面试题，但是作为一个 OIer，刷刷也无妨，还能够提高自己的代码能力。本来希望花个 3 天刷完 LeetCode，结果发现这是完全不可能的，今天就被很基础的第三题给卡住了……">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-30T01:41:23.294Z">
+<meta property="og:updated_time" content="2018-08-30T07:04:11.991Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[LeetCode 刷题日志] LeetCode-3 无重复字符的最长子串">
 <meta name="twitter:description" content="写在前面今天开始刷 LeetCode，虽然说里面都是大公司的面试题，但是作为一个 OIer，刷刷也无妨，还能够提高自己的代码能力。本来希望花个 3 天刷完 LeetCode，结果发现这是完全不可能的，今天就被很基础的第三题给卡住了……">
@@ -434,7 +434,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-08-30 09:41:23" itemprop="dateModified" datetime="2018-08-30T09:41:23+08:00">2018-08-30</time>
+                <time title="修改时间：2018-08-30 15:04:11" itemprop="dateModified" datetime="2018-08-30T15:04:11+08:00">2018-08-30</time>
               
             
           </span>
@@ -519,11 +519,21 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"> <span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> maxLen = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">int</span> currLen = <span class="number">0</span>;</span><br><span class="line">		<span class="comment">// table 用于记录字符出现的次数，之所以设为 128 是为了适配 ASCII 码</span></span><br><span class="line">		<span class="keyword">int</span> table[<span class="number">128</span>], start = <span class="number">0</span>;</span><br><span class="line">		<span class="comment">// 全部初始化为 0</span></span><br><span class="line">		<span class="built_in">memset</span>(table, <span class="number">0</span>, <span class="keyword">sizeof</span>(table));</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.length(); ++i) &#123;</span><br><span class="line">			<span class="comment">// 如果 ++table[s[i]] 为 2，则说明这个数在所选的子串中已经出现过了</span></span><br><span class="line">			<span class="comment">// 当然这里还有好多写法</span></span><br><span class="line">			<span class="keyword">if</span> (++table[s[i]] == <span class="number">2</span>) &#123;</span><br><span class="line">				<span class="comment">// 因为遇到重复的字符了，所以要先更新 maxLen</span></span><br><span class="line">				<span class="keyword">if</span> (currLen &gt; maxLen) maxLen = currLen;</span><br><span class="line">				<span class="comment">// 接下来查找重复的数字出现的地方，并且更新字串起始位置</span></span><br><span class="line">				<span class="comment">// 这里可以优化：使用一个 map&lt;char, int&gt;</span></span><br><span class="line">				<span class="comment">// 或 table0[128] 来记录字符的出现位置</span></span><br><span class="line">				<span class="comment">// 同时也可以与前面的 table 数组合并，既加快速度又减少空间</span></span><br><span class="line">				<span class="comment">// 这里因为不需要（懒），所以就打了这个未优化的算法</span></span><br><span class="line">				<span class="comment">// 有兴趣的读者可以去试一试优化算法。</span></span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> j = start; j &lt; i; ++j) &#123;</span><br><span class="line">					<span class="keyword">if</span> (s[j] == s[i]) &#123;</span><br><span class="line">						table[s[j]] = <span class="number">1</span>;</span><br><span class="line">						start = j + <span class="number">1</span>;</span><br><span class="line">						<span class="keyword">break</span>;</span><br><span class="line">						<span class="comment">// 因为最多出现一次，所以直接 break</span></span><br><span class="line">					&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">						<span class="comment">// 没找到的话必须减小答案</span></span><br><span class="line">						--currLen;</span><br><span class="line">						<span class="comment">// 重置</span></span><br><span class="line">						table[s[j]] = <span class="number">0</span>;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125; <span class="keyword">else</span> ++currLen; <span class="comment">// 没有重复就直接自加一</span></span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 最后的判断必不可少</span></span><br><span class="line">		<span class="keyword">if</span> (currLen &gt; maxLen) maxLen = currLen;</span><br><span class="line">		<span class="keyword">return</span> maxLen;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 由于本人是一个 OIer，还是 Google 资深老粉丝，所以代码风格比较混搭（逃）。</span></span><br></pre></td></tr></table></figure>
 <p>那么，是什么卡了我那么长时间呢？一开始的代码遇到重复的字符，直接更新起始位置到当前字符，殊不知会有 abcdaefg 这种情况，于是一直 WA。论充分思考的重要性…..</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>LeetCode 的题目难度并不是很大的，很多题差不多是<code>提高-</code>的难度，但是细节太多，同时对代码能力的要求比较高，某些数据结构也与 OI 中所写地不太一样。但是当作算法训练场来做也没什么坏处。</p>
+<hr>
 
       
     </div>
 
     
+    <div>
+      
+        <div>
+  
+    <div style="text-align:center;color: #636363;font-size:14px;letter-spacing: 10px">本文结束啦<i class="fa fa-bell"></i>感谢您的阅读</div>
+  
+</div>
+        
+    </div>
     <div>
       
         
@@ -535,7 +545,7 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
   <p><span><strong>文章作者:</strong></span><a href="/" title="访问 Wales Mei 的个人博客">Wales Mei</a></p>
-  <p><span><strong>最后更新:</strong></span>2018年08月30日 09:08:23</p>
+  <p><span><strong>最后更新:</strong></span>2018年08月30日 15:08:11</p>
   <p><span><strong>原始链接:</strong></span><a href="/2018/08/12/LeetCode-刷题日志-LeetCode-3-无重复字符的最长子串/" title="[LeetCode 刷题日志] LeetCode-3 无重复字符的最长子串">http://walesexcitedmei.github.io/2018/08/12/LeetCode-刷题日志-LeetCode-3-无重复字符的最长子串/</a></p>
   <p><span><strong>版权声明:</strong></span>本博客所有文章除特别声明外，均采用 <i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" title="Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)"> BY-NC-SA 3.0 许可协议</a>，转载请注明出处！</p>  
 </div>
@@ -585,11 +595,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
+            <a href="/tags/LeetCode/" rel="tag"><i class="fa fa-tag"></i> LeetCode</a>
           
-            <a href="/tags/字符串/" rel="tag"># 字符串</a>
+            <a href="/tags/字符串/" rel="tag"><i class="fa fa-tag"></i> 字符串</a>
           
-            <a href="/tags/算法/" rel="tag"># 算法</a>
+            <a href="/tags/算法/" rel="tag"><i class="fa fa-tag"></i> 算法</a>
           
         </div>
       
@@ -801,7 +811,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">33</span>
+                      
+                    
+                    <span class="site-state-item-count">34</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>

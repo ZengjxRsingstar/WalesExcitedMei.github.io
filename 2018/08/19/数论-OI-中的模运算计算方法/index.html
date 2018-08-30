@@ -140,7 +140,7 @@
 <meta property="og:site_name" content="梅骏逸的博客">
 <meta property="og:description" content="写在前面模运算在 OI 中是非常神奇的存在，有时候题目会非常好（m）心（m）地（p）让我们将答案取模，然而计算模的方法随着题目的变化而变化，网上很多博客又太零散，这里痛下决心总结一下。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-30T01:41:23.170Z">
+<meta property="og:updated_time" content="2018-08-30T07:04:11.861Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[数论] OI 中的模运算计算方法">
 <meta name="twitter:description" content="写在前面模运算在 OI 中是非常神奇的存在，有时候题目会非常好（m）心（m）地（p）让我们将答案取模，然而计算模的方法随着题目的变化而变化，网上很多博客又太零散，这里痛下决心总结一下。">
@@ -434,7 +434,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-08-30 09:41:23" itemprop="dateModified" datetime="2018-08-30T09:41:23+08:00">2018-08-30</time>
+                <time title="修改时间：2018-08-30 15:04:11" itemprop="dateModified" datetime="2018-08-30T15:04:11+08:00">2018-08-30</time>
               
             
           </span>
@@ -538,11 +538,21 @@
 <p><strong>注：$p$ 一定要是大质数，起码得大于 $m$。若要求 $a$ 在模 $p$ 下的乘法逆元，必须要保证 $a$ 与 $p$ 互质。在此题中，要求 $m!$ 的乘法逆元，那么 $p$ 必须与 $m!$ 互质，所以 $p$ 要大于 $m$，且是个质数。<del>我一开始忘记了这点，导致调了一年</del></strong></p>
 <h4 id="方法三：卢卡斯定理"><a href="#方法三：卢卡斯定理" class="headerlink" title="方法三：卢卡斯定理"></a>方法三：卢卡斯定理</h4><p><strong>适用于对答案模一个质数的情况。</strong><br>与逆元不同的是，这个方法不要求 $p$ 是个很大的素数，因此，适用范围更广（也许吧）。<br><strong><a href="https://zh.wikipedia.org/wiki/%E5%8D%A2%E5%8D%A1%E6%96%AF%E5%AE%9A%E7%90%86" target="_blank" rel="noopener">卢卡斯定理</a></strong>：<br>对于非负整数 $m$ 和 $n$ 及素数 $p$，有同余式：<br>$$<br>\binom{n}{m}\equiv\prod_{i=0}^k\binom{n_i}{m_i} \pmod p<br>$$<br>成立。其中：<br>$$<br>n=n_kp^k+n_{k-1}p^{k-1}+…+n_1p+n_0<br>$$<br>并且<br>$$<br>m=m_kp^k+m_{k-1}p^{k-1}+…+m_1p+m_0<br>$$<br>以上两个式子是 $n$ 和 $m$ 的 $p$ 进制展开。当 $m &lt; n$ 时，二项式系数 $\binom{n}{m}=0$。<br>可以通过<a href="https://www.luogu.org/blog/user28007/lucas" target="_blank" rel="noopener">一系列的推导</a>得出下面这个结论：<br>$$<br>\binom{n}{m}\equiv\binom{\lfloor\frac{n}{p}\rfloor}{\lfloor\frac{m}{p}\rfloor}\times \binom{n\bmod p}{m\bmod p} \pmod p<br>$$<br>由这个公式我们可以得出结论：<strong>在 $n$ 和 $m$ 都小于 $p$ 时，公式一点用都没有。（啥？你问我为什么？$\binom{0}{0}=1$ 啊！）</strong>所以这个公式是在 $n\geqslant p$ 或 $m\geqslant p$ 的情况下使用的。这样可以减小 $n$ 和 $m$，使之小于 $p$，再用乘法逆元去求组合数。 </p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">Montgomery</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> a, <span class="keyword">long</span> <span class="keyword">long</span> b, <span class="keyword">long</span> <span class="keyword">long</span> c)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (b == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span> % c;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> result = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> temp = a;</span><br><span class="line">	<span class="keyword">while</span> (b &gt; <span class="number">0</span>) &#123;</span><br><span class="line">		<span class="keyword">if</span> (b &amp; <span class="number">1</span>) result = (result * temp) % c;</span><br><span class="line">		temp = (temp * temp) % c;</span><br><span class="line">		b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">getInverse</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> a, <span class="keyword">long</span> <span class="keyword">long</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> Montgomery(a, b - <span class="number">2</span>, b);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="title">c</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> m, <span class="keyword">int</span> p)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (m == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span> % p;</span><br><span class="line">	<span class="keyword">if</span> (n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span> (n &gt;= p || m &gt;= p) <span class="keyword">return</span> c(n / p, m / p, p) * c(n % p, m % p, p) % p;</span><br><span class="line">	<span class="comment">// 核心语句</span></span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> x = <span class="number">1</span>, y = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = n; i &gt;= n - m + <span class="number">1</span>; --i) x = x * i % p;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i) y = y * i % p;</span><br><span class="line">	<span class="keyword">return</span> x * getInverse(y, p) % p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> n, m, p;</span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m &gt;&gt; p;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; c(n, m, p);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="未完待续……"><a href="#未完待续……" class="headerlink" title="未完待续……"></a>未完待续……</h3>
+<h3 id="未完待续……"><a href="#未完待续……" class="headerlink" title="未完待续……"></a>未完待续……</h3><hr>
+
       
     </div>
 
     
+    <div>
+      
+        <div>
+  
+    <div style="text-align:center;color: #636363;font-size:14px;letter-spacing: 10px">本文结束啦<i class="fa fa-bell"></i>感谢您的阅读</div>
+  
+</div>
+        
+    </div>
     <div>
       
         
@@ -554,7 +564,7 @@
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
   <p><span><strong>文章作者:</strong></span><a href="/" title="访问 Wales Mei 的个人博客">Wales Mei</a></p>
-  <p><span><strong>最后更新:</strong></span>2018年08月30日 09:08:23</p>
+  <p><span><strong>最后更新:</strong></span>2018年08月30日 15:08:11</p>
   <p><span><strong>原始链接:</strong></span><a href="/2018/08/19/数论-OI-中的模运算计算方法/" title="[数论] OI 中的模运算计算方法">http://walesexcitedmei.github.io/2018/08/19/数论-OI-中的模运算计算方法/</a></p>
   <p><span><strong>版权声明:</strong></span>本博客所有文章除特别声明外，均采用 <i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" title="Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)"> BY-NC-SA 3.0 许可协议</a>，转载请注明出处！</p>  
 </div>
@@ -604,9 +614,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/数论/" rel="tag"># 数论</a>
+            <a href="/tags/数论/" rel="tag"><i class="fa fa-tag"></i> 数论</a>
           
-            <a href="/tags/模运算/" rel="tag"># 模运算</a>
+            <a href="/tags/模运算/" rel="tag"><i class="fa fa-tag"></i> 模运算</a>
           
         </div>
       
@@ -818,7 +828,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">33</span>
+                      
+                    
+                    <span class="site-state-item-count">34</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
