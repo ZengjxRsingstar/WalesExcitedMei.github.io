@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://walesexcitedmei.github.io/"/>
-  <updated>2018-08-31T04:22:24.549Z</updated>
+  <updated>2018-08-31T11:58:08.927Z</updated>
   <id>http://walesexcitedmei.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[GFW] 万里长城永不倒，我有梯子我自豪</title>
+    <link href="http://walesexcitedmei.github.io/2018/08/31/GFW-%E4%B8%87%E9%87%8C%E9%95%BF%E5%9F%8E%E6%B0%B8%E4%B8%8D%E5%80%92%EF%BC%8C%E6%88%91%E6%9C%89%E6%A2%AF%E5%AD%90%E6%88%91%E8%87%AA%E8%B1%AA/"/>
+    <id>http://walesexcitedmei.github.io/2018/08/31/GFW-万里长城永不倒，我有梯子我自豪/</id>
+    <published>2018-08-31T11:20:34.000Z</published>
+    <updated>2018-08-31T11:58:08.927Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note default"><p>嗯，本篇文章来普及一下科学上网，当然先只讲一个方法<del>一次讲太多影响不好</del>。为什么会想写这篇文章呢？主要是因为最近发生了很多事，而且很多消息国内被封锁了，所以这里为了让更多人能够看到墙外的世界，看到一个事情的更多面，并且将富强民主文明和谐的社会主义核心价值观播撒到世界各地，专门开了这么一篇文章。</p></div><a id="more"></a><h3 id="什么是-GFW？"><a href="#什么是-GFW？" class="headerlink" title="什么是 GFW？"></a>什么是 GFW？</h3><p>下面这段话摘自维基百科上对 <a href="https://zh.wikipedia.org/wiki/%E9%98%B2%E7%81%AB%E9%95%BF%E5%9F%8E" target="_blank" rel="noopener">GFW 的解释</a></p><div class="note info"><br>防火长城（英语：Great Firewall (of China)，常用简称：GFW，中文也称中国国家防火墙，中国大陆民众俗称墙、防火墙、功夫网等等），是对中华人民共和国政府在其互联网边界审查系统（包括相关行政审查系统）的统称。此系统起步于1998年，其英文名称得自于2002年5月17日Charles R. Smith所写的一篇关于中国网络审查的文章《The Great Firewall of China》，取与Great Wall（长城）相谐的效果，简写为Great Firewall，缩写GFW。随着使用的拓广，中文“墙”和英文“GFW”有时也被用作动词，网友所说的“被墙”即指网站内容被防火长城所屏蔽或者指服务器的通讯被封阻，“翻墙”也被引申为突破网络审查浏览境内外被屏蔽的网站或使用服务（如被GFW屏蔽的网盘Dropbox）的行为。<br></div><p>所以这个 GFW 出发点还是挺好的，而且这个墙其实是很多国家都有的，维基百科上的解释欠妥。如果想知道到底有哪些网站被墙了可以看<a href="https://github.com/gfwlist/gfwlist" target="_blank" rel="noopener">这个</a>。 当然 GFW 在一定程度上也保证了国家安全不被侵犯，利大于弊。然而还是有很多东西我们想访问或者必须访问却无法访问，这个时候就是梯子也就是科学上网工具发挥作用的时候了。</p><h3 id="使用-Psiphon-来突破网络审查"><a href="#使用-Psiphon-来突破网络审查" class="headerlink" title="使用 Psiphon 来突破网络审查"></a>使用 Psiphon 来突破网络审查</h3><h4 id="直接下载"><a href="#直接下载" class="headerlink" title="直接下载"></a>直接下载</h4><p>因为 Lantern 太坑，而且并不是很稳定，所以我最后选择了免费而且<strong>开源</strong>的 Psiphon。Psiphon 的网站在<a href="https://www.psiphon3.com/" target="_blank" rel="noopener">这里</a>，不过似乎要翻墙🤣，所以可以：<br><br></p><p><center><br><a class="btn" href="https://s3.amazonaws.com/psiphon/web/l99h-ony2-bspu/zh/download.html#direct" target="_blank" rel="noopener"><i class="fa fa-download fa-lg fa-fw"></i><strong>直接到这里下载</strong></a><br></center><br><br><br>安装完成之后点击连接，第一次会比较慢，连接好之后会跳出一个网页，告诉你当前网络的地理位置，一般来说可以直接忽略了。当然设置里也可以设置分通道代理之类的。最后一点提醒，像我这样的 iOS 用户要使用美区号才能在 AppStore 里下载。</p><h4 id="极客方法"><a href="#极客方法" class="headerlink" title="极客方法"></a>极客方法</h4><p>极客那当然是自己编译安装，直接用命令行了。这个感兴趣的同学可以看<a href="https://medium.com/@rampage_router/psiphon3-%E5%91%BD%E4%BB%A4%E8%A1%8C%E7%89%88%E6%9C%AC%E7%BC%96%E8%AF%91%E6%8C%87%E5%8D%97-f45c7846dc2b" target="_blank" rel="noopener">这篇文章</a></p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p><del>由于自己比较穷</del>，所以只能用个开源软件勉强糊口，有钱的同学可以自己买 VPN 或 Shadowsocks，<a href="https://medium.com/@zoomyale/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E7%9A%84%E7%BB%88%E6%9E%81%E5%A7%BF%E5%8A%BF-%E5%9C%A8-vultr-vps-%E4%B8%8A%E6%90%AD%E5%BB%BA-shadowsocks-fd57c807d97e" target="_blank" rel="noopener">甚至可以自己搭</a>。</p><hr>]]></content>
+    
+    <summary type="html">
+    
+      &lt;div class=&quot;note default&quot;&gt;&lt;p&gt;嗯，本篇文章来普及一下科学上网，当然先只讲一个方法&lt;del&gt;一次讲太多影响不好&lt;/del&gt;。为什么会想写这篇文章呢？主要是因为最近发生了很多事，而且很多消息国内被封锁了，所以这里为了让更多人能够看到墙外的世界，看到一个事情的更多面，并且将富强民主文明和谐的社会主义核心价值观播撒到世界各地，专门开了这么一篇文章。&lt;/p&gt;&lt;/div&gt;
+    
+    </summary>
+    
+      <category term="GFW" scheme="http://walesexcitedmei.github.io/categories/GFW/"/>
+    
+    
+      <category term="GFW" scheme="http://walesexcitedmei.github.io/tags/GFW/"/>
+    
+  </entry>
   
   <entry>
     <title>[HEXO] NexT 主题提高博客颜值</title>
