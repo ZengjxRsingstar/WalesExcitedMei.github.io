@@ -147,18 +147,18 @@
 });
 tpwidget("show");</script>
 
-  <meta name="description" content="初赛模拟测试错了一道简单题，似乎还是一道陈年老题，网上去查了一下，似乎还和 POJ 1663 这道水题一模一样，这里总结一下">
+  <meta name="description" content="初赛模拟测试错了一道简单题，似乎还是一道陈年老题，网上去查了一下，似乎还和 POJ 1663 这道水题一模一样，这里总结一下 &amp;lt;!-- more --&amp;gt; 题目 大意：有 $m$ 个一模一样的苹果放入 $n$ 个一模一样的盘子中，求放法的数量 $k$。 注意：对于 $m=7,n=3$ 这组数据：$5,1,1$ 和 $1,5,1$ 是一样的。 思路 我们来分类讨论，令 $\operator">
 <meta name="keywords" content="NOIP 初赛">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[NOIP 初赛] 总结 &lt;苹果放盘子问题&gt; (POJ1664)">
 <meta property="og:url" content="http://walesexcitedmei.github.io/2018/10/08/NOIP-初赛-总结-苹果放盘子问题-POJ1664/index.html">
 <meta property="og:site_name" content="梅骏逸的博客">
-<meta property="og:description" content="初赛模拟测试错了一道简单题，似乎还是一道陈年老题，网上去查了一下，似乎还和 POJ 1663 这道水题一模一样，这里总结一下">
+<meta property="og:description" content="初赛模拟测试错了一道简单题，似乎还是一道陈年老题，网上去查了一下，似乎还和 POJ 1663 这道水题一模一样，这里总结一下 &amp;lt;!-- more --&amp;gt; 题目 大意：有 $m$ 个一模一样的苹果放入 $n$ 个一模一样的盘子中，求放法的数量 $k$。 注意：对于 $m=7,n=3$ 这组数据：$5,1,1$ 和 $1,5,1$ 是一样的。 思路 我们来分类讨论，令 $\operator">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-10T11:37:56.196Z">
+<meta property="og:updated_time" content="2018-11-26T07:39:42.701Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[NOIP 初赛] 总结 &lt;苹果放盘子问题&gt; (POJ1664)">
-<meta name="twitter:description" content="初赛模拟测试错了一道简单题，似乎还是一道陈年老题，网上去查了一下，似乎还和 POJ 1663 这道水题一模一样，这里总结一下">
+<meta name="twitter:description" content="初赛模拟测试错了一道简单题，似乎还是一道陈年老题，网上去查了一下，似乎还和 POJ 1663 这道水题一模一样，这里总结一下 &amp;lt;!-- more --&amp;gt; 题目 大意：有 $m$ 个一模一样的苹果放入 $n$ 个一模一样的盘子中，求放法的数量 $k$。 注意：对于 $m=7,n=3$ 这组数据：$5,1,1$ 和 $1,5,1$ 是一样的。 思路 我们来分类讨论，令 $\operator">
 
 
 
@@ -467,7 +467,7 @@ tpwidget("show");</script>
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-10 19:37:56" itemprop="dateModified" datetime="2018-11-10T19:37:56+08:00">2018-11-10</time>
+                <time title="修改时间：2018-11-26 15:39:42" itemprop="dateModified" datetime="2018-11-26T15:39:42+08:00">2018-11-26</time>
               
             
           </span>
@@ -536,25 +536,41 @@ tpwidget("show");</script>
       
 
       
-        <div class="note default"><p>初赛模拟测试错了一道简单题，似乎还是一道陈年老题，网上去查了一下，似乎还和 <a href="http://poj.org/problem?id=1664" target="_blank" rel="noopener">POJ 1663</a> 这道水题一模一样，这里总结一下</p></div>
-<a id="more"></a>
-<h3 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h3><p>大意：有 $m$ 个一模一样的苹果放入 $n$ 个一模一样的盘子中，求放法的数量 $k$。<br>注意：对于 $m=7,n=3$ 这组数据：$5,1,1$ 和 $1,5,1$ 是一样的。</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>我们来分类讨论，令 $\operatorname{f}(m,n)$ 表示放法的数量 $k$，</p>
+        <p><div class="note default"><p>初赛模拟测试错了一道简单题，似乎还是一道陈年老题，网上去查了一下，似乎还和 <a href="http://poj.org/problem?id=1664" target="_blank" rel="noopener">POJ 1663</a> 这道水题一模一样，这里总结一下</p></div></p>
+<p>&lt;!-- more --&gt;</p>
+<h3>题目</h3>
+<p>大意：有 $m$ 个一模一样的苹果放入 $n$ 个一模一样的盘子中，求放法的数量 $k$。
+注意：对于 $m=7,n=3$ 这组数据：$5,1,1$ 和 $1,5,1$ 是一样的。</p>
+<h3>思路</h3>
+<p>我们来分类讨论，令 $\operatorname{f}(m,n)$ 表示放法的数量 $k$，</p>
 <ol>
 <li>$m&lt; n$，此时我们把多余的盘子拿掉，$\operatorname{f}(m,n)=\operatorname{f}(m,m)$</li>
-<li>$m\geqslant n$，此时我们再分两类来讨论：有盘子空着和没有盘子空着。有盘子空着时，$\operatorname{f}(m,n)=\operatorname{f}(m,n-1)$；没有盘子空着时，$\operatorname{f}(m,n)=\operatorname{f}(m-n,n)$<br>于是我们得出 $\operatorname{f}(m, n)$ 的表达式：</li>
+<li>$m\geqslant n$，此时我们再分两类来讨论：有盘子空着和没有盘子空着。有盘子空着时，$\operatorname{f}(m,n)=\operatorname{f}(m,n-1)$；没有盘子空着时，$\operatorname{f}(m,n)=\operatorname{f}(m-n,n)$
+于是我们得出 $\operatorname{f}(m, n)$ 的表达式：</li>
 </ol>
-<p>$$<br>\operatorname{f}(m,n)=<br>\begin{cases}<br>1 &amp; \text{when $m=0$ or $n=1$} \\<br>\operatorname{f}(m,m) &amp; \text{when $m&lt; n$} \\<br>\operatorname{f}(m,n-1)+\operatorname{f}(m-n,n) &amp; \text{otherwise}<br>\end{cases}<br>$$</p>
-<p>所以我们就可以写出 POJ 1664 的代码了<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (m == <span class="number">0</span> || n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span> (m &lt; n) <span class="keyword">return</span> f(m, m);</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">return</span> f(m, n - <span class="number">1</span>) + f(m - n, n);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> m, n, t;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">  <span class="keyword">while</span> (t--) &#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; m &gt;&gt; n;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; f(m, n);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>至于初赛中的那道题嘛，手动打表就可以了，应该还挺快的（似乎还可以直接暴力枚举……）。</p>
+<p>$$
+\operatorname{f}(m,n)=
+\begin{cases}
+1 &amp; \text{when $m=0$ or $n=1$} \
+\operatorname{f}(m,m) &amp; \text{when $m&lt; n$} \
+\operatorname{f}(m,n-1)+\operatorname{f}(m-n,n) &amp; \text{otherwise}
+\end{cases}
+$$</p>
+<p>所以我们就可以写出 POJ 1664 的代码了
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (m == <span class="number">0</span> || n == <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">if</span> (m &lt; n) <span class="keyword">return</span> f(m, m);</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">return</span> f(m, n - <span class="number">1</span>) + f(m - n, n);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> m, n, t;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">  <span class="keyword">while</span> (t--) &#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; m &gt;&gt; n;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; f(m, n);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>至于初赛中的那道题嘛，手动打表就可以了，应该还挺快的（似乎还可以直接暴力枚举......）。</p>
 <hr>
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7465666912424994" data-ad-slot="3198608984"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<p><br></p>
+<p>&lt;script async src=&quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;&gt;&lt;/script&gt;
+&lt;ins class=&quot;adsbygoogle&quot;
+style=&quot;display:block; text-align:center;&quot;
+data-ad-layout=&quot;in-article&quot;
+data-ad-format=&quot;fluid&quot;
+data-ad-client=&quot;ca-pub-7465666912424994&quot;
+data-ad-slot=&quot;3198608984&quot;&gt;&lt;/ins&gt;
+&lt;script&gt;
+(adsbygoogle = window.adsbygoogle || []).push({});
+&lt;/script&gt;</p>
+<p>&lt;br/&gt;</p>
 
       
     </div>
@@ -584,7 +600,7 @@ tpwidget("show");</script>
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
   <p><span><strong>文章作者:</strong></span><a href="/" title="访问 Wales Mei 的个人博客">Wales Mei</a></p>
-  <p><span><strong>最后更新:</strong></span>2018年11月10日 19:11:56</p>
+  <p><span><strong>最后更新:</strong></span>2018年11月26日 15:11:42</p>
   <p><span><strong>原始链接:</strong></span><a href="/2018/10/08/NOIP-初赛-总结-苹果放盘子问题-POJ1664/" title="[NOIP 初赛] 总结 <苹果放盘子问题> (POJ1664)">http://walesexcitedmei.github.io/2018/10/08/NOIP-初赛-总结-苹果放盘子问题-POJ1664/</a></p>
   <p><span><strong>版权声明:</strong></span>本博客所有文章除特别声明外，均采用 <i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" title="Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)"> BY-NC-SA 3.0 许可协议</a>，转载请注明出处！</p>  
 </div>
@@ -743,7 +759,7 @@ tpwidget("show");</script>
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">34</span>
+                    <span class="site-state-item-count">35</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -776,7 +792,9 @@ tpwidget("show");</script>
                     
                       
                     
-                    <span class="site-state-item-count">10</span>
+                      
+                    
+                    <span class="site-state-item-count">11</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -873,7 +891,9 @@ tpwidget("show");</script>
                     
                       
                     
-                    <span class="site-state-item-count">42</span>
+                      
+                    
+                    <span class="site-state-item-count">43</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -968,7 +988,7 @@ tpwidget("show");</script>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#题目"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#思路"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li></ol></div>
             
 
           </div>
