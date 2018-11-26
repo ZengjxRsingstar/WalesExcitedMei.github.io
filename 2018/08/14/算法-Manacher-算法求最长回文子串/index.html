@@ -147,18 +147,24 @@
 });
 tpwidget("show");</script>
 
-  <meta name="description" content="写在前面 最近几次考试都涉及到了字符串处理这个话题，所以自己打算恶补字符串有关的算法，同时又刚好做到了 LeetCode 上这么一道题，所以干脆一同解决掉。 &amp;lt;!-- more --&amp;gt; 最长回文字串问题 最长回文子串问题：给定一个字符串，求它的最长回文子串长度。 如果一个字符串正着读和反着读是一样的，那它就是回文串。下面是一些回文串的实例： 12321 a aba abba aaaa">
+  <meta name="description" content="写在前面最近几次考试都涉及到了字符串处理这个话题，所以自己打算恶补字符串有关的算法，同时又刚好做到了 LeetCode 上这么一道题，所以干脆一同解决掉。">
 <meta name="keywords" content="字符串,算法,Manacher">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[算法] Manacher 算法求最长回文子串">
 <meta property="og:url" content="http://walesexcitedmei.github.io/2018/08/14/算法-Manacher-算法求最长回文子串/index.html">
 <meta property="og:site_name" content="梅骏逸的博客">
-<meta property="og:description" content="写在前面 最近几次考试都涉及到了字符串处理这个话题，所以自己打算恶补字符串有关的算法，同时又刚好做到了 LeetCode 上这么一道题，所以干脆一同解决掉。 &amp;lt;!-- more --&amp;gt; 最长回文字串问题 最长回文子串问题：给定一个字符串，求它的最长回文子串长度。 如果一个字符串正着读和反着读是一样的，那它就是回文串。下面是一些回文串的实例： 12321 a aba abba aaaa">
+<meta property="og:description" content="写在前面最近几次考试都涉及到了字符串处理这个话题，所以自己打算恶补字符串有关的算法，同时又刚好做到了 LeetCode 上这么一道题，所以干脆一同解决掉。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-26T07:39:42.779Z">
+<meta property="og:image" content="http://walesexcitedmei.github.io/2018/08/14/算法-Manacher-算法求最长回文子串/pic1.jpg">
+<meta property="og:image" content="http://walesexcitedmei.github.io/2018/08/14/算法-Manacher-算法求最长回文子串/pic2.jpg">
+<meta property="og:image" content="http://walesexcitedmei.github.io/2018/08/14/算法-Manacher-算法求最长回文子串/pic3.jpg">
+<meta property="og:image" content="http://walesexcitedmei.github.io/2018/08/14/算法-Manacher-算法求最长回文子串/pic4.jpg">
+<meta property="og:image" content="http://walesexcitedmei.github.io/2018/08/14/算法-Manacher-算法求最长回文子串/pic5.jpg">
+<meta property="og:updated_time" content="2018-11-26T08:03:58.538Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[算法] Manacher 算法求最长回文子串">
-<meta name="twitter:description" content="写在前面 最近几次考试都涉及到了字符串处理这个话题，所以自己打算恶补字符串有关的算法，同时又刚好做到了 LeetCode 上这么一道题，所以干脆一同解决掉。 &amp;lt;!-- more --&amp;gt; 最长回文字串问题 最长回文子串问题：给定一个字符串，求它的最长回文子串长度。 如果一个字符串正着读和反着读是一样的，那它就是回文串。下面是一些回文串的实例： 12321 a aba abba aaaa">
+<meta name="twitter:description" content="写在前面最近几次考试都涉及到了字符串处理这个话题，所以自己打算恶补字符串有关的算法，同时又刚好做到了 LeetCode 上这么一道题，所以干脆一同解决掉。">
+<meta name="twitter:image" content="http://walesexcitedmei.github.io/2018/08/14/算法-Manacher-算法求最长回文子串/pic1.jpg">
 
 
 
@@ -467,7 +473,7 @@ tpwidget("show");</script>
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-26 15:39:42" itemprop="dateModified" datetime="2018-11-26T15:39:42+08:00">2018-11-26</time>
+                <time title="修改时间：2018-11-26 16:03:58" itemprop="dateModified" datetime="2018-11-26T16:03:58+08:00">2018-11-26</time>
               
             
           </span>
@@ -536,41 +542,30 @@ tpwidget("show");</script>
       
 
       
-        <h3>写在前面</h3>
-<p>最近几次考试都涉及到了字符串处理这个话题，所以自己打算恶补字符串有关的算法，同时又刚好做到了 LeetCode 上<a href="https://leetcode-cn.com/problems/longest-palindromic-substring/description/" target="_blank" rel="noopener">这么一道题</a>，所以干脆一同解决掉。</p>
-<p>&lt;!-- more --&gt;</p>
-<h3>最长回文字串问题</h3>
-<p><strong>最长回文子串问题：给定一个字符串，求它的最长回文子串长度。</strong>
-如果一个字符串正着读和反着读是一样的，那它就是回文串。下面是一些回文串的实例：</p>
+        <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>最近几次考试都涉及到了字符串处理这个话题，所以自己打算恶补字符串有关的算法，同时又刚好做到了 LeetCode 上<a href="https://leetcode-cn.com/problems/longest-palindromic-substring/description/" target="_blank" rel="noopener">这么一道题</a>，所以干脆一同解决掉。</p>
+<a id="more"></a>
+<h3 id="最长回文字串问题"><a href="#最长回文字串问题" class="headerlink" title="最长回文字串问题"></a>最长回文字串问题</h3><p><strong>最长回文子串问题：给定一个字符串，求它的最长回文子串长度。</strong><br>如果一个字符串正着读和反着读是一样的，那它就是回文串。下面是一些回文串的实例：</p>
 <pre><code>12321 a aba abba aaaa tattarrattat（牛津英语词典中最长的回文单词
-</code></pre>
-<p>那么如何解决这个问题呢？有很多种方法：</p>
+</code></pre><p>那么如何解决这个问题呢？有很多种方法：</p>
 <ol>
 <li>Brute-Force 暴力求解：找到所有字串，一一验证，时间复杂度为 $O(n^3)$</li>
 <li>改进版 Brute-Force：遍历整个字符串的中间字符及空隙，然后向两端扫描，时间复杂度为 $O(n^2)$。</li>
 <li>动态规划，此处暂时不介绍</li>
 <li>下面将要介绍的 Manacher 算法，又名<strong><em>马拉车</em></strong>。</li>
 </ol>
-<h3>Manacher 算法</h3>
-<h4>暴力解法的缺陷所在</h4>
-<ol>
+<h3 id="Manacher-算法"><a href="#Manacher-算法" class="headerlink" title="Manacher 算法"></a>Manacher 算法</h3><h4 id="暴力解法的缺陷所在"><a href="#暴力解法的缺陷所在" class="headerlink" title="暴力解法的缺陷所在"></a>暴力解法的缺陷所在</h4><ol>
 <li>回文串奇偶性不定，使用上述方法二需要分类讨论，降低效率。</li>
 <li>字串重复访问，时间复杂度冗余。</li>
 </ol>
 <p>举个例子：</p>
 <pre><code>char: a b a b a
    i: 0 1 2 3 4
-</code></pre>
-<p>在 $i=1$ 和 $i=2$ 时，字串 <code>aba</code> 被分别遍历了一次。
-Manacher 算法正式针对这些算法进行改进的算法，可以大大提高算法的运行效率。</p>
-<h4>解决长度奇偶性问题</h4>
-<p>Manacher 算法通过一种预处理方式来解决第一个问题，它在字符串首尾及中间空隙插入一个字符，并且满足这个符号不在字符串中出现，这样就可以让所有的字符串长度变为奇数。以插入<code>#</code>为例：</p>
+</code></pre><p>在 $i=1$ 和 $i=2$ 时，字串 <code>aba</code> 被分别遍历了一次。<br>Manacher 算法正式针对这些算法进行改进的算法，可以大大提高算法的运行效率。</p>
+<h4 id="解决长度奇偶性问题"><a href="#解决长度奇偶性问题" class="headerlink" title="解决长度奇偶性问题"></a>解决长度奇偶性问题</h4><p>Manacher 算法通过一种预处理方式来解决第一个问题，它在字符串首尾及中间空隙插入一个字符，并且满足这个符号不在字符串中出现，这样就可以让所有的字符串长度变为奇数。以插入<code>#</code>为例：</p>
 <pre><code>aba  --&gt; #a#b#a#
 abba --&gt; #a#b#b#a#
-</code></pre>
-<p><strong>插入的是同样的符号，且符号不存在于原串，因此子串的回文性不受影响，原来是回文的串，插完之后还是回文的，原来不是回文的，依然不会是回文</strong></p>
-<h4>解决重复访问问题</h4>
-<p>我们把一个回文串中最左或最右位置的字符与其对称轴的距离称为回文半径。Manacher定义了一个回文半径数组 $RL$，用 $RL[i]$ 表示以第 $i$ 个字符为对称轴的回文串的回文半径。我们一般对字符串从左往右处理，因此这里定义 $RL[i]$ 为第 $i$ 个字符为对称轴的回文串的最右一个字符与字符 $i$ 的距离。对于上面插入分隔符之后的两个串，可以得到 $RL$ 数组：</p>
+</code></pre><p><strong>插入的是同样的符号，且符号不存在于原串，因此子串的回文性不受影响，原来是回文的串，插完之后还是回文的，原来不是回文的，依然不会是回文</strong></p>
+<h4 id="解决重复访问问题"><a href="#解决重复访问问题" class="headerlink" title="解决重复访问问题"></a>解决重复访问问题</h4><p>我们把一个回文串中最左或最右位置的字符与其对称轴的距离称为回文半径。Manacher定义了一个回文半径数组 $RL$，用 $RL[i]$ 表示以第 $i$ 个字符为对称轴的回文串的回文半径。我们一般对字符串从左往右处理，因此这里定义 $RL[i]$ 为第 $i$ 个字符为对称轴的回文串的最右一个字符与字符 $i$ 的距离。对于上面插入分隔符之后的两个串，可以得到 $RL$ 数组：</p>
 <table>
 <thead>
 <tr>
@@ -620,37 +615,35 @@ abba --&gt; #a#b#b#a#
 <p>上面我们还求了一下 $RL[i]-1$。通过观察可以发现，$RL[i]-1$的值，正是在原本那个没有插入过分隔符的串中，以位置i为对称轴的最长回文串的长度。那么只要我们求出了 $RL$ 数组，就能得到最长回文子串的长度。</p>
 <p>于是问题变成了，<strong>如何高效地求的 $RL$ 数组</strong>。基本思路是<strong>利用回文串的对称性，扩展回文串</strong>。</p>
 <p>我们再引入一个辅助变量 $MaxRight$，表示当前访问到的<strong>所有回文子串</strong>，所能触及的<strong>最右</strong>一个字符的位置。另外还要记录下 $MaxRight$ 对应的回文串的对称轴所在的位置，记为 $pos$，它们的位置关系如下：</p>
-<p>&lt;div style=&quot;align: center&quot;&gt; &lt;img src=&quot;pic1.jpg&quot;/&gt; &lt;/div&gt;</p>
+<div style="align: center"> <img src="pic1.jpg"> </div>
+
 <p>我们从左往右地访问字符串来求 $RL$，假设当前访问到的位置为 $i$，即要求 $RL[i]$，在对应上图，$i$ 必然是在 $pos$ 右边的。但我们更关注的是，$i$ 是在 $MaxRight$ 的左边还是右边。我们分情况来讨论：</p>
-<h5>情况一：$i$ 在 $MaxRight$ 左边</h5>
-<p>如下图所示：</p>
-<p>&lt;div style=&quot;align: center&quot;&gt; &lt;img src=&quot;pic2.jpg&quot;/&gt; &lt;/div&gt;</p>
+<h5 id="情况一：-i-在-MaxRight-左边"><a href="#情况一：-i-在-MaxRight-左边" class="headerlink" title="情况一：$i$ 在 $MaxRight$ 左边"></a>情况一：$i$ 在 $MaxRight$ 左边</h5><p>如下图所示：</p>
+<div style="align: center"> <img src="pic2.jpg"> </div>
+
 <p>我们知道，图中两个红色块之间（包括红色块）的串是回文的；并且以 $i$ 为对称轴的回文串，是与红色块间的回文串有所重叠的。我们找到 $i$ 关于 $pos$ 的对称位置 $j$，这个 $j$ 对应的 $RL[j]$ 我们是已经算过的。根据回文串的对称性，以i为对称轴的回文串和以j为对称轴的回文串，有一部分是相同的。这里又有两种细分的情况:</p>
-<h6>以 $j$ 为对称轴的回文串较短</h6>
-<p>如下图：</p>
-<p>&lt;div style=&quot;align: center&quot;&gt; &lt;img src=&quot;pic3.jpg&quot;/&gt; &lt;/div&gt;</p>
+<h6 id="以-j-为对称轴的回文串较短"><a href="#以-j-为对称轴的回文串较短" class="headerlink" title="以 $j$ 为对称轴的回文串较短"></a>以 $j$ 为对称轴的回文串较短</h6><p>如下图：</p>
+<div style="align: center"> <img src="pic3.jpg"> </div>
+
 <p>这时我们知道 $RL[i]$ 至少不会小于 $RL[j]$，并且已经知道了部分的以i为中心的回文串，于是可以令 $RL[i]=RL[j]$。但是以i为对称轴的回文串可能实际上更长，因此我们试着以 $i$ 为对称轴，继续往左右两边扩展，直到左右两边字符不同，或者到达边界。</p>
-<h6>以 $j$ 为对称轴的回文串较长</h6>
-<p>如下图：</p>
-<p>&lt;div style=&quot;align: center&quot;&gt; &lt;img src=&quot;pic4.jpg&quot;/&gt; &lt;/div&gt;</p>
+<h6 id="以-j-为对称轴的回文串较长"><a href="#以-j-为对称轴的回文串较长" class="headerlink" title="以 $j$ 为对称轴的回文串较长"></a>以 $j$ 为对称轴的回文串较长</h6><p>如下图：</p>
+<div style="align: center"> <img src="pic4.jpg"> </div>
+
 <p>这时，我们只能确定，两条蓝线之间的部分（即不超过 $MaxRight$ 的部分）是回文的，于是从这个长度开始，尝试以i为中心向左右两边扩展，，直到左右两边字符不同，或者到达边界。</p>
-<h6>小结</h6>
-<p>不论以上哪种情况，之后都要尝试更新MaxRight和pos，因为有可能得到更大的MaxRight。</p>
+<h6 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h6><p>不论以上哪种情况，之后都要尝试更新MaxRight和pos，因为有可能得到更大的MaxRight。</p>
 <p>具体操作如下：</p>
 <ol>
 <li>令 $RL[i]=min\lbrace RL[2\times pos-i], MaxRight-i\rbrace$</li>
 <li>以 $i$ 为中心扩展回文串，直到左右两边字符不同，或者到达边界</li>
 <li>更新 $MaxRight$ 和 $pos$</li>
 </ol>
-<h5>情况二：$i$ 在 $MaxRight$ 右边</h5>
-<p>如下图：</p>
-<p>&lt;div style=&quot;align: center&quot;&gt; &lt;img src=&quot;pic5.jpg&quot;/&gt; &lt;/div&gt;</p>
+<h5 id="情况二：-i-在-MaxRight-右边"><a href="#情况二：-i-在-MaxRight-右边" class="headerlink" title="情况二：$i$ 在 $MaxRight$ 右边"></a>情况二：$i$ 在 $MaxRight$ 右边</h5><p>如下图：</p>
+<div style="align: center"> <img src="pic5.jpg"> </div>
+
 <p>遇到这种情况，说明以 $i$ 为对称轴的回文串还没有任何一个部分被访问过，于是只能从 $i$ 的左右两边开始尝试扩展了，当左右两边字符不同，或者到达字符串边界时停止。然后更新 $MaxRight$ 和 $pos$。</p>
-<h4>代码实现</h4>
-<p>此处以 <a href="https://leetcode-cn.com/problems/longest-palindromic-substring/description/" target="_blank" rel="noopener">LeetCode 上的题</a>为例：</p>
-<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="built_in">string</span> <span class="title">longestPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> len = s.size();</span><br><span class="line">		<span class="keyword">if</span> (len &lt;= <span class="number">1</span>) <span class="keyword">return</span> s;</span><br><span class="line">		<span class="built_in">string</span> str = preProcess(s);</span><br><span class="line">		<span class="keyword">int</span> n = str.size(), pos = <span class="number">0</span>, MaxRight = <span class="number">0</span>;</span><br><span class="line">		<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; RL(n, <span class="number">0</span>);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n - <span class="number">1</span>; ++i) &#123;</span><br><span class="line">			RL[i] = MaxRight &gt; i ? min(RL[<span class="number">2</span> * pos - i], MaxRight - i) : <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">while</span> (str[i + RL[i]] == str[i - RL[i]]) ++RL[i];</span><br><span class="line">			<span class="keyword">if</span> (i + RL[i] &gt; MaxRight) &#123;</span><br><span class="line">				MaxRight = i + RL[i];</span><br><span class="line">				pos = i;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> maxLen = <span class="number">0</span>, index = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n - <span class="number">1</span>; ++i) &#123;</span><br><span class="line">			<span class="keyword">if</span>(RL[i] &gt; maxLen) &#123;</span><br><span class="line">				maxLen = RL[i];</span><br><span class="line">				index = i;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="comment">// 这里可以和上面并在一起</span></span><br><span class="line">		<span class="keyword">return</span> s.substr((index - maxLen) / <span class="number">2</span>, maxLen - <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//预处理字符串，abc预处理后变成$#a#b#c#^</span></span><br><span class="line">	<span class="function"><span class="built_in">string</span> <span class="title">preProcess</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span> &amp;s)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> n = s.size();</span><br><span class="line">		<span class="built_in">string</span> res;</span><br><span class="line">		res.push_back(<span class="string">'$'</span>);</span><br><span class="line">		res.push_back(<span class="string">'#'</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">			res.push_back(s[i]);</span><br><span class="line">			res.push_back(<span class="string">'#'</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		res.push_back(<span class="string">'^'</span>);</span><br><span class="line">		<span class="keyword">return</span> res;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 注：此处字符串预处理在头上加入 '$' 是为了方便处理</span></span><br><span class="line">	<span class="comment">// 如果是空间瘤患者，直接在有关的地方减一就行了</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<h3>总结</h3>
-<p>Manacher 算法其实可以算奇技淫巧吧，主要还是掌握它的思路，充分利用待求解问题的性质，从而降低求解的复杂度。这个也是在竞赛中会用到的技巧。</p>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><p>此处以 <a href="https://leetcode-cn.com/problems/longest-palindromic-substring/description/" target="_blank" rel="noopener">LeetCode 上的题</a>为例：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="built_in">string</span> <span class="title">longestPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> len = s.size();</span><br><span class="line">		<span class="keyword">if</span> (len &lt;= <span class="number">1</span>) <span class="keyword">return</span> s;</span><br><span class="line">		<span class="built_in">string</span> str = preProcess(s);</span><br><span class="line">		<span class="keyword">int</span> n = str.size(), pos = <span class="number">0</span>, MaxRight = <span class="number">0</span>;</span><br><span class="line">		<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; RL(n, <span class="number">0</span>);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n - <span class="number">1</span>; ++i) &#123;</span><br><span class="line">			RL[i] = MaxRight &gt; i ? min(RL[<span class="number">2</span> * pos - i], MaxRight - i) : <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">while</span> (str[i + RL[i]] == str[i - RL[i]]) ++RL[i];</span><br><span class="line">			<span class="keyword">if</span> (i + RL[i] &gt; MaxRight) &#123;</span><br><span class="line">				MaxRight = i + RL[i];</span><br><span class="line">				pos = i;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> maxLen = <span class="number">0</span>, index = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n - <span class="number">1</span>; ++i) &#123;</span><br><span class="line">			<span class="keyword">if</span>(RL[i] &gt; maxLen) &#123;</span><br><span class="line">				maxLen = RL[i];</span><br><span class="line">				index = i;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125; <span class="comment">// 这里可以和上面并在一起</span></span><br><span class="line">		<span class="keyword">return</span> s.substr((index - maxLen) / <span class="number">2</span>, maxLen - <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//预处理字符串，abc预处理后变成$#a#b#c#^</span></span><br><span class="line">	<span class="function"><span class="built_in">string</span> <span class="title">preProcess</span><span class="params">(<span class="keyword">const</span> <span class="built_in">string</span> &amp;s)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">int</span> n = s.size();</span><br><span class="line">		<span class="built_in">string</span> res;</span><br><span class="line">		res.push_back(<span class="string">'$'</span>);</span><br><span class="line">		res.push_back(<span class="string">'#'</span>);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">			res.push_back(s[i]);</span><br><span class="line">			res.push_back(<span class="string">'#'</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		res.push_back(<span class="string">'^'</span>);</span><br><span class="line">		<span class="keyword">return</span> res;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 注：此处字符串预处理在头上加入 '$' 是为了方便处理</span></span><br><span class="line">	<span class="comment">// 如果是空间瘤患者，直接在有关的地方减一就行了</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Manacher 算法其实可以算奇技淫巧吧，主要还是掌握它的思路，充分利用待求解问题的性质，从而降低求解的复杂度。这个也是在竞赛中会用到的技巧。</p>
 <hr>
 
       
@@ -681,7 +674,7 @@ abba --&gt; #a#b#b#a#
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
   <p><span><strong>文章作者:</strong></span><a href="/" title="访问 Wales Mei 的个人博客">Wales Mei</a></p>
-  <p><span><strong>最后更新:</strong></span>2018年11月26日 15:11:42</p>
+  <p><span><strong>最后更新:</strong></span>2018年11月26日 16:11:58</p>
   <p><span><strong>原始链接:</strong></span><a href="/2018/08/14/算法-Manacher-算法求最长回文子串/" title="[算法] Manacher 算法求最长回文子串">http://walesexcitedmei.github.io/2018/08/14/算法-Manacher-算法求最长回文子串/</a></p>
   <p><span><strong>版权声明:</strong></span>本博客所有文章除特别声明外，均采用 <i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" title="Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)"> BY-NC-SA 3.0 许可协议</a>，转载请注明出处！</p>  
 </div>
@@ -1073,7 +1066,7 @@ abba --&gt; #a#b#b#a#
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">最长回文字串问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">Manacher 算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.1.</span> <span class="nav-text">暴力解法的缺陷所在</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.2.</span> <span class="nav-text">解决长度奇偶性问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.3.</span> <span class="nav-text">解决重复访问问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-number">3.3.1.</span> <span class="nav-text">情况一：$i$ 在 $MaxRight$ 左边</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#undefined"><span class="nav-number">3.3.1.1.</span> <span class="nav-text">以 $j$ 为对称轴的回文串较短</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#undefined"><span class="nav-number">3.3.1.2.</span> <span class="nav-text">以 $j$ 为对称轴的回文串较长</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#undefined"><span class="nav-number">3.3.1.3.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#undefined"><span class="nav-number">3.3.2.</span> <span class="nav-text">情况二：$i$ 在 $MaxRight$ 右边</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.4.</span> <span class="nav-text">代码实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最长回文字串问题"><span class="nav-number">2.</span> <span class="nav-text">最长回文字串问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Manacher-算法"><span class="nav-number">3.</span> <span class="nav-text">Manacher 算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#暴力解法的缺陷所在"><span class="nav-number">3.1.</span> <span class="nav-text">暴力解法的缺陷所在</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决长度奇偶性问题"><span class="nav-number">3.2.</span> <span class="nav-text">解决长度奇偶性问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决重复访问问题"><span class="nav-number">3.3.</span> <span class="nav-text">解决重复访问问题</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#情况一：-i-在-MaxRight-左边"><span class="nav-number">3.3.1.</span> <span class="nav-text">情况一：$i$ 在 $MaxRight$ 左边</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#以-j-为对称轴的回文串较短"><span class="nav-number">3.3.1.1.</span> <span class="nav-text">以 $j$ 为对称轴的回文串较短</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#以-j-为对称轴的回文串较长"><span class="nav-number">3.3.1.2.</span> <span class="nav-text">以 $j$ 为对称轴的回文串较长</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#小结"><span class="nav-number">3.3.1.3.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#情况二：-i-在-MaxRight-右边"><span class="nav-number">3.3.2.</span> <span class="nav-text">情况二：$i$ 在 $MaxRight$ 右边</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#代码实现"><span class="nav-number">3.4.</span> <span class="nav-text">代码实现</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>

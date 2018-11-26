@@ -147,18 +147,18 @@
 });
 tpwidget("show");</script>
 
-  <meta name="description" content="有同学问我如何使用 ShadowsocksR 来加密以保证自己的网络安全，这个口头讲起来真的是挺烦的，所以这里就写一篇教程。本篇说明仅供交流与学习使用，请勿作出任何违反国家法律的行为！ &amp;lt;!-- more --&amp;gt; 何为 ShadowsocksR 想要知道 ShadowsocksR 为何物，首先要知道 Shadowsocks 是什么。它是既可以指一种基于 Socks5 代理方式的加密传输">
+  <meta name="description" content="有同学问我如何使用 ShadowsocksR 来加密以保证自己的网络安全，这个口头讲起来真的是挺烦的，所以这里就写一篇教程。本篇说明仅供交流与学习使用，请勿作出任何违反国家法律的行为！">
 <meta name="keywords" content="ShadowsocksR">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[SSR] ShadowsocksR 配置及使用">
 <meta property="og:url" content="http://walesexcitedmei.github.io/2018/11/26/SSR-ShadowsocksR-配置及使用/index.html">
 <meta property="og:site_name" content="梅骏逸的博客">
-<meta property="og:description" content="有同学问我如何使用 ShadowsocksR 来加密以保证自己的网络安全，这个口头讲起来真的是挺烦的，所以这里就写一篇教程。本篇说明仅供交流与学习使用，请勿作出任何违反国家法律的行为！ &amp;lt;!-- more --&amp;gt; 何为 ShadowsocksR 想要知道 ShadowsocksR 为何物，首先要知道 Shadowsocks 是什么。它是既可以指一种基于 Socks5 代理方式的加密传输">
+<meta property="og:description" content="有同学问我如何使用 ShadowsocksR 来加密以保证自己的网络安全，这个口头讲起来真的是挺烦的，所以这里就写一篇教程。本篇说明仅供交流与学习使用，请勿作出任何违反国家法律的行为！">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-11-26T07:39:42.747Z">
+<meta property="og:updated_time" content="2018-11-26T08:03:58.497Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[SSR] ShadowsocksR 配置及使用">
-<meta name="twitter:description" content="有同学问我如何使用 ShadowsocksR 来加密以保证自己的网络安全，这个口头讲起来真的是挺烦的，所以这里就写一篇教程。本篇说明仅供交流与学习使用，请勿作出任何违反国家法律的行为！ &amp;lt;!-- more --&amp;gt; 何为 ShadowsocksR 想要知道 ShadowsocksR 为何物，首先要知道 Shadowsocks 是什么。它是既可以指一种基于 Socks5 代理方式的加密传输">
+<meta name="twitter:description" content="有同学问我如何使用 ShadowsocksR 来加密以保证自己的网络安全，这个口头讲起来真的是挺烦的，所以这里就写一篇教程。本篇说明仅供交流与学习使用，请勿作出任何违反国家法律的行为！">
 
 
 
@@ -450,7 +450,7 @@ tpwidget("show");</script>
                 
               
 
-              <time title="创建时间：2018-11-26 14:54:29 / 修改时间：15:39:42" itemprop="dateCreated datePublished" datetime="2018-11-26T14:54:29+08:00">2018-11-26</time>
+              <time title="创建时间：2018-11-26 14:54:29 / 修改时间：16:03:58" itemprop="dateCreated datePublished" datetime="2018-11-26T14:54:29+08:00">2018-11-26</time>
             
 
             
@@ -524,77 +524,55 @@ tpwidget("show");</script>
       
 
       
-        <p><div class="note default"><p>有同学问我如何使用 ShadowsocksR 来加密以保证自己的网络安全，这个口头讲起来真的是挺烦的，所以这里就写一篇教程。<strong>本篇说明仅供交流与学习使用，请勿作出任何违反国家法律的行为！</strong></p></div></p>
-<p>&lt;!-- more --&gt;</p>
-<h3>何为 ShadowsocksR</h3>
-<p>想要知道 <code>ShadowsocksR</code> 为何物，首先要知道 <code>Shadowsocks</code> 是什么。它是既可以指一种基于 <code>Socks5</code> 代理方式的加密传输协议，也可以指实现这个协议的各种开发包。目前包使用 <code>Python</code>、<code>C</code>、<code>C++</code>、<code>C#</code>、<code>Go</code> 等编程语言开发，大部分主要实现（<code>iOS</code> 平台的除外）采用 <code>Apache</code> 许可证、<code>GPL</code>、<code>MIT</code> 许可证等多种自由软件许可协议开放源代码。<code>Shadowsocks</code> 分为服务器端和客户端，在使用之前，需要先将服务器端部署到服务器上面，然后通过客户端连接并创建本地代理。<code>ShadowsocksR</code> 是 <code>breakwa11</code> 发起的 <code>Shadowsocks</code> 分支，在 <code>Shadowsocks</code> 的基础上增加了一些数据混淆方式，称修复了部分安全问题并可以提高 <code>QoS</code> 优先级。后来贡献者 <code>Librehat</code> 也为 <code>Shadowsocks</code> 补上了一些此类特性，甚至增加了类似 <code>Tor</code> 的可插拔传输层功能。</p>
-<h3>安装 ShadowsocksR</h3>
-<h4>客户端下载</h4>
-<ol>
+        <div class="note default"><p>有同学问我如何使用 ShadowsocksR 来加密以保证自己的网络安全，这个口头讲起来真的是挺烦的，所以这里就写一篇教程。<br><strong>本篇说明仅供交流与学习使用，请勿作出任何违反国家法律的行为！</strong></p></div>
+<a id="more"></a>
+<h3 id="何为-ShadowsocksR"><a href="#何为-ShadowsocksR" class="headerlink" title="何为 ShadowsocksR"></a>何为 ShadowsocksR</h3><p>想要知道 <code>ShadowsocksR</code> 为何物，首先要知道 <code>Shadowsocks</code> 是什么。它是既可以指一种基于 <code>Socks5</code> 代理方式的加密传输协议，也可以指实现这个协议的各种开发包。目前包使用 <code>Python</code>、<code>C</code>、<code>C++</code>、<code>C#</code>、<code>Go</code> 等编程语言开发，大部分主要实现（<code>iOS</code> 平台的除外）采用 <code>Apache</code> 许可证、<code>GPL</code>、<code>MIT</code> 许可证等多种自由软件许可协议开放源代码。<code>Shadowsocks</code> 分为服务器端和客户端，在使用之前，需要先将服务器端部署到服务器上面，然后通过客户端连接并创建本地代理。<code>ShadowsocksR</code> 是 <code>breakwa11</code> 发起的 <code>Shadowsocks</code> 分支，在 <code>Shadowsocks</code> 的基础上增加了一些数据混淆方式，称修复了部分安全问题并可以提高 <code>QoS</code> 优先级。后来贡献者 <code>Librehat</code> 也为 <code>Shadowsocks</code> 补上了一些此类特性，甚至增加了类似 <code>Tor</code> 的可插拔传输层功能。</p>
+<h3 id="安装-ShadowsocksR"><a href="#安装-ShadowsocksR" class="headerlink" title="安装 ShadowsocksR"></a>安装 ShadowsocksR</h3><h4 id="客户端下载"><a href="#客户端下载" class="headerlink" title="客户端下载"></a>客户端下载</h4><ol>
 <li><a href="https://github.com/shadowsocksrr/shadowsocksr-csharp/releases" target="_blank" rel="noopener">Windows</a></li>
 <li><a href="https://github.com/shadowsocks/shadowsocks-iOS/wiki/Shadowsocks-for-OSX-Help" target="_blank" rel="noopener">macOS</a></li>
 <li><a href="https://github.com/librehat/shadowsocks-qt5" target="_blank" rel="noopener">Linux</a></li>
 <li><a href="https://github.com/shadowsocks/shadowsocks-android" target="_blank" rel="noopener">Android</a></li>
 <li><a href="https://github.com/shadowsocks/shadowsocks-iOS/wiki/Help" target="_blank" rel="noopener">iOS</a></li>
 </ol>
-<h4>配置服务端 ShadowsocksR</h4>
-<ol>
-<li>
-<p>首先你要有一个 VPS，推荐使用 Vultr 这个 VPS 服务商</p>
+<h4 id="配置服务端-ShadowsocksR"><a href="#配置服务端-ShadowsocksR" class="headerlink" title="配置服务端 ShadowsocksR"></a>配置服务端 ShadowsocksR</h4><ol>
+<li>首先你要有一个 VPS，推荐使用 Vultr 这个 VPS 服务商</li>
+<li><p>使用 ssh 登陆到 root 用户后运行一下命令（这是一位大佬的一键配置文件，<a href="https://teddysun.com/" target="_blank" rel="noopener">他的网站</a>）：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh</span><br><span class="line">chmod +x shadowsocksR.sh</span><br><span class="line">./shadowsocksR.sh 2&gt;&amp;1 | tee shadowsocksR.log</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>使用 ssh 登陆到 root 用户后运行一下命令（这是一位大佬的一键配置文件，<a href="https://teddysun.com/" target="_blank" rel="noopener">他的网站</a>）：
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh</span><br><span class="line">chmod +x shadowsocksR.sh</span><br><span class="line">./shadowsocksR.sh 2&gt;&amp;1 | tee shadowsocksR.log</span><br></pre></td></tr></table></figure></p>
+<li><p>接下来设置密码端口，加密方式，协议，混淆（obfs）就可以了。</p>
 </li>
-<li>
-<p>接下来设置密码端口，加密方式，协议，混淆（obfs）就可以了。</p>
+<li><p>安装完成后，会有脚本提示如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Congratulations, ShadowsocksR server install completed!</span><br><span class="line">Your Server IP        :your_server_ip</span><br><span class="line">Your Server Port      :your_server_port</span><br><span class="line">Your Password         :your_password</span><br><span class="line">Your Protocol         :your_protocol</span><br><span class="line">Your obfs             :your_obfs</span><br><span class="line">Your Encryption Method:your_encryption_method</span><br><span class="line"></span><br><span class="line">Welcome to visit:https://shadowsocks.be/9.html</span><br><span class="line">Enjoy it!</span><br></pre></td></tr></table></figure>
 </li>
-<li>
-<p>安装完成后，会有脚本提示如下：
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Congratulations, ShadowsocksR server install completed!</span><br><span class="line">Your Server IP        :your_server_ip</span><br><span class="line">Your Server Port      :your_server_port</span><br><span class="line">Your Password         :your_password</span><br><span class="line">Your Protocol         :your_protocol</span><br><span class="line">Your obfs             :your_obfs</span><br><span class="line">Your Encryption Method:your_encryption_method</span><br><span class="line"></span><br><span class="line">Welcome to visit:https://shadowsocks.be/9.html</span><br><span class="line">Enjoy it!</span><br></pre></td></tr></table></figure></p>
-</li>
-<li>
-<p>将你的配置信息输入到客户端中就可以使用了</p>
+<li><p>将你的配置信息输入到客户端中就可以使用了</p>
 </li>
 </ol>
-<h3>管理你的 ShadowsocksR</h3>
-<h4>卸载</h4>
-<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./shadowsocksR.sh uninstall</span><br></pre></td></tr></table></figure></p>
-<h4>查看状态</h4>
-<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/shadowsocks status</span><br></pre></td></tr></table></figure></p>
-<h4>启动</h4>
-<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/shadowsocks start</span><br></pre></td></tr></table></figure></p>
-<h4>停止</h4>
-<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/shadowsocks stop</span><br></pre></td></tr></table></figure></p>
-<h4>重启</h4>
-<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/shadowsocks restart</span><br></pre></td></tr></table></figure></p>
-<h4>文件目录</h4>
-<ol>
+<h3 id="管理你的-ShadowsocksR"><a href="#管理你的-ShadowsocksR" class="headerlink" title="管理你的 ShadowsocksR"></a>管理你的 ShadowsocksR</h3><h4 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./shadowsocksR.sh uninstall</span><br></pre></td></tr></table></figure>
+<h4 id="查看状态"><a href="#查看状态" class="headerlink" title="查看状态"></a>查看状态</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/shadowsocks status</span><br></pre></td></tr></table></figure>
+<h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/shadowsocks start</span><br></pre></td></tr></table></figure>
+<h4 id="停止"><a href="#停止" class="headerlink" title="停止"></a>停止</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/shadowsocks stop</span><br></pre></td></tr></table></figure>
+<h4 id="重启"><a href="#重启" class="headerlink" title="重启"></a>重启</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/shadowsocks restart</span><br></pre></td></tr></table></figure>
+<h4 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h4><ol>
 <li>配置文件路径：<code>/etc/shadowsocks.json</code></li>
 <li>日志文件路径：<code>/var/log/shadowsocks.log</code></li>
 <li>代码安装目录：<code>/usr/local/shadowsocks</code></li>
 </ol>
-<h4>配置多用户</h4>
-<p>示例：</p>
-<p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"server"</span>:<span class="string">"0.0.0.0"</span>,</span><br><span class="line">  <span class="attr">"server_ipv6"</span>: <span class="string">"[::]"</span>,</span><br><span class="line">  <span class="attr">"local_address"</span>:<span class="string">"127.0.0.1"</span>,</span><br><span class="line">  <span class="attr">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line">  <span class="attr">"port_password"</span>:&#123;</span><br><span class="line">    <span class="attr">"8989"</span>:<span class="string">"password1"</span>,</span><br><span class="line">    <span class="attr">"8990"</span>:<span class="string">"password2"</span>,</span><br><span class="line">    <span class="attr">"8991"</span>:<span class="string">"password3"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"timeout"</span>:<span class="number">300</span>,</span><br><span class="line">  <span class="attr">"method"</span>:<span class="string">"aes-256-cfb"</span>,</span><br><span class="line">  <span class="attr">"protocol"</span>: <span class="string">"origin"</span>,</span><br><span class="line">  <span class="attr">"protocol_param"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"obfs"</span>: <span class="string">"plain"</span>,</span><br><span class="line">  <span class="attr">"obfs_param"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"redirect"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"dns_ipv6"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"fast_open"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"workers"</span>: <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="配置多用户"><a href="#配置多用户" class="headerlink" title="配置多用户"></a>配置多用户</h4><p>示例：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"server"</span>:<span class="string">"0.0.0.0"</span>,</span><br><span class="line">  <span class="attr">"server_ipv6"</span>: <span class="string">"[::]"</span>,</span><br><span class="line">  <span class="attr">"local_address"</span>:<span class="string">"127.0.0.1"</span>,</span><br><span class="line">  <span class="attr">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line">  <span class="attr">"port_password"</span>:&#123;</span><br><span class="line">    <span class="attr">"8989"</span>:<span class="string">"password1"</span>,</span><br><span class="line">    <span class="attr">"8990"</span>:<span class="string">"password2"</span>,</span><br><span class="line">    <span class="attr">"8991"</span>:<span class="string">"password3"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"timeout"</span>:<span class="number">300</span>,</span><br><span class="line">  <span class="attr">"method"</span>:<span class="string">"aes-256-cfb"</span>,</span><br><span class="line">  <span class="attr">"protocol"</span>: <span class="string">"origin"</span>,</span><br><span class="line">  <span class="attr">"protocol_param"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"obfs"</span>: <span class="string">"plain"</span>,</span><br><span class="line">  <span class="attr">"obfs_param"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"redirect"</span>: <span class="string">""</span>,</span><br><span class="line">  <span class="attr">"dns_ipv6"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"fast_open"</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">"workers"</span>: <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>其中把 <code>&quot;server&quot;</code> 替换成自己的地址就可以了，<code>&quot;port_password&quot;</code> 自己设置，其它的视自己情况更改。修改配置文件参考：</p>
 <ol>
-<li>https://github.com/shadowsocksr-backup/shadowsocks-rss/wiki/Server-Setup</li>
-<li>https://github.com/shadowsocksr-backup/shadowsocks-rss/blob/master/ssr.md</li>
-<li>https://github.com/shadowsocksr-backup/shadowsocks-rss/wiki/config.json</li>
+<li><a href="https://github.com/shadowsocksr-backup/shadowsocks-rss/wiki/Server-Setup" target="_blank" rel="noopener">https://github.com/shadowsocksr-backup/shadowsocks-rss/wiki/Server-Setup</a></li>
+<li><a href="https://github.com/shadowsocksr-backup/shadowsocks-rss/blob/master/ssr.md" target="_blank" rel="noopener">https://github.com/shadowsocksr-backup/shadowsocks-rss/blob/master/ssr.md</a></li>
+<li><a href="https://github.com/shadowsocksr-backup/shadowsocks-rss/wiki/config.json" target="_blank" rel="noopener">https://github.com/shadowsocksr-backup/shadowsocks-rss/wiki/config.json</a></li>
 </ol>
 <hr>
-<p>&lt;script async src=&quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;&gt;&lt;/script&gt;
-&lt;ins class=&quot;adsbygoogle&quot;
-style=&quot;display:block; text-align:center;&quot;
-data-ad-layout=&quot;in-article&quot;
-data-ad-format=&quot;fluid&quot;
-data-ad-client=&quot;ca-pub-7465666912424994&quot;
-data-ad-slot=&quot;3198608984&quot;&gt;&lt;/ins&gt;
-&lt;script&gt;
-(adsbygoogle = window.adsbygoogle || []).push({});
-&lt;/script&gt;</p>
-<p>&lt;br/&gt;</p>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-7465666912424994" data-ad-slot="3198608984"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<p><br></p>
 
       
     </div>
@@ -624,7 +602,7 @@ data-ad-slot=&quot;3198608984&quot;&gt;&lt;/ins&gt;
   <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
   <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
   <p><span><strong>文章作者:</strong></span><a href="/" title="访问 Wales Mei 的个人博客">Wales Mei</a></p>
-  <p><span><strong>最后更新:</strong></span>2018年11月26日 15:11:42</p>
+  <p><span><strong>最后更新:</strong></span>2018年11月26日 16:11:58</p>
   <p><span><strong>原始链接:</strong></span><a href="/2018/11/26/SSR-ShadowsocksR-配置及使用/" title="[SSR] ShadowsocksR 配置及使用">http://walesexcitedmei.github.io/2018/11/26/SSR-ShadowsocksR-配置及使用/</a></p>
   <p><span><strong>版权声明:</strong></span>本博客所有文章除特别声明外，均采用 <i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" title="Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)"> BY-NC-SA 3.0 许可协议</a>，转载请注明出处！</p>  
 </div>
@@ -1008,7 +986,7 @@ data-ad-slot=&quot;3198608984&quot;&gt;&lt;/ins&gt;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">1.</span> <span class="nav-text">何为 ShadowsocksR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">2.</span> <span class="nav-text">安装 ShadowsocksR</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.1.</span> <span class="nav-text">客户端下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">2.2.</span> <span class="nav-text">配置服务端 ShadowsocksR</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-number">3.</span> <span class="nav-text">管理你的 ShadowsocksR</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.1.</span> <span class="nav-text">卸载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.2.</span> <span class="nav-text">查看状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.3.</span> <span class="nav-text">启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.4.</span> <span class="nav-text">停止</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.5.</span> <span class="nav-text">重启</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.6.</span> <span class="nav-text">文件目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-number">3.7.</span> <span class="nav-text">配置多用户</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#何为-ShadowsocksR"><span class="nav-number">1.</span> <span class="nav-text">何为 ShadowsocksR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-ShadowsocksR"><span class="nav-number">2.</span> <span class="nav-text">安装 ShadowsocksR</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#客户端下载"><span class="nav-number">2.1.</span> <span class="nav-text">客户端下载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置服务端-ShadowsocksR"><span class="nav-number">2.2.</span> <span class="nav-text">配置服务端 ShadowsocksR</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管理你的-ShadowsocksR"><span class="nav-number">3.</span> <span class="nav-text">管理你的 ShadowsocksR</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#卸载"><span class="nav-number">3.1.</span> <span class="nav-text">卸载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看状态"><span class="nav-number">3.2.</span> <span class="nav-text">查看状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动"><span class="nav-number">3.3.</span> <span class="nav-text">启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#停止"><span class="nav-number">3.4.</span> <span class="nav-text">停止</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#重启"><span class="nav-number">3.5.</span> <span class="nav-text">重启</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文件目录"><span class="nav-number">3.6.</span> <span class="nav-text">文件目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置多用户"><span class="nav-number">3.7.</span> <span class="nav-text">配置多用户</span></a></li></ol></li></ol></div>
             
 
           </div>

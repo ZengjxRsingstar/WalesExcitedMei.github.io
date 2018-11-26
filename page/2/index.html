@@ -468,7 +468,7 @@ tpwidget("show");</script>
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-26 15:39:42" itemprop="dateModified" datetime="2018-11-26T15:39:42+08:00">2018-11-26</time>
+                <time title="修改时间：2018-11-26 16:03:58" itemprop="dateModified" datetime="2018-11-26T16:03:58+08:00">2018-11-26</time>
               
             
           </span>
@@ -532,7 +532,7 @@ tpwidget("show");</script>
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="/2018/10/03/猴排！？一道高考题！？出题人的无下限猴子专场/photo1.png" rel="gallery_cjoy05ymw004dmcmjh66jabah"
+                 href="/2018/10/03/猴排！？一道高考题！？出题人的无下限猴子专场/photo1.png" rel="gallery_cjoy10snj002mrcmj9ekn6r20"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/2018/10/03/猴排！？一道高考题！？出题人的无下限猴子专场/photo1.png" itemprop="contentUrl"/>
               </a>
@@ -546,130 +546,14 @@ tpwidget("show");</script>
 
       
         
-          
-            <p><div class="note default"><p>今天模拟测的第一道题实在是妙，本以为是简单排序，但是发现某些数据下过不了，后来想打暴力，但是怕直接被 T 掉，于是使用了全世界最好的<a href="https://zh.wikipedia.org/wiki/Bogo%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">猴子排序</a>，骗了个 35 分。。。。。。</p></div></p>
-<p>&lt;!-- more --&gt;</p>
-<h3>题目描述</h3>
-<p>Coder Jun 当年没有经历高考就直接保送进了名牌大学，如今孩子都上初中了，想想保送政策已经取消，孩子过几年铁定要参加高考，心里非常着急，于是决定抽空做些高考题，好给孩子传授传授经验。于是他遇到了这样一道高考题。题目给你了 $N$ 个二元组，其中第i个二元组表示为 $(A_i,B_i)$。使用这个二元组，我们可以构造出另一个序列 $T$，构造方法如下：</p>
-<ol>
-<li>当 $i=1$ 时，$T_i=A_i+B_i$</li>
-<li>当 $i\neq 1$ 时，$T_i=B_i+\max\lbrace T_{i-1},\sum_{j=1}^i A_j\rbrace$</li>
-</ol>
-<p>由于计算T时需要用到 <code>max</code> 函数令 Coder Jun 感到非常不爽，所以 Coder Jun 想让你帮他来最小化 $T_N$ 的值，即你需要对这 $N$ 个二元组进行重排，使得 $T_N$ 的值最小。</p>
-<h3>题解</h3>
-<h4>骗分算法</h4>
-<p>嗯，反正题目中说的就是重排，而我又不知道怎么排，那当然就是猴排了...... 35分骗分代码</p>
-<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 100010</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> int64;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Tuple</span> &#123;</span> <span class="keyword">int</span> A; <span class="keyword">int</span> B; &#125;;</span><br><span class="line"><span class="keyword">int</span> N;</span><br><span class="line">Tuple tuple[maxn];</span><br><span class="line"><span class="comment">// 这个 tuple 在某些地方好像会编译出错......</span></span><br><span class="line"><span class="built_in">map</span>&lt;<span class="built_in">string</span>, int64&gt; mp;</span><br><span class="line">int64 ans = (<span class="number">1</span> &lt;&lt; <span class="number">30</span>), prefix[maxn];</span><br><span class="line"><span class="built_in">string</span> sit;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">prepare</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  prefix[<span class="number">1</span>] = tuple[<span class="number">1</span>].A; </span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= N; ++i) prefix[i] = prefix[i - <span class="number">1</span>] + tuple[i].A;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> int64 <span class="title">calc</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  int64 T_i_1, T_i;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">1</span>) &#123;</span><br><span class="line">      T_i = tuple[i].A + tuple[i].B; T_i_1 = T_i;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      T_i = tuple[i].B + max(T_i_1, prefix[i]); T_i_1 = T_i;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> T_i;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="built_in">string</span> <span class="title">hash</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">ostringstream</span> ret;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) ret &lt;&lt; tuple[i].A &lt;&lt; <span class="string">" "</span> &lt;&lt; tuple[i].B &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span> ret.str();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="function">ifstream <span class="title">in</span><span class="params">(<span class="string">"gaokao.in"</span>)</span></span>;</span><br><span class="line">  <span class="function">ofstream <span class="title">out</span><span class="params">(<span class="string">"gaokao.out"</span>)</span></span>;</span><br><span class="line">  srand((<span class="keyword">unsigned</span>)time(<span class="literal">NULL</span>));</span><br><span class="line">  in &gt;&gt; N;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) &#123; in &gt;&gt; tuple[i].A &gt;&gt; tuple[i].B; &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">10000000</span>; ++i) &#123;</span><br><span class="line">    <span class="keyword">if</span> (clock() &gt;= <span class="number">600</span>) <span class="keyword">break</span>;</span><br><span class="line">    prepare(); mp[hash()] = calc();</span><br><span class="line">    <span class="keyword">if</span> (clock() &gt;= <span class="number">600</span>) <span class="keyword">break</span>;</span><br><span class="line">    random_shuffle(tuple + <span class="number">1</span>, tuple + N + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (clock() &gt;= <span class="number">600</span>) <span class="keyword">break</span>;</span><br><span class="line">    <span class="comment">// 骗分精髓之处，极限卡时</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">map</span>&lt;<span class="built_in">string</span>, int64&gt;::iterator iter;</span><br><span class="line">  <span class="keyword">for</span> (iter = mp.begin(); iter != mp.end(); ++iter)</span><br><span class="line">    <span class="keyword">if</span> (ans &gt; iter-&gt;second) &#123; ans = iter-&gt;second; sit = iter-&gt;first; &#125;</span><br><span class="line">  out &lt;&lt; ans &lt;&lt; <span class="built_in">endl</span> &lt;&lt; sit;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这个代码看看开心一下就好，虽然说对于某些数据是可能对的，但是还是要看人品。</p>
-<h4>正解</h4>
-<p>先双手送上<a href="https://www.luogu.org/problemnew/show/P2123" target="_blank" rel="noopener">洛谷上的原题</a>👍。
-首先，我们来了解一下<a href="https://zh.wikipedia.org/wiki/%E5%81%8F%E5%BA%8F%E5%85%B3%E7%B3%BB" target="_blank" rel="noopener">偏序关系</a>这个东西，我们其实只要明白严格偏序和非严格偏序的性质就行了（主要是传递性这个东西）。然后我们就可以开始求解这道题了。这道题无非就是找出一个排序方法来令所有的情况下的结果最小或最大。因为我们有公式：</p>
-<p>$$
-T_i=
-\begin{cases}
-A_i+B_i &amp; \text{when $i=1$} \
-B_i+\max\lbrace T_{i-1},\sum_{j=1}^i A_j\rbrace &amp; \text{when $i\neq1$}
-\end{cases}
-$$</p>
-<p>所以 $T_i\geqslant T_{i-1}$ 是严格递增的。然后我们用相邻交换法来考虑偏序关系（排序的方法）。对于某两个元组 $(A_i,B_i)$ 和 $(A_{i+1}, B_{i+1})$，如果我们不交换，那么：</p>
-<p>$$
-\begin{aligned}
-\max\lbrace T_i, T_{i+1}\rbrace = {}&amp; T_{i+1} {} \
-= {}&amp; B_{i+1}+\max\lbrace T_{i},\sum_{j=1}^{i+1}A_j\rbrace {} \
-= {}&amp; B_{i+1}+\max\lbrace B_i+\max\lbrace T_{i-1},\sum_{j=1}^i A_j\rbrace,\sum_{j=1}^{i+1}A_j\rbrace
-\end{aligned}
-$$</p>
-<p>我们令 $S=\sum_{j=1}^{i-1}A_j$，那么上式可以表示为：</p>
-<p>$$
-\max\lbrace T_i,T_{i+1}\rbrace=B_{i+1}+\max\lbrace B_i+\max\lbrace T_{i-1},S+A_i\rbrace,S+A_i+A_{i+1}\rbrace
-$$</p>
-<p>即：</p>
-<p>$$
-\max\lbrace T_i,T_{i+1}\rbrace=\max\lbrace \left(T_{i-1}+B_i+B_{i+1}\right),\left(S+A_i+B_i+B_{i+1}\right),\left(S+A_i+A_{i+1}+B_{i+1}\right)\rbrace
-$$</p>
-<p>如果这两个元组交换，那么 $\max\lbrace T_i,T_{i+1}\rbrace=T_i$，即：</p>
-<p>$$
-\begin{aligned}
-\max\lbrace T_i,T_{i+1}\rbrace=\max\lbrace \left(T_{i-1}+B_i+B_{i+1}\right),\left(S+A_{i+1}+B_i+B_{i+1}\right),\left(S+A_i+A_{i+1}+B_i\right)\rbrace
-\end{aligned}
-$$</p>
-<p>我们不妨设不交换更优，那么我们可以得到：</p>
-<p>$$
-\begin{aligned}
-{}&amp; \max\lbrace \left(T_{i-1}+B_i+B_{i+1}\right),\left(S+A_i+B_i+B_{i+1}\right),\left(S+A_i+A_{i+1}+B_{i+1}\right)\rbrace\leqslant {} \
-{}&amp; \max\lbrace \left(T_{i-1}+B_i+B_{i+1}\right),\left(S+A_{i+1}+B_i+B_{i+1}\right),\left(S+A_i+A_{i+1}+B_i\right)\rbrace
-\end{aligned}
-$$</p>
-<p>所以我们现在就需要思考如何删去 $\left(T_{i-1}+B_i+B_{i+1}\right)$ 这一项了。考虑对于一个不等式 $\max\lbrace a,c\rbrace\leqslant\max\lbrace b,c\rbrace$，如果我们删去 $c$，那么就变成了 $a\leqslant c$，如果这个不等式成立，那么我们不用管，如果不成立，我们就可以进行交换，于是，我们判断更优条件就变成了</p>
-<p>$$
-\begin{aligned}
-{}&amp; \max\lbrace \left(S+A_i+B_i+B_{i+1}\right),\left(S+A_i+A_{i+1}+B_{i+1}\right)\rbrace\leqslant {} \
-{}&amp; \max\lbrace \left(S+A_{i+1}+B_i+B_{i+1}\right),\left(S+A_i+A_{i+1}+B_i\right)\rbrace
-\end{aligned}
-$$</p>
-<p>两边消去 $S$：</p>
-<p>$$
-\begin{aligned}
-{}&amp; \max\lbrace \left(A_i+B_i+B_{i+1}\right),\left(A_i+A_{i+1}+B_{i+1}\right)\rbrace\leqslant {} \
-{}&amp; \max\lbrace \left(A_{i+1}+B_i+B_{i+1}\right),\left(A_i+A_{i+1}+B_i\right)\rbrace
-\end{aligned}
-$$</p>
-<p>化简得：</p>
-<p>$$
-\max\lbrace A_{i+1},B_i\rbrace+A_i+B_{i+1}\leqslant\max\lbrace A_i,B_{i+1}\rbrace+A_{i+1}+B_i
-$$</p>
-<p>移项：</p>
-<p>$$
-\max\lbrace A_{i+1},B_i\rbrace-A_{i+1}-B_i\leqslant\max\lbrace A_i,B_{i+1}\rbrace-A_i-B_{i+1}
-$$</p>
-<p>我们可以发现，两边式子中大的数被删去了，留下的是小的数的相反数，所以，我们了可以得到：</p>
-<p>$$
--\min\lbrace A_{i+1},B_i\rbrace\leqslant -\min\lbrace A_i, B_{i+1}\rbrace
-$$</p>
-<p>即：</p>
-<p>$$
-\min\lbrace A_i, B_{i+1}\rbrace\leqslant\min\lbrace A_{i+1},B_i\rbrace
-$$</p>
-<p>这也就是我们判断更优的条件了，但是细细一想，发现不对，这个式子不满足偏序的传递性啊！举个例子：</p>
-<pre><code>7 3
-1 1
-1 6
-</code></pre>
-<p>显然，这样可以是排完序后的结果，因为两两之间用条件判断都是等于。这样算出来答案是 $17$。而如果这样排：</p>
-<pre><code>1 1
-1 6
-7 3
-</code></pre>
-<p>答案是 $12$，显然这样更优。所以这个偏序关系并不能得出最优解。</p>
-<p>我们从 $A, B$ 的大小关系来分三组考虑：</p>
-<ol>
-<li>$A_i&lt;B_i,A_{i+1}&lt;B_{i+1}$ 时，$A_i\leqslant A_{i+1}$，按照 $A$ 升序排序</li>
-<li>$A_i=B_i,A_{i+1}=B_{i+1}$ 时，随便这么排都可以</li>
-<li>$A_i&gt;B_i,A_{i+1}&gt;B_{i+1}$ 时，$B_i\geqslant B_{i+1}$，按照 $B$ 来降序排序</li>
-</ol>
-<p>接下来思考这三组如何排序：</p>
-<ol>
-<li><strong>$1$ 组和 $2$ 组，$1$ 组在 $2$ 组前肯定能保证满足条件。</strong></li>
-<li><strong>$2$ 组和 $3$ 组，$2$ 组在 $3$ 组前面肯定能保证满足条件。</strong></li>
-<li><strong>那么 $1$ 组在前，$2$ 组在中，$3$ 组在后，是肯定能保证满足要求的。</strong></li>
-</ol>
-<p>我们令 $C_i=\operatorname{sgn}(A_i - B_i)$，则对于 $1$ 组 $C=-1$，对于 $2$ 组 $C=0$，对于第三组 $C=1$，所以最终的排序方法是：<strong>先按 $C$ 值排序；然后若 $C$ 值小于等于 $0$，按 $A$ 升序排序（这里把 $2$ 组归入 $1$ 组）；若 $C$ 值大于 $0$，则按 $B$ 降序排序</strong>。</p>
-<p>正确代码：</p>
-<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 20010</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> int64;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">TU</span> &#123;</span> int64 A, B, C; &#125;;</span><br><span class="line"></span><br><span class="line">int64 N, p[maxn];</span><br><span class="line">TU t[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(TU a, TU b)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (a.C != b.C) <span class="keyword">return</span> a.C &lt; b.C;</span><br><span class="line">  <span class="keyword">if</span> (a.C &lt;= <span class="number">0</span>) <span class="keyword">return</span> a.A &lt; b.A;</span><br><span class="line">  <span class="keyword">return</span> a.B &gt; b.B;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  freopen(<span class="string">"gaokao.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">  freopen(<span class="string">"gaokao.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line">  <span class="built_in">scanf</span>(<span class="string">"%lld"</span>, &amp;N);</span><br><span class="line">  <span class="keyword">for</span> (int64 i = <span class="number">1</span>; i &lt;= N; ++i) &#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">"%lld%lld"</span>, &amp;t[i].A, &amp;t[i].B);</span><br><span class="line">    <span class="keyword">if</span> (t[i].A &gt; t[i].B) t[i].C = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (t[i].A &lt; t[i].B) t[i].C = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">else</span> t[i].C = <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  sort(t + <span class="number">1</span>, t + N + <span class="number">1</span>, cmp);</span><br><span class="line">  p[<span class="number">1</span>] = t[<span class="number">1</span>].A;</span><br><span class="line">  int64 Ti1, Ti;</span><br><span class="line">  <span class="keyword">for</span> (int64 i = <span class="number">2</span>; i &lt;= N; ++i) p[i] = p[i - <span class="number">1</span>] + t[i].A;</span><br><span class="line">  <span class="keyword">for</span> (int64 i = <span class="number">1</span>; i &lt;= N; ++i) &#123;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">1</span>) &#123;</span><br><span class="line">      Ti = t[i].A + t[i].B;</span><br><span class="line">      Ti1 = Ti;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      Ti = t[i].B + max(Ti1, p[i]);</span><br><span class="line">      Ti1 = Ti;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, T_i);</span><br><span class="line">  <span class="keyword">for</span> (int64 i = <span class="number">1</span>; i &lt;= N; ++i)</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%lld %lld\n"</span>, t[i].A, t[i].B);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<hr>
-<p>&lt;script async src=&quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;&gt;&lt;/script&gt;
-&lt;ins class=&quot;adsbygoogle&quot;
-style=&quot;display:block; text-align:center;&quot;
-data-ad-layout=&quot;in-article&quot;
-data-ad-format=&quot;fluid&quot;
-data-ad-client=&quot;ca-pub-7465666912424994&quot;
-data-ad-slot=&quot;3198608984&quot;&gt;&lt;/ins&gt;
-&lt;script&gt;
-(adsbygoogle = window.adsbygoogle || []).push({});
-&lt;/script&gt;</p>
-<p>&lt;br/&gt;</p>
-
-          
+          <div class="note default"><p>今天模拟测的第一道题实在是妙，本以为是简单排序，但是发现某些数据下过不了，后来想打暴力，但是怕直接被 T 掉，于是使用了全世界最好的<a href="https://zh.wikipedia.org/wiki/Bogo%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">猴子排序</a>，骗了个 35 分。。。。。。</p></div>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/03/猴排！？一道高考题！？出题人的无下限猴子专场/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -789,7 +673,7 @@ data-ad-slot=&quot;3198608984&quot;&gt;&lt;/ins&gt;
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-26 15:39:42" itemprop="dateModified" datetime="2018-11-26T15:39:42+08:00">2018-11-26</time>
+                <time title="修改时间：2018-11-26 16:03:58" itemprop="dateModified" datetime="2018-11-26T16:03:58+08:00">2018-11-26</time>
               
             
           </span>
@@ -853,7 +737,7 @@ data-ad-slot=&quot;3198608984&quot;&gt;&lt;/ins&gt;
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="/2018/10/01/NOIP-模拟-一次出卷老师把题目出反的模拟赛/photo1.png" rel="gallery_cjoy05yf30013mcmjnuvq64ji"
+                 href="/2018/10/01/NOIP-模拟-一次出卷老师把题目出反的模拟赛/photo1.png" rel="gallery_cjoy10sm80017rcmj853t8gw9"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/2018/10/01/NOIP-模拟-一次出卷老师把题目出反的模拟赛/photo1.png" itemprop="contentUrl"/>
               </a>
@@ -867,81 +751,15 @@ data-ad-slot=&quot;3198608984&quot;&gt;&lt;/ins&gt;
 
       
         
-          
-            <p><div class="note success"><p><strong>在这里先祝祖国母亲生日快乐，以及成为世界上存在时间最长的社会主义国家！😊😊</strong>。</p></div></p>
-<p><div class="note default"><p>好了，说今天这套题目，隶属于国庆七连测😭，第一道题最恶心，第二题最难想，第三道题最简单。</p></div></p>
-<p>&lt;!-- more --&gt;</p>
-<h3>T1 bread</h3>
-<h4>题目</h4>
-<pre><code>N 个数，M 次操作，给出两个参数 p, q，第i次染色将区间 (i * p + q) % N + 1 和 (i * q + p) % N + 1 之间的数变为 i（后面的操作将前面的覆盖）
-
-输入 M, N, p, q
-
-输出每个数的最终数字
-
-100% 数据 n &lt;= 1e6, m &lt;= 1e7
-m * p + q, m * q + p 在 int 范围内
-</code></pre>
-<h4>题解</h4>
-<p>一开始看到这道题是懵逼的，先打了一波暴力模拟，最大的数据跑一年都跑不出来，于是开始思考更好的算法，后来在某大佬的提示下，想到了并查集的做法。
-先打表，发现在 $M &gt; N$ 时，区间是会有循环的，并且是 $N$ 次一循环，而这道题中最后某个点的颜色是以最后一次染色为准的，所以只要对 $\max\lbrace M - N + 1, 1\rbrace$ 到 $M$ 这几次操作进行运算即可。但是发现这样还是会超时，因为区间是会有重复的，这会造成冗余的复杂度，所以需要考虑如何将这些运算去掉。考虑倒序进行处理，当我们对区间 $[l, r]$ 进行处理时，对于我们遇到的每一个点 $k$ 有两种情况：</p>
-<ol>
-<li>$k$ 未被更新过。</li>
-<li>$k$ 已经被更新过了，那么上次更新时它所在区间的所有的点也都被更新过了。</li>
-</ol>
-<p>从 $r$ 向前到 $l$ 进行更新，我们记录点 $k$ 上次更新时的左边界 $l'$，若 $k$ 被更新过，那么直接跳到 $l'-1$ 再继续向前更新。那为什么要用并查集呢？因为若 $l'-1$ 也被更新过了，就可以直接跳到更前面，进一步减少冗余运算，同时也防止数据卡我们。</p>
-<p>贴上代码：
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">char</span> <span class="title">nextchar</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">char</span> buf[<span class="number">100000</span>], *p1 = buf, *p2 = buf;</span><br><span class="line">  <span class="keyword">return</span> (p1 == p2) &amp;&amp;</span><br><span class="line">    (p2 = (p1 = buf) + fread(buf, <span class="number">1</span>, <span class="number">100000</span>, <span class="built_in">stdin</span>), p1 == p2) ? EOF : *p1++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;x)</span> </span>&#123;</span><br><span class="line">  x = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">char</span> ch = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">bool</span> sign = <span class="literal">false</span>;</span><br><span class="line">  <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123; sign |= (ch == <span class="string">'-'</span>); ch = nextchar(); &#125;</span><br><span class="line">  <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch)) &#123; x = x * <span class="number">10</span> + (ch ^ <span class="number">48</span>); ch = nextchar(); &#125;</span><br><span class="line">  x = sign ? -x : x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">int</span> stk[<span class="number">100</span>], top = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">if</span> (x == <span class="number">0</span>) &#123; <span class="built_in">putchar</span>(<span class="string">'0'</span>); <span class="keyword">return</span>; &#125;</span><br><span class="line">  <span class="keyword">if</span> (x &lt; <span class="number">0</span>) &#123; <span class="built_in">putchar</span>(<span class="string">'-'</span>); x = -x; &#125;</span><br><span class="line">  <span class="keyword">while</span> (x) &#123; stk[++top] = x % <span class="number">10</span>; x /= <span class="number">10</span>; &#125;</span><br><span class="line">  <span class="keyword">while</span> (top) <span class="built_in">putchar</span>(stk[top--] + <span class="string">'0'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">PAINT</span> &#123;</span> <span class="keyword">int</span> l, r; &#125;;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxm 10000010</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 1000010</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> N, M, p, q, ans[maxn], fa[maxn];</span><br><span class="line"><span class="keyword">bool</span> painted[maxn];</span><br><span class="line">PAINT paint[maxm];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">get</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (fa[x] == x) <span class="keyword">return</span> x;</span><br><span class="line">  <span class="keyword">return</span> fa[x] = get(fa[x]);</span><br><span class="line">  <span class="comment">// 这里交的时候打成了 fa[x] == get(fa[x]) TAT</span></span><br><span class="line">  <span class="comment">// 然而只 WA  了一个点 orz</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  freopen(<span class="string">"bread.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">  freopen(<span class="string">"bread.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line">  read(N); read(M); read(p); read(q);</span><br><span class="line">  <span class="built_in">memset</span>(ans, <span class="number">0</span>, <span class="keyword">sizeof</span>(ans));</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) fa[i] = i;</span><br><span class="line">  <span class="keyword">int</span> low = max(M - N + <span class="number">1</span>, <span class="number">1</span>);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = M; i &gt;= low; --i) &#123;</span><br><span class="line">    <span class="keyword">int</span> l = min((i * p + q) % N + <span class="number">1</span>, (i * q + p) % N + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> r = max((i * p + q) % N + <span class="number">1</span>, (i * q + p) % N + <span class="number">1</span>);</span><br><span class="line">    paint[i].l = l;</span><br><span class="line">    paint[i].r = r;</span><br><span class="line">  &#125; <span class="comment">// 防止区间出错，因为又可能出现 l &gt; r 的情况。</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = M; i &gt;= low; --i) &#123;</span><br><span class="line">    <span class="keyword">int</span> l = paint[i].l;</span><br><span class="line">    <span class="keyword">int</span> r = paint[i].r;</span><br><span class="line">    <span class="keyword">int</span> j = r;</span><br><span class="line">    <span class="keyword">while</span> (j &gt;= l) &#123;</span><br><span class="line">      <span class="keyword">if</span> (ans[j] == <span class="number">0</span>) &#123;</span><br><span class="line">        ans[j] = i;</span><br><span class="line">        fa[j] = get(l);</span><br><span class="line">        j--;</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123; j = fa[j] - <span class="number">1</span>; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= N; ++i) &#123; write(ans[i]); <span class="built_in">puts</span>(<span class="string">""</span>); &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3>T2 divide</h3>
-<h4>题目</h4>
-<pre><code>你有 n1 个 1，n2 个 2, n3 个 3, n4 个 4, n5 个 5, n6 个 6，问能否将他们分成两部分使得两部分的和相等
-
-输入 第一行一个整数n，之后n行每行六个整数n1, n2, n3, n4, n5, n6
-
-输出 如果可以输出 &quot;Can be divided.&quot;，不行输出 &quot;Can't be divided.&quot;
-</code></pre>
-<h4>题解</h4>
-<p>这道题老师来说了下 $n$ 最大有 $5000$，于是坚信了这道题是数论题 TAT。所以思考的角度完全错误，直接爆零。
-比赛结束后知道了应该用背包做，但是裸的多重背包会 TLE，更何况有 $5000$ 的数据，所以去阅读了标程，发现了原来正解是一个很神奇的 dp。</p>
-<p>首先我们令 $f[i][j]$ 表示当总和为 $j$ 时，$i$ 这个数还可以使用的个数，$a[i]$ 表示 $i$ 这个数可以使用的总个数，于是我们有动态规划方程如下：</p>
-<p>$$
-f[i][j] =
-\begin{cases}
-a[i], &amp; \text{when $f[i - 1][j]\geqslant 0$} \
-f[i][j - i] - 1, &amp; \text{when $j\geqslant i$ and $f[i - 1][j]\leqslant 0$} \
--1, &amp; \text{otherwise}
-\end{cases}\
-\text{There is a solution only when $f[6][\frac{\sum_{i = 1}^6 a[i]\times i}{2}] \geqslant 0$}
-$$</p>
-<p>然后发现数组 <code>f</code> 其实只需要一维就够了，而且 $j$ 也只需要枚举到 $\frac{\sum_{i = 1}^6 a[i]\times i}{2}$ 就行了，所以实现的时候只要这样子就行了：</p>
-<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">char</span> <span class="title">nextchar</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">char</span> buf[<span class="number">100000</span>], *p1 = buf, *p2 = buf;</span><br><span class="line">  <span class="keyword">return</span> (p1 == p2) &amp;&amp;</span><br><span class="line">    (p2 = (p1 = buf) + fread(buf, <span class="number">1</span>, <span class="number">100000</span>, <span class="built_in">stdin</span>), p1 == p2) ? EOF : *p1++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;x)</span> </span>&#123;</span><br><span class="line">  x = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">char</span> ch = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">bool</span> sign = <span class="literal">false</span>;</span><br><span class="line">  <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123; sign |= (ch == <span class="string">'-'</span>); ch = nextchar(); &#125;</span><br><span class="line">  <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch)) &#123; x = x * <span class="number">10</span> + (ch ^ <span class="number">48</span>); ch = nextchar(); &#125;</span><br><span class="line">  x = sign ? -x : x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">int</span> stk[<span class="number">100</span>], top = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">if</span> (x == <span class="number">0</span>) &#123; <span class="built_in">putchar</span>(<span class="string">'0'</span>); <span class="keyword">return</span>; &#125;</span><br><span class="line">  <span class="keyword">if</span> (x &lt; <span class="number">0</span>) &#123; <span class="built_in">putchar</span>(<span class="string">'-'</span>); x = -x; &#125;</span><br><span class="line">  <span class="keyword">while</span> (x) &#123; stk[++top] = x % <span class="number">10</span>; x /= <span class="number">10</span>; &#125;</span><br><span class="line">  <span class="keyword">while</span> (top) <span class="built_in">putchar</span>(stk[top--] + <span class="string">'0'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 20010</span></span><br><span class="line"><span class="comment">// 这个 maxn 不能省</span></span><br><span class="line"><span class="keyword">int</span> n, a[<span class="number">10</span>], sum, f[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  read(n);</span><br><span class="line">  <span class="keyword">while</span> (n--) &#123;</span><br><span class="line">    sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">6</span>; ++i) &#123; read(a[i]); sum += a[i] * i; &#125;</span><br><span class="line">    <span class="keyword">if</span> (sum &amp; <span class="number">1</span>) &#123; <span class="built_in">puts</span>(<span class="string">"Can't be divided."</span>); <span class="keyword">continue</span>; &#125;</span><br><span class="line">    sum &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">memset</span>(f, <span class="number">-1</span>, <span class="keyword">sizeof</span>(f));</span><br><span class="line">    f[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">6</span>; ++i) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= sum; ++j) &#123;</span><br><span class="line">        <span class="keyword">if</span> (f[j] &gt;= <span class="number">0</span>) f[j] = a[i];</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (i &lt;= j) f[j] = f[j - i] - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> f[j] = <span class="number">-1</span>; </span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (f[sum] &gt;= <span class="number">0</span>) <span class="built_in">puts</span>(<span class="string">"Can be divided."</span>);</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"Can't be divided."</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3>T3 cmi</h3>
-<h4>题目</h4>
-<pre><code>有一全排列，每次移动一个数，求使其变为升序的最少移动次数
-
-输入 两行，第一行为排列中数字的数量，第二行为排列
-
-输出 一行，最少移动的次数
-</code></pre>
-<h4>题解</h4>
-<p>就是最长上升子序列（LIS），中间再加一点优化（可以二分，也可以直接用 <code>lower_bound()</code> 函数）</p>
-<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;x)</span> </span>&#123;</span><br><span class="line">  x = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">char</span> ch = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">bool</span> sign = <span class="literal">false</span>;</span><br><span class="line">  <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123; sign |= (ch == <span class="string">'-'</span>); ch = getchar(); &#125;</span><br><span class="line">  <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch)) &#123; x = x * <span class="number">10</span> + (ch ^ <span class="number">48</span>); ch = getchar(); &#125;</span><br><span class="line">  x = sign ? -x : x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">int</span> stk[<span class="number">100</span>], top = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">if</span> (x == <span class="number">0</span>) &#123; <span class="built_in">putchar</span>(<span class="string">'0'</span>); <span class="keyword">return</span>; &#125;</span><br><span class="line">  <span class="keyword">if</span> (x &lt; <span class="number">0</span>) &#123; <span class="built_in">putchar</span>(<span class="string">'-'</span>); x = -x; &#125;</span><br><span class="line">  <span class="keyword">while</span> (x) &#123; stk[++top] = x % <span class="number">10</span>; x /= <span class="number">10</span>; &#125;</span><br><span class="line">  <span class="keyword">while</span> (top) <span class="built_in">putchar</span>(stk[top--] + <span class="string">'0'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 200010</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, a[maxn], f[maxn], ans;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  freopen(<span class="string">"cmi.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">  freopen(<span class="string">"cmi.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line">  read(n); read(a[<span class="number">1</span>]);</span><br><span class="line">  ans = <span class="number">1</span>;</span><br><span class="line">  f[<span class="number">1</span>] = a[<span class="number">1</span>];</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">    read(a[i]);</span><br><span class="line">    <span class="keyword">if</span> (a[i] &gt; f[ans]) &#123;</span><br><span class="line">      ans++;</span><br><span class="line">      f[ans] = a[i];</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="keyword">int</span> pos = lower_bound(f + <span class="number">1</span>, f + ans + <span class="number">1</span>, a[i]) - f;</span><br><span class="line">      f[pos] = a[i];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  write(n - ans);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3>总结</h3>
-<p>今天的题目做完后真的是感觉出卷老师出反了，以后还是得先浏览一遍题目 orz。</p>
-<hr>
-<p>&lt;script async src=&quot;//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js&quot;&gt;&lt;/script&gt;
-&lt;ins class=&quot;adsbygoogle&quot;
-style=&quot;display:block; text-align:center;&quot;
-data-ad-layout=&quot;in-article&quot;
-data-ad-format=&quot;fluid&quot;
-data-ad-client=&quot;ca-pub-7465666912424994&quot;
-data-ad-slot=&quot;3198608984&quot;&gt;&lt;/ins&gt;
-&lt;script&gt;
-(adsbygoogle = window.adsbygoogle || []).push({});
-&lt;/script&gt;</p>
-<p>&lt;br/&gt;</p>
-
-          
+          <div class="note success"><p><strong>在这里先祝祖国母亲生日快乐，以及成为世界上存在时间最长的社会主义国家！😊😊</strong>。</p></div>
+<div class="note default"><p>好了，说今天这套题目，隶属于国庆七连测😭，第一道题最恶心，第二题最难想，第三道题最简单。</p></div>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/01/NOIP-模拟-一次出卷老师把题目出反的模拟赛/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1061,7 +879,7 @@ data-ad-slot=&quot;3198608984&quot;&gt;&lt;/ins&gt;
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-26 15:39:42" itemprop="dateModified" datetime="2018-11-26T15:39:42+08:00">2018-11-26</time>
+                <time title="修改时间：2018-11-26 16:03:58" itemprop="dateModified" datetime="2018-11-26T16:03:58+08:00">2018-11-26</time>
               
             
           </span>
@@ -1123,94 +941,14 @@ data-ad-slot=&quot;3198608984&quot;&gt;&lt;/ins&gt;
 
       
         
-          
-            <p><div class="note default"><p>排序算法在初赛中似乎每次都会考到，而且考到的不外乎它们的时间复杂度和空间复杂度，所以此处进行一次整理。</p></div></p>
-<p>&lt;!-- more --&gt;</p>
-<h3>时间复杂度</h3>
-<table>
-<thead>
-<tr>
-<th>算法名称</th>
-<th>平均时间复杂度</th>
-<th>最好时间复杂度</th>
-<th>最坏时间复杂度</th>
-<th>稳定性</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>桶排序</td>
-<td>$\mathcal{O}(n)$</td>
-<td>$\mathcal{O}(n)$</td>
-<td>$\mathcal{O}(n)$</td>
-<td>不稳定</td>
-</tr>
-<tr>
-<td>基数排序</td>
-<td>$\mathcal{O}(n)$</td>
-<td>$\mathcal{O}(n)$</td>
-<td>$\mathcal{O}(n)$</td>
-<td>稳定</td>
-</tr>
-<tr>
-<td>归并排序</td>
-<td>$\mathcal{O}(n\log n)$</td>
-<td>$\mathcal{O}(n\log n)$</td>
-<td>$\mathcal{O}(n\log n)$</td>
-<td>稳定</td>
-</tr>
-<tr>
-<td>快速排序</td>
-<td>$\mathcal{O}(n\log n)$</td>
-<td>$\mathcal{O}(n\log n)$</td>
-<td>$\mathcal{O}(n^2)$</td>
-<td>不稳定</td>
-</tr>
-<tr>
-<td>选择排序</td>
-<td>$\mathcal{O}(n^2)$</td>
-<td>$\mathcal{O}(n)$</td>
-<td>$\mathcal{O}(n)$</td>
-<td>不稳定</td>
-</tr>
-<tr>
-<td>插入排序</td>
-<td>$\mathcal{O}(n^2)$</td>
-<td>$\mathcal{O}(n)$</td>
-<td>$\mathcal{O}(n^2)$</td>
-<td>稳定</td>
-</tr>
-<tr>
-<td>希尔排序</td>
-<td><a href="https://zh.wikipedia.org/wiki/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">见维基百科</a></td>
-<td><a href="https://zh.wikipedia.org/wiki/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">见维基百科</a></td>
-<td><a href="https://zh.wikipedia.org/wiki/%E5%B8%8C%E5%B0%94%E6%8E%92%E5%BA%8F" target="_blank" rel="noopener">见维基百科</a></td>
-<td>不稳定</td>
-</tr>
-<tr>
-<td>堆排序</td>
-<td>$\mathcal{O}(n\log n)$</td>
-<td>$\mathcal{O}(n\log n)$</td>
-<td>$\mathcal{O}(n\log n)$</td>
-<td>不稳定</td>
-</tr>
-<tr>
-<td>冒泡排序</td>
-<td>$\mathcal{O}(n^2)$</td>
-<td>$\mathcal{O}(n^2)$</td>
-<td>$\mathcal{O}(n^2)$</td>
-<td>稳定</td>
-</tr>
-</tbody>
-</table>
-<p><strong>注：《算法》的作者曾经说过，所有的不稳定算法都可以用额外空间变成稳定的，所以这里的整理只能用于 NOIP 初赛</strong></p>
-<h3>空间复杂度</h3>
-<p>冒泡排序,简单选择排序,堆排序,直接插入排序,希尔排序的空间复杂度为 $\mathcal{O}(1)$，因为需要一个临时变量来交换元素位置,(另外遍历序列时自然少不了用一个变量来做索引)
-快速排序空间复杂度为 $\mathcal{O}(\log n)$ （因为递归调用了），归并排序空间复杂是 $\mathcal{O}(n)$，需要一个大小为n的临时数组.
-基数排序的空间复杂是 $\mathcal{O}(n)$，桶排序的空间复杂度不确定。</p>
-<hr>
-
-          
+          <div class="note default"><p>排序算法在初赛中似乎每次都会考到，而且考到的不外乎它们的时间复杂度和空间复杂度，所以此处进行一次整理。</p></div>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/28/NOIP-初赛-各类排序算法时间-空间复杂度整理/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1330,7 +1068,7 @@ data-ad-slot=&quot;3198608984&quot;&gt;&lt;/ins&gt;
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-26 15:39:42" itemprop="dateModified" datetime="2018-11-26T15:39:42+08:00">2018-11-26</time>
+                <time title="修改时间：2018-11-26 16:03:58" itemprop="dateModified" datetime="2018-11-26T16:03:58+08:00">2018-11-26</time>
               
             
           </span>
@@ -1394,7 +1132,7 @@ data-ad-slot=&quot;3198608984&quot;&gt;&lt;/ins&gt;
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="/2018/09/25/HEXO-hexo-中加入-AdSense-广告服务的方法/photo1.png" rel="gallery_cjoy05ye70005mcmjqtqobuxf"
+                 href="/2018/09/25/HEXO-hexo-中加入-AdSense-广告服务的方法/photo1.png" rel="gallery_cjoy10slc0006rcmjw36ufe5z"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/2018/09/25/HEXO-hexo-中加入-AdSense-广告服务的方法/photo1.png" itemprop="contentUrl"/>
               </a>
@@ -1408,30 +1146,14 @@ data-ad-slot=&quot;3198608984&quot;&gt;&lt;/ins&gt;
 
       
         
-          
-            <p><div class="note default"><p>就在昨天！我的 AdSense 申请终于过了！这里来总结一下 hexo 上 AdSense 通过的经验。</p></div></p>
-<p>&lt;!-- more --&gt;</p>
-<h3>注册 AdSense 账号</h3>
-<p>这个不多说了，直接去<a href="https://www.google.com/adsense/start/#/?modal_active=none" target="_blank" rel="noopener">这里</a></p>
-<p>&lt;div&gt; &lt;img style=&quot;align: center&quot; src=&quot;pic1.jpg&quot; /&gt; &lt;/div&gt;</p>
-<h3>更改自己 hexo 主题文件</h3>
-<p>此处以 NexT 主题为例（注：可能不是最简方式，自行斟酌）：</p>
-<ol>
-<li>新建 <code>theme/next/layout/_custom/google_adsense.swig</code>，将 AdSense 上的代码粘贴进去</li>
-<li>在 <code>theme/next/layout/_custom/head.swig</code> 中也粘贴一份</li>
-<li>如果在每篇博客里也想看到广告的话，在 <code>theme/next/layout/post.swig</code> 里中在希望看到的地方加上:</li>
-</ol>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% include &apos;_custom/google_adsense.swig&apos; %&#125;</span><br></pre></td></tr></table></figure></p>
-<p>例如：在 <code>&lt;div id=&quot;posts&quot; class=&quot;posts-expand&quot;&gt; &lt;/div&gt;</code> 中间插入，总代码如下：</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;% block content %&#125;</span><br><span class="line">  &lt;div id=&quot;posts&quot; class=&quot;posts-expand&quot;&gt;</span><br><span class="line">    &#123;&#123; post_template.render(page) &#125;&#125;</span><br><span class="line">    &#123;% include &apos;_custom/google_adsense.swig&apos; %&#125;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&#123;% endblock %&#125;</span><br></pre></td></tr></table></figure></p>
-<p>此时如果 <code>hexo server</code> 的话是看不到广告的，因为 AdSense 的显示是 Google 控制的。</p>
-<h3>疯狂更新博客</h3>
-<p>你需要使你的网站内容充足以通过 AdSense 的审核（我写了 21 篇左右才通过，其实算上所有网页其实还不止），如果被拒绝了，就再重新申请一次，说不定就过了🤣。</p>
-<h3>总结</h3>
-<p>使用 AdSense 来赚外块，美滋滋~~</p>
-<hr>
-
-          
+          <div class="note default"><p>就在昨天！我的 AdSense 申请终于过了！这里来总结一下 hexo 上 AdSense 通过的经验。</p></div>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/25/HEXO-hexo-中加入-AdSense-广告服务的方法/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1551,7 +1273,7 @@ data-ad-slot=&quot;3198608984&quot;&gt;&lt;/ins&gt;
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-26 15:39:42" itemprop="dateModified" datetime="2018-11-26T15:39:42+08:00">2018-11-26</time>
+                <time title="修改时间：2018-11-26 16:03:58" itemprop="dateModified" datetime="2018-11-26T16:03:58+08:00">2018-11-26</time>
               
             
           </span>
@@ -1615,7 +1337,7 @@ data-ad-slot=&quot;3198608984&quot;&gt;&lt;/ins&gt;
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="/2018/09/22/C-奇技淫巧-终极快速读入-输出/photo1.png" rel="gallery_cjoy05ye70001mcmj4benbulk"
+                 href="/2018/09/22/C-奇技淫巧-终极快速读入-输出/photo1.png" rel="gallery_cjoy10slc0002rcmj83vey9s3"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/2018/09/22/C-奇技淫巧-终极快速读入-输出/photo1.png" itemprop="contentUrl"/>
               </a>
@@ -1629,33 +1351,14 @@ data-ad-slot=&quot;3198608984&quot;&gt;&lt;/ins&gt;
 
       
         
-          
-            <p><div class="note default"><p>上次看到一个手写 <code>getchar()</code> 的大神，发现自己的快速读入还是不够骚，于是去查了下网络，发现了更加厉害的快读方式。顺便把自己的快输用非递归优化了一下。</p></div></p>
-<p>&lt;!-- more --&gt;</p>
-<h3>手写 <code>getchar()</code></h3>
-<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">char</span> <span class="title">nextchar</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">char</span> buf[<span class="number">100000</span>], *p1 = buf, *p2 = buf;</span><br><span class="line">  <span class="keyword">return</span> (p1 == p2) &amp;&amp;</span><br><span class="line">    (p2 = (p1 = buf) + fread(buf, <span class="number">1</span>, <span class="number">100000</span>, <span class="built_in">stdin</span>), p1 == p2) ? EOF : *p1++;</span><br><span class="line">&#125; <span class="comment">// 使用 fread() 来提高速度</span></span><br></pre></td></tr></table></figure></p>
-<h3>快读使用 <code>nextchar()</code></h3>
-<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span>&amp; x)</span> </span>&#123;</span><br><span class="line">  x = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">char</span> ch = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">bool</span> sign = <span class="literal">false</span>;</span><br><span class="line">  <span class="comment">// 使用 static 节省空间</span></span><br><span class="line">  <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123; sign |= (ch == <span class="string">'-'</span>); ch = nextchar(); &#125;</span><br><span class="line">  <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch)) &#123; x = x * <span class="number">10</span> + (ch ^ <span class="number">48</span>); ch = nextchar(); &#125;</span><br><span class="line">  <span class="comment">// 这里 x * 10 和 (x &lt;&lt; 1) + (x &lt;&lt; 3) 编译后的代码是一样的</span></span><br><span class="line">  <span class="comment">// 所以不需要用位运算了</span></span><br><span class="line">  x = sign ? -x : x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3>非递归 <code>write()</code></h3>
-<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">int</span> stk[<span class="number">100</span>], top = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">if</span> (x == <span class="number">0</span>) &#123; <span class="built_in">putchar</span>(<span class="string">'0'</span>); <span class="keyword">return</span>; &#125;</span><br><span class="line">  <span class="keyword">if</span> (x &lt; <span class="number">0</span>) &#123; x = -x; <span class="built_in">putchar</span>(<span class="string">'-'</span>); &#125;</span><br><span class="line">  <span class="keyword">while</span> (x) &#123; stk[++top] = x % <span class="number">10</span>; x /= <span class="number">10</span>; &#125;</span><br><span class="line">  <span class="keyword">while</span> (top) &#123; <span class="built_in">putchar</span>(stk[top--] + <span class="string">'0'</span>); &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3>速度测试</h3>
-<h4>数据生成</h4>
-<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="function">ofstream <span class="title">test</span><span class="params">(<span class="string">"testdata.txt"</span>)</span></span>;</span><br><span class="line">  srand((<span class="keyword">unsigned</span>)time(<span class="literal">NULL</span>) * <span class="number">19260817</span>); <span class="comment">// +1s</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5000000</span>; ++i)</span><br><span class="line">    test &lt;&lt; rand() &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125; <span class="comment">// 祖传代码</span></span><br></pre></td></tr></table></figure></p>
-<h4>老版本测试</h4>
-<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;chrono&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>::chrono;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span>&amp; x)</span> </span>&#123;</span><br><span class="line">  x = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">char</span> ch = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">bool</span> sign = <span class="literal">false</span>;</span><br><span class="line">  <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123; sign |= (ch == <span class="string">'-'</span>); ch = getchar(); &#125;</span><br><span class="line">  <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch)) &#123; x = x * <span class="number">10</span> + (ch ^ <span class="number">48</span>); ch = getchar(); &#125;</span><br><span class="line">  x = sign ? -x : x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (x &lt; <span class="number">0</span>) &#123; <span class="built_in">putchar</span>(<span class="string">'-'</span>); x = -x; &#125;</span><br><span class="line">  <span class="keyword">if</span> (x &gt; <span class="number">9</span>) write(x / <span class="number">10</span>);</span><br><span class="line">  <span class="built_in">putchar</span>(x % <span class="number">10</span> + <span class="string">'0'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  freopen(<span class="string">"testdata.txt"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">  freopen(<span class="string">"output.txt"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line">  <span class="keyword">int</span> <span class="built_in">array</span>[<span class="number">1000000</span>];</span><br><span class="line">  <span class="keyword">auto</span> start = system_clock::now();</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">1000000</span>; ++i) read(<span class="built_in">array</span>[i - <span class="number">1</span>]);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">1000000</span>; ++i) write(<span class="built_in">array</span>[i - <span class="number">1</span>]), <span class="built_in">putchar</span>(<span class="string">' '</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">auto</span> end = system_clock::now();</span><br><span class="line">  <span class="keyword">auto</span> duration = duration_cast&lt;microseconds&gt;(end - start);</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"cost: "</span></span><br><span class="line">       &lt;&lt; <span class="keyword">double</span>(duration.count()) *</span><br><span class="line">          microseconds::period::num / microseconds::period::den</span><br><span class="line">       &lt;&lt; <span class="string">" seconds"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<pre><code>cost: 0.406813 seconds
-</code></pre>
-<h4>新版本测试</h4>
-<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;chrono&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>::chrono;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">char</span> <span class="title">nextchar</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">char</span> buf[<span class="number">100000</span>], *p1 = buf, *p2 = buf;</span><br><span class="line">  <span class="keyword">return</span> (p1 == p2) &amp;&amp;</span><br><span class="line">    (p2 = (p1 = buf) + fread(buf, <span class="number">1</span>, <span class="number">100000</span>, <span class="built_in">stdin</span>), p1 == p2) ? EOF : *p1++;</span><br><span class="line">&#125; <span class="comment">// 使用 fread() 来提高速度</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span>&amp; x)</span> </span>&#123;</span><br><span class="line">  x = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">char</span> ch = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">bool</span> sign = <span class="literal">false</span>;</span><br><span class="line">  <span class="comment">// 使用 static 节省空间</span></span><br><span class="line">  <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123; sign |= (ch == <span class="string">'-'</span>); ch = nextchar(); &#125;</span><br><span class="line">  <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch)) &#123; x = x * <span class="number">10</span> + (ch ^ <span class="number">48</span>); ch = nextchar(); &#125;</span><br><span class="line">  <span class="comment">// 这里 x * 10 和 (x &lt;&lt; 1) + (x &lt;&lt; 3) 编译后的代码是一样的</span></span><br><span class="line">  <span class="comment">// 所以不需要用位运算了</span></span><br><span class="line">  x = sign ? -x : x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="keyword">int</span> stk[<span class="number">100</span>], top = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">if</span> (x == <span class="number">0</span>) &#123; <span class="built_in">putchar</span>(<span class="string">'0'</span>); <span class="keyword">return</span>; &#125;</span><br><span class="line">  <span class="keyword">if</span> (x &lt; <span class="number">0</span>) &#123; x = -x; <span class="built_in">putchar</span>(<span class="string">'-'</span>); &#125;</span><br><span class="line">  <span class="keyword">while</span> (x) &#123; stk[++top] = x % <span class="number">10</span>; x /= <span class="number">10</span>; &#125;</span><br><span class="line">  <span class="keyword">while</span> (top) &#123; <span class="built_in">putchar</span>(stk[top--] + <span class="string">'0'</span>); &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  freopen(<span class="string">"testdata.txt"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">  freopen(<span class="string">"output.txt"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line">  <span class="keyword">int</span> <span class="built_in">array</span>[<span class="number">1000000</span>];</span><br><span class="line">  <span class="keyword">auto</span> start = system_clock::now();</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">1000000</span>; ++i) read(<span class="built_in">array</span>[i - <span class="number">1</span>]);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">1000000</span>; ++i) write(<span class="built_in">array</span>[i - <span class="number">1</span>]), <span class="built_in">putchar</span>(<span class="string">' '</span>);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">auto</span> end = system_clock::now();</span><br><span class="line">  <span class="keyword">auto</span> duration = duration_cast&lt;microseconds&gt;(end - start);</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"cost: "</span></span><br><span class="line">       &lt;&lt; <span class="keyword">double</span>(duration.count()) *</span><br><span class="line">          microseconds::period::num / microseconds::period::den</span><br><span class="line">       &lt;&lt; <span class="string">" seconds"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<pre><code>cost: 0.275003 seconds
-</code></pre>
-<h3>总结</h3>
-<p>新的快读几乎是快了一倍，不过两者都已经是神仙打架了，像 <code>scanf</code> 这种都已经被踢飞了，不过，快读虽好，使用还是要谨慎，速度的提高主要还是靠算法的优化（除了某些高性能的题）。</p>
-<h3>补充</h3>
-<p>这个 <code>nextchar()</code> 函数只能在读入文件时使用，在控制台输入时会出错，因为 <code>fread()</code> 是专门针对文件的。</p>
-<hr>
-
-          
+          <div class="note default"><p>上次看到一个手写 <code>getchar()</code> 的大神，发现自己的快速读入还是不够骚，于是去查了下网络，发现了更加厉害的快读方式。顺便把自己的快输用非递归优化了一下。</p></div>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/22/C-奇技淫巧-终极快速读入-输出/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1775,7 +1478,7 @@ data-ad-slot=&quot;3198608984&quot;&gt;&lt;/ins&gt;
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-26 15:39:42" itemprop="dateModified" datetime="2018-11-26T15:39:42+08:00">2018-11-26</time>
+                <time title="修改时间：2018-11-26 16:03:58" itemprop="dateModified" datetime="2018-11-26T16:03:58+08:00">2018-11-26</time>
               
             
           </span>
@@ -1839,7 +1542,7 @@ data-ad-slot=&quot;3198608984&quot;&gt;&lt;/ins&gt;
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="/2018/09/20/NOIP-初赛-总结一波读程序写结果题目/photo1.jpg" rel="gallery_cjoy05yen000jmcmjtub4p3yi"
+                 href="/2018/09/20/NOIP-初赛-总结一波读程序写结果题目/photo1.jpg" rel="gallery_cjoy10sm8000nrcmjjo43hbf5"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/2018/09/20/NOIP-初赛-总结一波读程序写结果题目/photo1.jpg" itemprop="contentUrl"/>
               </a>
@@ -1853,21 +1556,14 @@ data-ad-slot=&quot;3198608984&quot;&gt;&lt;/ins&gt;
 
       
         
-          
-            <p><div class="note default"><p>为了提高初赛分数，痛下决心总结一波<strong>读程序写结果</strong>的题。</p><p>ps: 一次更新不完，会持续更新</p></div></p>
-<p>&lt;!-- more --&gt;</p>
-<h3>第二十一届 / NOIP 2015</h3>
-<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(<span class="keyword">char</span> *a, <span class="keyword">char</span> *b)</span> </span>&#123;</span><br><span class="line">  a = b;</span><br><span class="line">  (*a)++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">char</span> c1, c2, *p1, *p2;</span><br><span class="line">  c1 = <span class="string">'A'</span>;</span><br><span class="line">  c2 = <span class="string">'a'</span>;</span><br><span class="line">  p1 = &amp;c1;</span><br><span class="line">  p2 = &amp;c2;</span><br><span class="line">  fun(p1, p2);</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; c1 &lt;&lt; c2 &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输出：Ab</span></span><br></pre></td></tr></table></figure></p>
-<p>这道题中先是将 <code>p1</code> 赋值为 <code>c1</code> 的地址，将 <code>p2</code> 赋值为 <code>c2</code> 的地址，然后将 <code>p1</code> 赋值为 <code>p2</code> 的值，即现在 <code>p1</code> 所表示的是 <code>c2</code> 的地址，所以最后只有 <code>c2</code> 会发生改变，这道题一开始没看出来，后来仔细想了想才反应过来，不失为一道坑题。</p>
-<p>&lt;hr /&gt;</p>
-<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> fromPos, <span class="keyword">int</span> toPos)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> t, tot;</span><br><span class="line">  <span class="keyword">if</span> (n == <span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (t = <span class="number">1</span>; t &lt;= <span class="number">3</span>; t++)</span><br><span class="line">    <span class="keyword">if</span> (t != fromPos &amp;&amp; t != toPos)</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">  tot = <span class="number">0</span>;</span><br><span class="line">  tot += fun(n - <span class="number">1</span>, fromPos, t);</span><br><span class="line">  tot++;</span><br><span class="line">  tot += fun(n - <span class="number">1</span>, t, toPos);</span><br><span class="line">  <span class="keyword">return</span> tot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> n;</span><br><span class="line">  <span class="built_in">cin</span> &gt;&gt; n;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; fun(n, <span class="number">1</span>, <span class="number">3</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 输入：5</span></span><br><span class="line"><span class="comment">// 输出：31</span></span><br></pre></td></tr></table></figure></p>
-<p>这道题其实纯属糊弄人，可以发现 <code>fun</code> 这个函数中不管 <code>fromPos</code> 和 <code>toPos</code> 为何值，总能继续下去，所以简化后的函数如下：</p>
-<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">return</span> fun(n - <span class="number">1</span>) * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>好了，这样子的递归函数手推就行了。</p>
-<h3>未完待续......</h3>
-<hr>
-
-          
+          <div class="note default"><p>为了提高初赛分数，痛下决心总结一波<strong>读程序写结果</strong>的题。</p><p>ps: 一次更新不完，会持续更新</p></div>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/20/NOIP-初赛-总结一波读程序写结果题目/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1987,7 +1683,7 @@ data-ad-slot=&quot;3198608984&quot;&gt;&lt;/ins&gt;
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-26 15:39:42" itemprop="dateModified" datetime="2018-11-26T15:39:42+08:00">2018-11-26</time>
+                <time title="修改时间：2018-11-26 16:03:58" itemprop="dateModified" datetime="2018-11-26T16:03:58+08:00">2018-11-26</time>
               
             
           </span>
@@ -2049,18 +1745,14 @@ data-ad-slot=&quot;3198608984&quot;&gt;&lt;/ins&gt;
 
       
         
-          
-            <p><div class="note default"><p>初赛临近，每天一张初赛卷让我发现了很多基础知识上的坑，于是决定总结一下。</p></div></p>
-<p>&lt;!-- more --&gt;</p>
-<h3>信仰坑</h3>
-<p><div class="note info"><p><strong>NOI（1984 至今）:</strong> 已组织 33 次活动，各省选拔五名选手，至少一名为女选手。<strong>NOIP（1995 至今）:</strong> 已组织 22 次比赛，全国同一时间，不同地点。<strong>IOI（1989 至今）:</strong> 已组织 19 次比赛，IOI 2000 由中国主办，CCF 承办。<strong>APIO（2007 创建）:</strong> APIO 中国赛区由中国计算机学会组织。</p></div></p>
-<p><div class="note warning"><p><strong>NOIP 2022 年开始将停止支持 Pascal</strong></p></div></p>
-<h3>网络协议坑</h3>
-<p><div class="note info"><p><strong>ARP (Address Resolution Protocol) 地址解析协议</strong><strong>DHCP (Dynamic Host Configuration Protocol) 动态主机配置协议</strong><strong>FTP (File Transfer Protocol) 文件传输协议</strong><strong>HTTP (Hypertext Transfer Protocol) 超文本传输协议</strong><strong>HTTPS (Secure Hypertext Transfer Protocol) 安全超文本传输协议</strong><strong>IMAP4 (Internet Mail Access Protocol Version 4) Internet 邮件访问协议——版本4</strong><strong>IPv6 (Internet Protocol Version 6) Internet 协议——版本6</strong><strong>POP3 (Post Office Protocol version 3) 邮局协议——版本3</strong><strong>SMTP (Simple Mail Transfer Protocol) 简单邮件传输协议</strong><strong>TFTP (Trivial File Transfer Protocol) 小型文件传输协议</strong></p></div></p>
-<p><div class="note warning"><p><strong>WWW 是 URL，不是网络协议</strong></p></div></p>
-<hr>
-
-          
+          <div class="note default"><p>初赛临近，每天一张初赛卷让我发现了很多基础知识上的坑，于是决定总结一下。</p></div>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/16/NOIP-初赛-总结各种坑人基础知识/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2180,7 +1872,7 @@ data-ad-slot=&quot;3198608984&quot;&gt;&lt;/ins&gt;
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-26 15:39:42" itemprop="dateModified" datetime="2018-11-26T15:39:42+08:00">2018-11-26</time>
+                <time title="修改时间：2018-11-26 16:03:58" itemprop="dateModified" datetime="2018-11-26T16:03:58+08:00">2018-11-26</time>
               
             
           </span>
@@ -2242,46 +1934,14 @@ data-ad-slot=&quot;3198608984&quot;&gt;&lt;/ins&gt;
 
       
         
-          
-            <p><div class="note default"><p>昨天的一场模拟，第二题本来应该是一道很水的题，然而最后打崩了，归根结底还是自己不够仔细，题目审错，最后导致方法用错。</p></div></p>
-<p>&lt;!-- more --&gt;</p>
-<h3>题目描述</h3>
-<p><strong>[问题描述]</strong></p>
-<pre><code>神即将带领一些人去他们的孤寂之境，由于这个世界的不稳定，地点之间的有向道路会不
-定期地毁坏，出于工作准备，神想知道在某些道路毁坏之后某两点之间的最短路。
-就是给定一个有向图，现有两个操作，操作1 是删除一条边（一条边可重复删除），操作2
-是询问两个点之间的最短路。
-</code></pre>
-<p><strong>[输入格式]</strong></p>
-<pre><code>输入文件名为journey.in。
-第1 行两个正整数n, m，分别表示图的点数和操作数。
-第2 行至第n + 1 行每行n 个正整数，为图的邻接矩阵，第i 行第j 列的数表示点i 和点
-j 间距离，保证对角线为0。
-接下来m 行每行三个正整数c, x, y； c 表示操作种类，为1 或2，当c = 1 时表示删除x
-与y 相连的边，当 c = 2 时表示询问 x 到 y 的最短路，若不可达则输出 -1。
-</code></pre>
-<p><strong>[输出格式]</strong></p>
-<pre><code>输出文件名为journey.out
-输出若干行，每个 2 操作对应一行，答案为询问中 x 到 y 的最短路或 -1
-</code></pre>
-<p><strong>[样例]</strong></p>
-<pre><code>见下发/girls/girls.in(out)。
-</code></pre>
-<p><strong>[数据规模与约定]</strong></p>
-<pre><code>对于30% 的数据：n, m &lt;= 10
-对于50% 的数据：n, m &lt;= 50
-对于100% 的数据：n &lt;= 200; m &lt;= 100000, 操作1 不超过200 次，边权不超过10000
-</code></pre>
-<h3>题解</h3>
-<p>一碰到查找的题，那肯定就是两条路了，离线和在线两种思路，乍一看这 $n$ 的数据范围，并且题目中还说输入邻接矩阵，那求最短路肯定是 Floyd 了，再一想，如果是在线查询那只有朴素算法了，查一次求一次全源最短路，然后这种方法就 <code>TLE</code> 了，代码：</p>
-<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 210</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x3f3f3f3f</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;x)</span> </span>&#123;</span><br><span class="line">  x = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">bool</span> sign = <span class="literal">false</span>;</span><br><span class="line">  <span class="keyword">char</span> ch = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123;</span><br><span class="line">    sign |= (ch == <span class="string">'-'</span>);</span><br><span class="line">    ch = getchar();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch)) &#123;</span><br><span class="line">    x = (x &lt;&lt; <span class="number">3</span>) + (x &lt;&lt; <span class="number">1</span>) + (ch ^ <span class="number">48</span>);</span><br><span class="line">    ch = getchar();</span><br><span class="line">  &#125;</span><br><span class="line">  x = sign ? -x : x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (x &lt; <span class="number">0</span>) &#123; <span class="built_in">putchar</span>(<span class="string">'-'</span>); x = -x; &#125;</span><br><span class="line">  <span class="keyword">if</span> (x &gt; <span class="number">9</span>) write(x / <span class="number">10</span>);</span><br><span class="line">  <span class="built_in">putchar</span>(x % <span class="number">10</span> + <span class="string">'0'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">writeln</span><span class="params">(<span class="keyword">int</span> &amp;x)</span> </span>&#123; write(x); <span class="built_in">puts</span>(<span class="string">""</span>); &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;a, <span class="keyword">int</span> &amp;b)</span> </span>&#123; read(a); read(b); &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;a, <span class="keyword">int</span> &amp;b, <span class="keyword">int</span> &amp;c)</span> </span>&#123; read(a); read(b); read(c); &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> g[maxn][maxn], d[maxn][maxn], n, m, c, x, y;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Floyd</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= n; ++k)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; ++j)</span><br><span class="line">        g[i][j] = min(g[i][j], g[i][k] + g[k][j]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  freopen(<span class="string">"journey.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">  freopen(<span class="string">"journey.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line">  <span class="built_in">memset</span>(d, INF, <span class="keyword">sizeof</span>(d));</span><br><span class="line">  read(n, m);</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; ++j)</span><br><span class="line">      read(g[i][j]);</span><br><span class="line">  <span class="keyword">while</span> (m--) &#123;</span><br><span class="line">    read(c, x, y);</span><br><span class="line">    <span class="keyword">switch</span> (c) &#123;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">1</span>: &#123; g[x][y] = INF; <span class="keyword">break</span>; &#125;</span><br><span class="line">      <span class="keyword">case</span> <span class="number">2</span>: &#123;</span><br><span class="line">        <span class="built_in">memcpy</span>(d, g, <span class="keyword">sizeof</span>(g));</span><br><span class="line">        Floyd();</span><br><span class="line">        <span class="keyword">if</span> (g[x][y] == INF) <span class="built_in">puts</span>(<span class="string">"-1"</span>);</span><br><span class="line">        <span class="keyword">else</span> writeln(g[x][y]);</span><br><span class="line">        <span class="built_in">memcpy</span>(g, d, <span class="keyword">sizeof</span>(d));</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>所以正解肯定就是离线操作了，先把该删的边都给删掉，然后从最后一个操作开始处理，遇到操作一就加边，求一次最短路，当然这里不是用 Floyd 而是用一个 $\mathcal{O}(n^2)$ 的方法，附上代码：</p>
-<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxn 210</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> maxm 100010</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">op</span> &#123;</span> <span class="keyword">int</span> c, x, y; &#125;;</span><br><span class="line"><span class="comment">// op 结构体，记录操作</span></span><br><span class="line">op ops[maxm];</span><br><span class="line"><span class="keyword">int</span> g[maxn][maxn], d[maxn][maxn];</span><br><span class="line"><span class="keyword">int</span> w[maxm], ans[maxm];</span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;x)</span> </span>&#123;</span><br><span class="line">  x = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">bool</span> sign = <span class="literal">false</span>;</span><br><span class="line">  <span class="keyword">char</span> ch = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123;</span><br><span class="line">    sign |= (ch == <span class="string">'-'</span>);</span><br><span class="line">    ch = getchar();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch)) &#123;</span><br><span class="line">    x = (x &lt;&lt; <span class="number">3</span>) + (x &lt;&lt; <span class="number">1</span>) + (ch ^ <span class="number">48</span>);</span><br><span class="line">    ch = getchar();</span><br><span class="line">  &#125;</span><br><span class="line">  x = sign ? -x : x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">write</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (x &lt; <span class="number">0</span>) &#123; <span class="built_in">putchar</span>(<span class="string">'-'</span>); x = -x; &#125;</span><br><span class="line">  <span class="keyword">if</span> (x &gt; <span class="number">9</span>) write(x / <span class="number">10</span>);</span><br><span class="line">  <span class="built_in">putchar</span>(x % <span class="number">10</span> + <span class="string">'0'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">writeln</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123; write(x); <span class="built_in">puts</span>(<span class="string">""</span>); &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;a, <span class="keyword">int</span> &amp;b)</span> </span>&#123; read(a); read(b); &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">read</span><span class="params">(<span class="keyword">int</span> &amp;a, <span class="keyword">int</span> &amp;b, <span class="keyword">int</span> &amp;c)</span> </span>&#123; read(a); read(b); read(c); &#125;</span><br><span class="line"><span class="comment">// 快读快写黑科技</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Floyd</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= n; ++k)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; ++j)</span><br><span class="line">        d[i][j] = min(d[i][j], d[i][k] + d[k][j]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// Floyd 对 d[][] 操作求最短路</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  freopen(<span class="string">"journey.in"</span>, <span class="string">"r"</span>, <span class="built_in">stdin</span>);</span><br><span class="line">  freopen(<span class="string">"journey.out"</span>, <span class="string">"w"</span>, <span class="built_in">stdout</span>);</span><br><span class="line">  read(n, m);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; ++j)</span><br><span class="line">      read(g[i][j]);</span><br><span class="line">  <span class="built_in">memcpy</span>(d, g, <span class="keyword">sizeof</span>(g));</span><br><span class="line">  <span class="comment">// 输入，g[][] 用来备份原邻接矩阵</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i) &#123;</span><br><span class="line">    read(ops[i].c, ops[i].x, ops[i].y);</span><br><span class="line">    <span class="keyword">if</span> (ops[i].c == <span class="number">1</span>) &#123;</span><br><span class="line">      w[i] = g[ops[i].x][ops[i].y];</span><br><span class="line">      d[ops[i].x][ops[i].y] = INF;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  Floyd();</span><br><span class="line">  <span class="comment">// 读入所有操作后 Floyd</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> k = m; k &gt; <span class="number">0</span>; --k) &#123;</span><br><span class="line">  <span class="comment">// 注意循环顺序，从最后一个开始</span></span><br><span class="line">    <span class="keyword">int</span> x = ops[k].x;</span><br><span class="line">    <span class="keyword">int</span> y = ops[k].y;</span><br><span class="line">    <span class="keyword">if</span> (ops[k].c == <span class="number">2</span>) ans[++cnt] = (d[x][y] == INF ? <span class="number">-1</span> : d[x][y]);</span><br><span class="line">    <span class="comment">// 题目中要求如果不连通输出 -1，所以这里特判一下</span></span><br><span class="line">    <span class="comment">// 标程中似乎没有这一句，自己搞了一个数据把标程给卡掉了，所以还是要加的</span></span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">// 求一次最短路，只要把 d[x][y] 加进去再比较一下就可以了</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; ++j) &#123;</span><br><span class="line">          <span class="keyword">int</span> tmp = d[i][x] + d[y][j] + w[k];</span><br><span class="line">          <span class="keyword">if</span> (tmp &lt; d[i][j]) d[i][j] = tmp;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 最后输出要注意顺序</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = cnt; i &gt; <span class="number">0</span>; --i) writeln(ans[i]);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3>总结</h3>
-<p>以后看到这种题必须要读清楚题意，然后决定是否离线操作，考试的时候我根本就是智障了，直接在数组 $d$ 上面删边，求最短路，然后 GG。幸好最后醒悟过来打了个暴力。邻阶矩阵就是这点太坑。。。容易让人误操作。。。</p>
-<hr>
-
-          
+          <div class="note default"><p>昨天的一场模拟，第二题本来应该是一道很水的题，然而最后打崩了，归根结底还是自己不够仔细，题目审错，最后导致方法用错。</p></div>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/09/01/NOIP-模拟-记录一道坑题/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2401,7 +2061,7 @@ j 间距离，保证对角线为0。
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-26 15:39:42" itemprop="dateModified" datetime="2018-11-26T15:39:42+08:00">2018-11-26</time>
+                <time title="修改时间：2018-11-26 16:03:58" itemprop="dateModified" datetime="2018-11-26T16:03:58+08:00">2018-11-26</time>
               
             
           </span>
@@ -2465,7 +2125,7 @@ j 间距离，保证对角线为0。
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="/2018/08/30/HEXO-NexT-主题提高博客颜值/photo1.jpg" rel="gallery_cjoy05ye70004mcmjo7l6z3x5"
+                 href="/2018/08/30/HEXO-NexT-主题提高博客颜值/photo1.jpg" rel="gallery_cjoy10sls0008rcmjek9o642m"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/2018/08/30/HEXO-NexT-主题提高博客颜值/photo1.jpg" itemprop="contentUrl"/>
               </a>
@@ -2479,159 +2139,14 @@ j 间距离，保证对角线为0。
 
       
         
-          
-            <p><div class="note default"><p>今天是把博客好好地美化了一把，今天就来讲一下 hexo 博客美化过程中的心得，因为自己使用的是 NexT 主题，所以这里的有些过程仅供别的主题的用户做参考。</p></div></p>
-<p>&lt;!-- more --&gt;</p>
-<h3>文章的模板文件</h3>
-<p>为了每次更新方便，我直接改了 <code>blog/scaffolds/</code> 下的 <code>post.md</code>，每次生成的时候模板就都有了，不需要自己再去弄。这个是我的模板：</p>
-<p><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags:</span><br><span class="line">categories:</span><br><span class="line">mathjax: true</span><br><span class="line">copyright: true</span><br><span class="line">comment: true</span><br><span class="line">photo: </span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&#123;% note default %&#125;</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"></span><br><span class="line">---</span><br></pre></td></tr></table></figure></p>
-<p>说明一下，这个 <code>note</code> 要在 <code>next\_config.yml</code> 中开启才可以写。下面会讲到。<code>photo</code> 是文章开头的图片，就像这篇文章开头那样，注意一定要加绝对路径，比如我这张图片存在文章的文件夹下，那么路径就是 <code>/2018/08/30/HEXO-NexT-主题提高博客颜值/photo1.jpg</code>。<code>copyright</code> 这一项也是要开启之后才行，我的博客的 copyright 是自己重新写的，后面会讲到。最后这个 <code>---</code> 是结束符，和最后的结束语一起用。</p>
-<h3>Markdown 技巧与内置样式</h3>
-<p><a href="https://segmentfault.com/markdown" target="_blank" rel="noopener">基础的语法</a>就不提了，点进来的应该都会了。这里就讲讲一些技巧。</p>
-<h4>编辑器</h4>
-<p>我用的 Markdown 编辑器是 <a href="https://typora.io/" target="_blank" rel="noopener">Typora</a>，有些行内公式的显示可以在设置里打开。这是我用过的最好的 Markdown编辑器</p>
-<h4>分隔线和空行</h4>
-<p><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">这是文字</span><br><span class="line">&lt;hr /&gt;</span><br><span class="line">上面是分隔线</span><br><span class="line">&lt;br /&gt;</span><br><span class="line">上面是空行</span><br></pre></td></tr></table></figure></p>
-<p>效果如下：</p>
-<p>这是文字
-&lt;hr /&gt;
-上面是分隔线
-&lt;br /&gt;
-上面是空行</p>
-<h4>引用</h4>
-<p><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;blockquote&gt;引用内容&lt;/blockquote&gt;</span><br><span class="line">&lt;!-- 如果前后间隙很小，可以像下面这样写 --&gt;</span><br><span class="line">&lt;p&gt;&lt;blockquote&gt;引用内容&lt;/blockquote&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
-<p>效果如下：
-&lt;blockquote&gt;引用内容&lt;/blockquote&gt;
-&lt;p&gt;&lt;blockquote&gt;引用内容&lt;/blockquote&gt;&lt;/p&gt;</p>
-<h4>居中和右对齐</h4>
-<p><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 居中 --&gt;</span><br><span class="line">&lt;center&gt;内容&lt;/center&gt;</span><br><span class="line">&lt;!-- 右对齐 --&gt;</span><br><span class="line">&lt;div style="text-align:right"&gt;内容&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<p>效果如下：
-&lt;center&gt;内容&lt;/center&gt;
-&lt;div style=&quot;text-align:right&quot;&gt;内容&lt;/div&gt;</p>
-<h4>字体大小和颜色</h4>
-<p><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;font color="#187892" size="number"&gt;内容&lt;/font&gt;</span><br><span class="line">&lt;!-- 详细请查看 http://www.w3school.com.cn/tags/tag_font.asp --&gt;</span><br></pre></td></tr></table></figure></p>
-<p>效果如下：
-&lt;font color=&quot;#187892&quot; size=&quot;number&quot;&gt;内容&lt;/font&gt;</p>
-<h4>Todo list</h4>
-<p><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">&lt;li&gt;&lt;i class="fa fa-check-square"&gt;&lt;/i&gt; 已完成&lt;/li&gt;</span><br><span class="line">&lt;li&gt;&lt;i class="fa fa-square"&gt;&lt;/i&gt; 未完成&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure></p>
-<p>效果如下：
-&lt;ul&gt;
-&lt;li&gt;&lt;i class=&quot;fa fa-check-square&quot;&gt;&lt;/i&gt; 已完成&lt;/li&gt;
-&lt;li&gt;&lt;i class=&quot;fa fa-square&quot;&gt;&lt;/i&gt; 未完成&lt;/li&gt;
-&lt;/ul&gt;</p>
-<h4>Note 嵌套 Todo list</h4>
-<p><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 一共有两种写法，效果看下面 --&gt;</span><br><span class="line">&lt;div class="note primary"&gt;</span><br><span class="line">  &lt;i class="fa fa-check-square"&gt;&lt;/i&gt; 已完成</span><br><span class="line">  &lt;i class="fa fa-check-square"&gt;&lt;/i&gt; 已完成</span><br><span class="line">  &lt;i class="fa fa-check-square"&gt;&lt;/i&gt; 已完成</span><br><span class="line">  &lt;i class="fa fa-check-square"&gt;&lt;/i&gt; 已完成</span><br><span class="line">  &lt;i class="fa fa-check-square"&gt;&lt;/i&gt; 已完成</span><br><span class="line">  &lt;i class="fa fa-square"&gt;&lt;/i&gt; 未完成</span><br><span class="line">  &lt;i class="fa fa-square"&gt;&lt;/i&gt; 未完成</span><br><span class="line">  &lt;i class="fa fa-square"&gt;&lt;/i&gt; 未完成</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class="note primary"&gt;</span><br><span class="line">  &lt;p&gt;</span><br><span class="line"><span class="code">    &lt;i class="fa fa-check-square"&gt;&lt;/i&gt; 已完成</span></span><br><span class="line"><span class="code">    &lt;i class="fa fa-check-square"&gt;&lt;/i&gt; 已完成</span></span><br><span class="line"><span class="code">    &lt;i class="fa fa-check-square"&gt;&lt;/i&gt; 已完成</span></span><br><span class="line"><span class="code">    &lt;i class="fa fa-check-square"&gt;&lt;/i&gt; 已完成</span></span><br><span class="line"><span class="code">    &lt;i class="fa fa-check-square"&gt;&lt;/i&gt; 已完成</span></span><br><span class="line"><span class="code">    &lt;i class="fa fa-square"&gt;&lt;/i&gt; 未完成</span></span><br><span class="line"><span class="code">    &lt;i class="fa fa-square"&gt;&lt;/i&gt; 未完成</span></span><br><span class="line"><span class="code">    &lt;i class="fa fa-square"&gt;&lt;/i&gt; 未完成</span></span><br><span class="line">  &lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
-<p>效果如下：
-&lt;div class=&quot;note primary&quot;&gt;
-&lt;i class=&quot;fa fa-check-square&quot;&gt;&lt;/i&gt; 已完成
-&lt;i class=&quot;fa fa-check-square&quot;&gt;&lt;/i&gt; 已完成
-&lt;i class=&quot;fa fa-check-square&quot;&gt;&lt;/i&gt; 已完成
-&lt;i class=&quot;fa fa-check-square&quot;&gt;&lt;/i&gt; 已完成
-&lt;i class=&quot;fa fa-check-square&quot;&gt;&lt;/i&gt; 已完成
-&lt;i class=&quot;fa fa-square&quot;&gt;&lt;/i&gt; 未完成
-&lt;i class=&quot;fa fa-square&quot;&gt;&lt;/i&gt; 未完成
-&lt;i class=&quot;fa fa-square&quot;&gt;&lt;/i&gt; 未完成
-&lt;/div&gt;
-&lt;div class=&quot;note primary&quot;&gt;
-&lt;p&gt;
-&lt;i class=&quot;fa fa-check-square&quot;&gt;&lt;/i&gt; 已完成
-&lt;i class=&quot;fa fa-check-square&quot;&gt;&lt;/i&gt; 已完成
-&lt;i class=&quot;fa fa-check-square&quot;&gt;&lt;/i&gt; 已完成
-&lt;i class=&quot;fa fa-check-square&quot;&gt;&lt;/i&gt; 已完成
-&lt;i class=&quot;fa fa-check-square&quot;&gt;&lt;/i&gt; 已完成
-&lt;i class=&quot;fa fa-square&quot;&gt;&lt;/i&gt; 未完成
-&lt;i class=&quot;fa fa-square&quot;&gt;&lt;/i&gt; 未完成
-&lt;i class=&quot;fa fa-square&quot;&gt;&lt;/i&gt; 未完成
-&lt;/p&gt;
-&lt;/div&gt;</p>
-<p>这两个写法熟悉 HTML 的同学应该是明白的，这里<s>因为我太菜了</s>就不讲了。主要说一下 <code>&lt;i class=&quot;fa fa-square&quot;&gt;&lt;/i&gt;</code> 是从 <a href="https://fontawesome.com/" target="_blank" rel="noopener">Font Awesome</a> 上获取图标的方法，不过有些图标似乎是不能加载的，我也不知道为什么。</p>
-<h4>Font Awesome</h4>
-<p>Font Awesome 更多的使用可以看<a href="https://fontawesome.com/how-to-use/on-the-web/setup/getting-started?using=web-fonts-with-css" target="_blank" rel="noopener">官网示例</a>，这里讲一个放大图标的方法</p>
-<p><figure class="highlight md"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;i class="fa fa-download"&gt;&lt;/i&gt; 普通</span><br><span class="line">&lt;i class="fa fa-download fa-lg"&gt;&lt;/i&gt; 变大 33%</span><br><span class="line">&lt;i class="fa fa-download fa-2x"&gt;&lt;/i&gt; 两倍大</span><br></pre></td></tr></table></figure></p>
-<p>效果如下：
-&lt;i class=&quot;fa fa-download&quot;&gt;&lt;/i&gt; 普通
-&lt;i class=&quot;fa fa-download fa-lg&quot;&gt;&lt;/i&gt; 变大 33%
-&lt;i class=&quot;fa fa-download fa-2x&quot;&gt;&lt;/i&gt; 两倍大</p>
-<h4>代码高亮</h4>
-<p>主题自带样式 代码块高亮
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">```[language] [title] [url] [link-text]</span><br><span class="line">`代码`</span><br></pre></td></tr></table></figure></p>
-<p><code>[language]</code> 是代码语言的名称，用来设置代码块颜色高亮，非必须；
-<code>[title]</code> 是顶部左边的说明，非必须；
-<code>[url]</code> 是顶部右边的超链接地址，非必须；
-<code>[link text]</code> 如它的字面意思，超链接的名称，非必须。
-亲测这 4 项应该是根据空格来分隔，而不是[]，故请不要加[]。除非如果你想写后面两个，但不想写前面两个，那么就必须加 <code>[]</code> 了，要这样写：<code>[] [] [url] [link text]</code>。</p>
-<p>首先关于代码块颜色高亮，高亮的模式可以在主题配置文件中设置：
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Code Highlight theme</span></span><br><span class="line"><span class="comment"># Available value:</span></span><br><span class="line"><span class="comment">#    normal | night | night eighties | night blue | night bright</span></span><br><span class="line"><span class="comment"># https://github.com/chriskempson/tomorrow-theme</span></span><br><span class="line"></span><br><span class="line"><span class="attr">highlight_theme:</span> <span class="string">night</span> <span class="string">eighties</span></span><br></pre></td></tr></table></figure></p>
-<p>要颜色正确高亮，代码语言的名称肯定要写对，各种支持语言的名称可以查看<a href="https://almostover.ru/2016-07/hexo-highlight-code-styles/" target="_blank" rel="noopener">这篇文章</a>。当然，如果你和我一样懒，可以在站点配置文件 <code>_config.yml</code> 中设置自动高亮（不过这个自动高亮似乎有问题，不建议打开）：
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">highlight:</span><br><span class="line">  enable: true</span><br><span class="line">  line_number: true</span><br><span class="line"># 代码自动高亮</span><br><span class="line"><span class="deletion">-  auto_detect: false</span></span><br><span class="line"><span class="addition">+  auto_detect: true</span></span><br></pre></td></tr></table></figure></p>
-<p>从网上找到的一个文本效果如下（别跟我说你不知道 <code>diff</code> 是什么）：
-<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">Index: languages/ini.js</span></span><br><span class="line"><span class="comment">===================================================================</span></span><br><span class="line"><span class="comment">--- languages/ini.js    (revision 199)</span></span><br><span class="line"><span class="comment">+++ languages/ini.js    (revision 200)</span></span><br><span class="line"><span class="meta">@@ -1,8 +1,7 @@</span></span><br><span class="line"> hljs.LANGUAGES.ini =</span><br><span class="line"> &#123;</span><br><span class="line"><span class="deletion">-   case_insensitive: true,</span></span><br><span class="line"><span class="deletion">-  defaultMode:</span></span><br><span class="line">   &#123;</span><br><span class="line"><span class="addition">+  defaultMode: &#123;</span></span><br><span class="line"><span class="deletion">-     contains: ['comment', 'title', 'setting'],</span></span><br><span class="line"><span class="addition">+     illegal: '[^\\s]'</span></span><br><span class="line"><span class="addition">+   &#125;,</span></span><br><span class="line"><span class="comment">*** /path/to/original timestamp</span></span><br><span class="line"><span class="comment">--- /path/to/new      timestamp</span></span><br><span class="line"><span class="comment">***************</span></span><br><span class="line"><span class="meta">*** 1,3 ****</span></span><br><span class="line"><span class="meta">--- 1,9 ----</span></span><br><span class="line"><span class="addition">+ This is an important</span></span><br><span class="line"><span class="addition">+ notice! It should</span></span><br><span class="line"><span class="addition">+ therefore be located at</span></span><br><span class="line"><span class="addition">+ the beginning of this</span></span><br><span class="line"><span class="addition">+ document!</span></span><br><span class="line"><span class="addition">! compress the size of the</span></span><br><span class="line"><span class="addition">! changes.</span></span><br><span class="line">  It is important to spell</span><br></pre></td></tr></table></figure></p>
-<p>代码仅仅高亮肯定是不够地，代码块地功能也很重要，比如复制这个功能。只要在 <code>_config.yml</code> 里打开就行啦：
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">codeblock:</span></span><br><span class="line">  <span class="comment"># Manual define the border radius in codeblock</span></span><br><span class="line">  <span class="comment"># Leave it empty for the default 1</span></span><br><span class="line"><span class="attr">  border_radius:</span> <span class="number">3</span></span><br><span class="line">  <span class="comment"># Add copy button on codeblock</span></span><br><span class="line"><span class="attr">  copy_button:</span></span><br><span class="line"><span class="attr">    enable:</span> <span class="literal">true</span></span><br><span class="line">    <span class="comment"># Show text copy result</span></span><br><span class="line"><span class="attr">    show_result:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
-<h4>Note 标签</h4>
-<p>在主题配置文件_config.yml里有一个关于这个的配置:
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Note tag (bs-callout).</span></span><br><span class="line"><span class="attr">note:</span></span><br><span class="line">  <span class="comment"># 风格</span></span><br><span class="line"><span class="attr">  style:</span> <span class="string">flat</span></span><br><span class="line">  <span class="comment"># 要不要图标</span></span><br><span class="line"><span class="attr">  icons:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># 圆角矩形</span></span><br><span class="line"><span class="attr">  border_radius:</span> <span class="number">3</span></span><br><span class="line"><span class="attr">  light_bg_offset:</span> <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
-<p>用 HTML 写就是这个样子
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"note default"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>default<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"note primary"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>primary<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"note success"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>success<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"note info"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>info<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"note warning"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>warning<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"note danger"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>danger<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"note danger no-icon"</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>danger no-icon<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>用 swig 语法写就是这样</p>
-<p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% note [class] %&#125;</span><br><span class="line">Any content (support inline tags too).</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line">[class] : default | primary | success | info | warning | danger.</span><br><span class="line">          May be not defined.</span><br></pre></td></tr></table></figure></p>
-<p>里面的三种风格长啥样？开启图标长啥样？可以查看<a href="https://github.com/iissnan/hexo-theme-next/pull/1697" target="_blank" rel="noopener">这个页面</a>，更多的介绍也在这个页面，请自行查看</p>
-<p>最后的几种效果：
-&lt;div class=&quot;note default&quot;&gt;&lt;p&gt;default&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;note primary&quot;&gt;&lt;p&gt;primary&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;note success&quot;&gt;&lt;p&gt;success&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;info&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;note warning&quot;&gt;&lt;p&gt;warning&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;note danger&quot;&gt;&lt;p&gt;danger&lt;/p&gt;&lt;/div&gt;
-&lt;div class=&quot;note danger no-icon&quot;&gt;&lt;p&gt;danger no-icon&lt;/p&gt;&lt;/div&gt;</p>
-<h4>Label 标签</h4>
-<p><code>label</code> 标签不建议加在段首, 首先可以在主题配置文件中有配置：
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># Label tag.</span><br><span class="line">label: true</span><br></pre></td></tr></table></figure></p>
-<p>然后效果如下（<code>@</code>前面的是label的名字，后面的是要显示的文字）</p>
-<p><span class="label default">default</span>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% label default@default %&#125;</span><br></pre></td></tr></table></figure></p>
-<p><span class="label primary">primary</span>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% label primary@primary %&#125;</span><br></pre></td></tr></table></figure></p>
-<p><span class="label success">success</span>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% label success@success %&#125;</span><br></pre></td></tr></table></figure></p>
-<p><span class="label info">info</span>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% label info@info %&#125;</span><br></pre></td></tr></table></figure></p>
-<p><span class="label warning">warning</span>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% label warning@warning %&#125;</span><br></pre></td></tr></table></figure></p>
-<p><span class="label danger">danger</span>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% label danger@danger %&#125;</span><br></pre></td></tr></table></figure></p>
-<h4>Tab 选项卡</h4>
-<p>当然也是要先配置一下：
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Tabs tag.</span></span><br><span class="line"><span class="attr">tabs:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  transition:</span></span><br><span class="line"><span class="attr">    tabs:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">    labels:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  border_radius:</span> <span class="number">3</span></span><br></pre></td></tr></table></figure></p>
-<p>代码如下：
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;% tabs 选项卡, 2 %&#125;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">**这是选项卡 1** 呵呵哈哈哈哈哈哈</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">**这是选项卡 2** 额。。。</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">**这是选项卡 3** 哇，你找到我了！</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure></p>
-<p>效果如下：
-<div class="tabs" id="选项卡"><ul class="nav-tabs"><li class="tab"><a href="#选项卡-1">选项卡 1</a></li><li class="tab active"><a href="#选项卡-2">选项卡 2</a></li><li class="tab"><a href="#选项卡-3">选项卡 3</a></li></ul><div class="tab-content"><div class="tab-pane" id="选项卡-1"><p><strong>这是选项卡 1</strong> 呵呵哈哈哈哈哈哈</p></div><div class="tab-pane active" id="选项卡-2"><p><strong>这是选项卡 2</strong> 额。。。</p></div><div class="tab-pane" id="选项卡-3"><p><strong>这是选项卡 3</strong> 哇，你找到我了！</p></div></div></div></p>
-<p>上面源码中，2 表示一开始在第二个选项卡，非必须，若数值为 -1 则隐藏选项卡内容。</p>
-<h4>按钮样式</h4>
-<p>代码如下：
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% btn https://almostover.ru/2016-01/hexo-theme-next-test/#Button-tag-test, 更多关于按钮的使用点这里, download fa-lg fa-fw %&#125;</span><br></pre></td></tr></table></figure></p>
-<p>效果如下：</p>
-<p><a class="btn" href="https://almostover.ru/2016-01/hexo-theme-next-test/#Button-tag-test" target="_blank" rel="noopener"><i class="fa fa-download fa-lg fa-fw"></i>更多关于按钮的使用点这里</a></p>
-<h3>更多的主题配置</h3>
-<h4>返回顶部按钮与阅读进度</h4>
-<p>在 <code>next/_config.yml</code> 里找到 <code>b2t</code> 这个地方进行如下配置：
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Back to top in sidebar (only for Pisces | Gemini).</span></span><br><span class="line"><span class="attr">b2t:</span> <span class="literal">true</span></span><br><span class="line"><span class="comment"># Scroll percent label in b2t button.</span></span><br><span class="line"><span class="attr">scrollpercent:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
-<h4>添加 RSS 订阅</h4>
-<p>首先安装一个模块
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure></p>
-<p>然后在<strong>根目录</strong>下的 <code>_config.yml</code> 里添加：
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">plugins:</span> <span class="string">hexo-generate-feed</span></span><br></pre></td></tr></table></figure></p>
-<p>最后在 <code>next\_config.yml</code> 里配置：
-<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Set rss to false to disable feed link.</span></span><br><span class="line"><span class="comment"># Leave rss as empty to use site's feed link, and install hexo-generator-feed: `npm install hexo-generator-feed --save`.</span></span><br><span class="line"><span class="comment"># Set rss to specific value if you have burned your feed already.</span></span><br><span class="line"><span class="attr">rss:</span> <span class="string">/atom.xml</span></span><br></pre></td></tr></table></figure></p>
-<p>重新生成就可以使用 RSS 了。</p>
-<h3>评论系统重配置</h3>
-<p>以前用的是 Disqus，然而需要翻墙，所以决定换成 Valine。这个 Valine 要先在 <a href="https://leancloud.cn/" target="_blank" rel="noopener">LeanCloud</a> 里注册并创建一个应用，这里就不再赘述.然后在 <code>next\_config.yml</code> 里配置。注意：得在 <code>LeanCloud -&gt; 应用 -&gt; 设置 -&gt; 应用 Key</code> 中把 AppID 和 AppKey 给复制到 <code>next\_config.yml</code> 里面去，并且在 <code>LeanCloud -&gt; 应用 -&gt; 设置 -&gt; 安全中心</code> 里将自己的域名添加到 <code>Web 安全域名</code> 中。</p>
-<p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">valine:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span> <span class="comment"># When enable is set to be true, leancloud_visitors is recommended to be closed for the re-initialization problem within different leancloud adk version.</span></span><br><span class="line"><span class="attr">  appid:</span> <span class="comment"># your leancloud application appid</span></span><br><span class="line"><span class="attr">  appkey:</span> <span class="comment"># your leancloud application appkey</span></span><br><span class="line"><span class="attr">  notify:</span> <span class="literal">true</span> <span class="comment"># mail notifier , https://github.com/xCss/Valine/wiki</span></span><br><span class="line"><span class="attr">  verify:</span> <span class="literal">true</span> <span class="comment"># Verification code</span></span><br><span class="line"><span class="attr">  placeholder:</span> <span class="string">😎看了这么多，不想说点什么嘛😉</span> <span class="comment"># comment box placeholder</span></span><br><span class="line"><span class="attr">  avatar:</span> <span class="string">mm</span> <span class="comment"># gravatar style</span></span><br><span class="line"><span class="attr">  guest_info:</span> <span class="string">nick,mail,link</span> <span class="comment"># custom comment header</span></span><br><span class="line"><span class="attr">  pageSize:</span> <span class="number">10</span> <span class="comment"># pagination size</span></span><br><span class="line"><span class="attr">  visitor:</span> <span class="literal">false</span> <span class="comment"># leancloud-counter-security is not supported for now. When visitor is set to be true, appid and appkey are recommended to be the same as leancloud_visitors' for counter compatibility. Article reading statistic https://valine.js.org/visitor.html</span></span><br></pre></td></tr></table></figure></p>
-<p>这个 LeanCloud 也是比较良心的啊，可以免费使用，当然我用的是开发版，所以大家不要太着急🤣。</p>
-<hr>
-
-          
+          <div class="note default"><p>今天是把博客好好地美化了一把，今天就来讲一下 hexo 博客美化过程中的心得，因为自己使用的是 NexT 主题，所以这里的有些过程仅供别的主题的用户做参考。</p></div>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/30/HEXO-NexT-主题提高博客颜值/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -2751,7 +2266,7 @@ j 间距离，保证对角线为0。
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-11-26 15:39:42" itemprop="dateModified" datetime="2018-11-26T15:39:42+08:00">2018-11-26</time>
+                <time title="修改时间：2018-11-26 16:03:58" itemprop="dateModified" datetime="2018-11-26T16:03:58+08:00">2018-11-26</time>
               
             
           </span>
@@ -2813,19 +2328,14 @@ j 间距离，保证对角线为0。
 
       
         
-          
-            <h3>写在前面</h3>
-<p>一直很想写一篇博客来普及一下“编程规范”这个看似不重要其实很重要的东西，首先，它是团队合作的基础，有些 OI 竞赛也是有团队合作的。其次，下到 OI 中几十行的程序，上到大项目中几千行甚至几万行乃至上亿（额，这个似乎很少见），如果写得太难看那就会让人实在是无法忍受（比如在写 DP 的时候硬是将一个状态转移方程压成了一行，行数比列数还多一倍）。可见编程规范是多么的重要!</p>
-<p>&lt;!-- more --&gt;</p>
-<h3>Google C++ 编程规范</h3>
-<p>Google 的项目一直都让人看起来赏心悦目，即使有些混乱的宏定义也让人看起来赏心悦目，首先贴一张图，转自 <a href="https://blog.csdn.net/voidccc/article/details/37599203" target="_blank" rel="noopener">CSDN 上的一篇博客</a>
-&lt;div style=&quot;slign: center&quot;&gt; &lt;img src=&quot;pic1.jpg&quot; /&gt; &lt;/div&gt;</p>
-<p>然后贴上谷歌编程指南的<a href="https://zh-google-styleguide.readthedocs.io/en/latest/" target="_blank" rel="noopener">详细说明</a></p>
-<h3>评价</h3>
-<p>Google 的编程指南真的是高妙，看起来赏心悦目，但个人觉得还是要去其糟粕的，比如“不用全局变量”这种，在竞赛中就可以直接忽视了，还是以代码的易用性为第一要务。</p>
-<hr>
-
-          
+          <h3 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h3><p>一直很想写一篇博客来普及一下“编程规范”这个看似不重要其实很重要的东西，首先，它是团队合作的基础，有些 OI 竞赛也是有团队合作的。其次，下到 OI 中几十行的程序，上到大项目中几千行甚至几万行乃至上亿（额，这个似乎很少见），如果写得太难看那就会让人实在是无法忍受（比如在写 DP 的时候硬是将一个状态转移方程压成了一行，行数比列数还多一倍）。可见编程规范是多么的重要!</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/29/杂谈-编程规范那些事/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
