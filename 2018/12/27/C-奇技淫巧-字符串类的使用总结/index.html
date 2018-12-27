@@ -147,16 +147,18 @@
 });
 tpwidget("show");</script>
 
-  <meta name="description" content="OI 的坎坷旅途">
-<meta property="og:type" content="website">
-<meta property="og:title" content="梅骏逸的博客">
-<meta property="og:url" content="http://walesexcitedmei.github.io/tags/Bellman-Ford/index.html">
+  <meta name="description" content="字符串类是个好东西，不论是在 OI 竞赛中还是在实际的应用当中，C++ 中的字符串都提供了完备的函数。虽然在实现上可能并不如别的语言的字符串的实现，但是它仍然是个好东西。">
+<meta name="keywords" content="C++ 奇技淫巧,迭代器,iostream">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[C++ 奇技淫巧] 字符串类的使用总结">
+<meta property="og:url" content="http://walesexcitedmei.github.io/2018/12/27/C-奇技淫巧-字符串类的使用总结/index.html">
 <meta property="og:site_name" content="梅骏逸的博客">
-<meta property="og:description" content="OI 的坎坷旅途">
+<meta property="og:description" content="字符串类是个好东西，不论是在 OI 竞赛中还是在实际的应用当中，C++ 中的字符串都提供了完备的函数。虽然在实现上可能并不如别的语言的字符串的实现，但是它仍然是个好东西。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-27T12:58:17.891Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="梅骏逸的博客">
-<meta name="twitter:description" content="OI 的坎坷旅途">
+<meta name="twitter:title" content="[C++ 奇技淫巧] 字符串类的使用总结">
+<meta name="twitter:description" content="字符串类是个好东西，不论是在 OI 竞赛中还是在实际的应用当中，C++ 中的字符串都提供了完备的函数。虽然在实现上可能并不如别的语言的字符串的实现，但是它仍然是个好东西。">
 
 
 
@@ -165,7 +167,7 @@ tpwidget("show");</script>
 
 
 
-  <link rel="canonical" href="http://walesexcitedmei.github.io/tags/Bellman-Ford/"/>
+  <link rel="canonical" href="http://walesexcitedmei.github.io/2018/12/27/C-奇技淫巧-字符串类的使用总结/"/>
 
 
 
@@ -175,7 +177,7 @@ tpwidget("show");</script>
   };
 </script>
 
-  <title>标签: Bellman-Ford | 梅骏逸的博客</title>
+  <title>[C++ 奇技淫巧] 字符串类的使用总结 | 梅骏逸的博客</title>
   
 
 
@@ -231,7 +233,7 @@ tpwidget("show");</script>
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -288,7 +290,7 @@ tpwidget("show");</script>
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
   </li>
@@ -384,90 +386,334 @@ tpwidget("show");</script>
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Bellman-Ford<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://walesexcitedmei.github.io/2018/12/27/C-奇技淫巧-字符串类的使用总结/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wales Mei">
+      <meta itemprop="description" content="OI 的坎坷旅途">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="梅骏逸的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/08/10/图论-图论基础知识/" itemprop="url">
-              
-                <span itemprop="name">[图论] 图论基础知识</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">[C++ 奇技淫巧] 字符串类的使用总结
+              
+            
+          </h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-10T19:49:26+08:00"
-              content="2018-08-10" >
-          08-10
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-12-27 20:16:02 / 修改时间：20:58:17" itemprop="dateCreated datePublished" datetime="2018-12-27T20:16:02+08:00">2018-12-27</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/奇技淫巧/" itemprop="url" rel="index"><span itemprop="name">奇技淫巧</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/27/C-奇技淫巧-字符串类的使用总结/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2018/12/27/C-奇技淫巧-字符串类的使用总结/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon"
+            >
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <div class="note default"><p>字符串类是个好东西，不论是在 OI 竞赛中还是在实际的应用当中，C++ 中的字符串都提供了完备的函数。虽然在实现上可能并不如别的语言的字符串的实现，但是它仍然是个好东西。</p></div>
+<a id="more"></a>
+<h3 id="字符串类简介"><a href="#字符串类简介" class="headerlink" title="字符串类简介"></a>字符串类简介</h3><p>直接看<a href="https://zh.cppreference.com/w/cpp/string/basic_string" target="_blank" rel="noopener">这里</a>吧，说得很清楚。C++ 的 <code>string</code> 类型有很多，都是为了不同的目的设计的，这篇文章将会详细介绍 <code>std::string</code> 的用法，其它的将会一笔带过。</p>
+<h3 id="std-string-类"><a href="#std-string-类" class="headerlink" title="std::string 类"></a><code>std::string</code> 类</h3><h4 id="运算符重载"><a href="#运算符重载" class="headerlink" title="运算符重载"></a>运算符重载</h4><ol>
+<li><code>+</code> 和 <code>+=</code>：连接字符串</li>
+<li><code>=</code>：字符串赋值</li>
+<li><code>&gt;</code>、<code>&gt;=</code>、<code>&lt;</code> 和 <code>&lt;=</code>：字符串比较（例如a &lt; b, aa &lt; ab）</li>
+<li><code>==</code>、<code>!=</code>：比较字符串</li>
+<li><code>&lt;&lt;</code>、<code>&gt;&gt;</code>：输出、输入字符串</li>
+</ol>
+<p><strong>注意，两个字符串常量必须先声明再相加，不能像下面那样：</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="built_in">string</span> str = <span class="string">"cat"</span>;</span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; <span class="string">"apple"</span> + <span class="string">"boy"</span> <span class="comment">// illegal!</span></span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 因为 "apple" 和 "boy" 默认为 const char* 类型，没有重载 + 运算符</span></span><br></pre></td></tr></table></figure>
+<h4 id="查找方法"><a href="#查找方法" class="headerlink" title="查找方法"></a>查找方法</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回字符串 ab 在 str 的位置</span></span><br><span class="line">str.find(<span class="string">"ab"</span>);</span><br><span class="line"><span class="comment">// 在 str[2]~str[n-1] 范围内查找并返回字符串 ab 在 str 的位置</span></span><br><span class="line">str.find(<span class="string">"ab"</span>, <span class="number">2</span>);</span><br><span class="line"><span class="comment">// 在 str[0]~str[2] 范围内查找并返回字符串 ab 在 str 的位置</span></span><br><span class="line">str.rfind(<span class="string">"ab"</span>, <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// first 系列函数</span></span><br><span class="line"><span class="comment">// 返回 apple 中任何一个字符首次在 str 中出现的位置</span></span><br><span class="line">str.find_first_of(<span class="string">"apple"</span>);</span><br><span class="line"><span class="comment">// 返回 apple 中任何一个字符首次在 str[2]~str[n-1] 范围中出现的位置</span></span><br><span class="line">str.find_first_of(<span class="string">"apple"</span>, <span class="number">2</span>);</span><br><span class="line"><span class="comment">// 返回除 apple 以外的任何一个字符在 str 中首次出现的位置</span></span><br><span class="line">str.find_first_not_of(<span class="string">"apple"</span>);</span><br><span class="line"><span class="comment">// 返回除 apple 以外的任何一个字符在 str[2]~str[n-1] 范围中首次出现的位置</span></span><br><span class="line">str.find_first_not_of(<span class="string">"apple"</span>, <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// last 系列函数</span></span><br><span class="line"><span class="comment">// 返回 apple 中任何一个字符最后一次在 str 中出现的位置</span></span><br><span class="line">str.find_last_of(<span class="string">"apple"</span>);</span><br><span class="line"><span class="comment">// 返回 apple 中任何一个字符最后一次在 str[0]~str[2] 范围中出现的位置</span></span><br><span class="line">str.find_last_of(<span class="string">"apple"</span>, <span class="number">2</span>);</span><br><span class="line"><span class="comment">// 返回除 apple 以外的任何一个字符在 str 中最后一次出现的位置</span></span><br><span class="line">str.find_last_not_of(<span class="string">"apple"</span>);</span><br><span class="line"><span class="comment">// 返回除 apple 以外的任何一个字符在 str[0]~str[2] 范围中最后一次出现的位置</span></span><br><span class="line">str.find_last_not_of(<span class="string">"apple"</span>, <span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 以上函数如果没有找到，均返回string::npos</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="built_in">string</span>::npos;</span><br></pre></td></tr></table></figure>
+<h4 id="子串"><a href="#子串" class="headerlink" title="子串"></a>子串</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回 [3] 及以后的子串</span></span><br><span class="line">str.substr(<span class="number">3</span>);</span><br><span class="line"><span class="comment">// 返回 str[2]~str[2+(4-1)] 子串(即从[2]开始4个字符组成的字符串)</span></span><br><span class="line">str.substr(<span class="number">2</span>, <span class="number">4</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回把 [2]~[2+(4-1)] 的内容替换为 "sz" 后的新字符串</span></span><br><span class="line">str.replace(<span class="number">2</span>, <span class="number">4</span>, <span class="string">"sz"</span>);</span><br><span class="line"><span class="comment">// 返回把 [2]~[2+(4-1)] 的内容替换为 "abcd" 的前3个字符后的新字符串</span></span><br><span class="line">str.replace(<span class="number">2</span>, <span class="number">4</span>, <span class="string">"abcd"</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 从 [2] 位置开始添加字符串 "sz"，并返回形成的新字符串</span></span><br><span class="line">str.insert(<span class="number">2</span>, <span class="string">"sz"</span>);</span><br><span class="line"><span class="comment">// 从 [2] 位置开始添加字符串 "abcd" 的前 3 个字符，并返回形成的新字符串</span></span><br><span class="line">str.insert(<span class="number">2</span>, <span class="string">"abcd"</span>, <span class="number">3</span>);</span><br><span class="line"><span class="comment">// 从 [2] 位置开始添加字符串 "abcd" 的前 [2]~[2+(3-1)] 个字符，并返回形成的新字符串</span></span><br><span class="line">str.insert(<span class="number">2</span>, <span class="string">"abcd"</span>, <span class="number">1</span>, <span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="追加"><a href="#追加" class="headerlink" title="追加"></a>追加</h4><p>除了用重载的 <code>+</code> 操作符，还可以使用函数来完成。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str.push_back(<span class="string">'a'</span>); <span class="comment">// 在 str 末尾添加字符 'a'</span></span><br><span class="line">str.append(<span class="string">"abc"</span>);  <span class="comment">// 在 str 末尾添加字符串 "abc"</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">str.erase(<span class="number">3</span>);    <span class="comment">// 删除 [3] 及以后的字符，并返回新字符串</span></span><br><span class="line">str.erase(<span class="number">3</span>, <span class="number">5</span>); <span class="comment">// 删除从 [3] 开始的 5 个字符，并返回新字符串</span></span><br></pre></td></tr></table></figure>
+<h4 id="交换"><a href="#交换" class="headerlink" title="交换"></a>交换</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str1.swap(str2); <span class="comment">// 把 str1 与 str2 交换</span></span><br></pre></td></tr></table></figure>
+<h3 id="其它的-basic-string-lt-gt-类"><a href="#其它的-basic-string-lt-gt-类" class="headerlink" title="其它的 basic_string&lt;&gt; 类"></a>其它的 <code>basic_string&lt;&gt;</code> 类</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>std::wstring</code></td>
+<td><code>std::basic_string&lt;wchar_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>std::u8string</code></td>
+<td><code>std::basic_string&lt;char8_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>std::u16string</code></td>
+<td><code>std::basic_string&lt;char16_t&gt;</code></td>
+</tr>
+<tr>
+<td><code>std::u32string</code></td>
+<td><code>std::basic_string&lt;char32_t&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<p>主要还是说一下 <code>std::wstring</code> 吧，其实就是宽字符的 <code>string</code> ，Windows 和 Linux 上并不相同：</p>
+<ol>
+<li>在 Windows 平台下 <code>sizeof(wchar_t)</code> 为 2，而在 Linux 平台下 <code>sizeof(wchar_t)</code> 为 4；</li>
+<li>在 Windows 平台下宽字符(或字符串)字面量使用 <code>UTF-16</code> 编码，Linux平台下使用 <code>UTF-32</code> 编码。</li>
+</ol>
+<hr>
 
       
     </div>
 
+    
+      
+
+
+    
+    <div>
+      
+        <div>
+  
+    <div style="text-align:center;color: #636363;font-size:14px;letter-spacing: 10px">本文结束啦<i class="fa fa-bell"></i>感谢您的阅读</div>
+  
+</div>
+        
+    </div>
+    <div>
+      
+        
+<div class="my_post_copyright">
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+  <!-- JS库 sweetalert 可修改路径 -->
+  <script type="text/javascript" src="http://jslibs.wuxubj.cn/sweetalert_mini/jquery-1.7.1.min.js"></script>
+  <script src="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://jslibs.wuxubj.cn/sweetalert_mini/sweetalert.mini.css">
+  <p><span><strong>文章作者:</strong></span><a href="/" title="访问 Wales Mei 的个人博客">Wales Mei</a></p>
+  <p><span><strong>最后更新:</strong></span>2018年12月27日 20:12:17</p>
+  <p><span><strong>原始链接:</strong></span><a href="/2018/12/27/C-奇技淫巧-字符串类的使用总结/" title="[C++ 奇技淫巧] 字符串类的使用总结">http://walesexcitedmei.github.io/2018/12/27/C-奇技淫巧-字符串类的使用总结/</a></p>
+  <p><span><strong>版权声明:</strong></span>本博客所有文章除特别声明外，均采用 <i class="fa fa-creative-commons"></i> <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" title="Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)"> BY-NC-SA 3.0 许可协议</a>，转载请注明出处！</p>  
+</div>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>明人不说暗话，如果你觉得我写得还可以的话，你懂的！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.JPG" alt="Wales Mei 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.JPG" alt="Wales Mei 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C-奇技淫巧/" rel="tag"><i class="fa fa-tag"></i> C++ 奇技淫巧</a>
+          
+            <a href="/tags/迭代器/" rel="tag"><i class="fa fa-tag"></i> 迭代器</a>
+          
+            <a href="/tags/iostream/" rel="tag"><i class="fa fa-tag"></i> iostream</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/26/SSR-ShadowsocksR-配置及使用/" rel="next" title="[SSR] ShadowsocksR 配置及使用">
+                <i class="fa fa-chevron-left"></i> [SSR] ShadowsocksR 配置及使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7465666912424994",
+    enable_page_level_ads: true
+  });
+</script>
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -488,8 +734,17 @@ tpwidget("show");</script>
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -728,6 +983,22 @@ tpwidget("show");</script>
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串类简介"><span class="nav-number">1.</span> <span class="nav-text">字符串类简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#std-string-类"><span class="nav-number">2.</span> <span class="nav-text">std::string 类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#运算符重载"><span class="nav-number">2.1.</span> <span class="nav-text">运算符重载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查找方法"><span class="nav-number">2.2.</span> <span class="nav-text">查找方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子串"><span class="nav-number">2.3.</span> <span class="nav-text">子串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#替换"><span class="nav-number">2.4.</span> <span class="nav-text">替换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插入"><span class="nav-number">2.5.</span> <span class="nav-text">插入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#追加"><span class="nav-number">2.6.</span> <span class="nav-text">追加</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除"><span class="nav-number">2.7.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#交换"><span class="nav-number">2.8.</span> <span class="nav-text">交换</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其它的-basic-string-lt-gt-类"><span class="nav-number">3.</span> <span class="nav-text">其它的 basic_string&lt;&gt; 类</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
         <div class="back-to-top">
@@ -901,6 +1172,10 @@ tpwidget("show");</script>
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
 
   
 
@@ -1302,6 +1577,30 @@ tpwidget("show");</script>
   
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
   
 
 
